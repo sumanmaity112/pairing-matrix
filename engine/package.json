@@ -1,0 +1,33 @@
+{
+  "name": "pairing-matrix-engine",
+  "version": "0.1.0",
+  "description": "Main logic to create pairing matrix using github commits",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Suman Maity"
+  },
+  "readme": "https://github.com/sumanmaity112/pairing-matrix/blob/main/engine/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sumanmaity112/pairing-matrix.git",
+    "directory": "engine"
+  },
+  "private": false,
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "simple-git": "^3.2.6"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "engineStrict": true,
+  "keywords": [
+    "pairing matrix",
+    "pairing-matrix",
+    "engine",
+    "pair",
+    "matrix"
+  ]
+}
