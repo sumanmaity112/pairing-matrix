@@ -3,4 +3,6 @@ fileignoreconfig:
   checksum: 9fdf6525eb63fc646bf2c913a0f401d1f8098215fbaf8007f3ceff7177b29a58
 - filename: engine/yarn.lock
   checksum: 30e7d295d75827d7b33c083e0602eeb0bcaf1fd0c2c9c411d5fa54800349039b
+- filename: vue-visualiser/yarn.lock
+  checksum: dbb6abc1aa30a2aae55ba951ec65b4d3f71a0624dc6cf41e9df916ae9fca9970
 version: "1.0"
