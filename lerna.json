@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "engine", "visualiser"
+  ],
+  "version": "independent",
+  "npmClient": "yarn"
+}
