@@ -1,7 +1,5 @@
 {
-  "packages": [
-    "engine", "visualiser"
-  ],
+  "packages": ["engine", "vue-visualiser"],
   "version": "independent",
   "npmClient": "yarn"
 }

@@ -15,9 +15,7 @@
   },
   "scripts": {
     "build": "NODE_ENV=production webpack --config build/webpack.prod.conf.js --progress",
-    "build:dev": "NODE_ENV=dev webpack --config build/webpack.dev.conf.js --progress",
-    "lint": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "build:dev": "NODE_ENV=dev webpack --config build/webpack.dev.conf.js --progress"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -26,14 +24,13 @@
     "d3": "^7.3.0"
   },
   "devDependencies": {
-    "vue": "^3.0.0",
     "@babel/core": "^7.17.5",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@vue/compiler-sfc": "^3.2.31",
     "babel-loader": "^8.2.3",
-    "prettier": "^2.5.1",
     "terser-webpack-plugin": "^5.3.1",
+    "vue": "^3.0.0",
     "vue-loader": "^17.0.0",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2",
