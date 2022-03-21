@@ -1,5 +1,13 @@
 {
   "packages": ["engine", "vue-visualiser"],
+  "npmClient": "yarn",
   "version": "independent",
-  "npmClient": "yarn"
+  "command": {
+    "version": {
+      "allowBranch": "main",
+      "ignoreChanges": ["**/*.md"],
+      "changelogPreset": "conventionalcommits",
+      "message": "build: Bump new version"
+    }
+  }
 }
