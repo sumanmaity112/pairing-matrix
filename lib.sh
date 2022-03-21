@@ -45,3 +45,8 @@ _check() {
   yarn lerna exec --concurrency 1 --stream 'yarn audit --production --audit-level=high'
 }
 
+_bump_version() {
+  _ensure_nvm
+  # shellcheck disable=SC2068
+  yarn lerna version --conventional-commits --no-private --sign-git-tag $@
+}

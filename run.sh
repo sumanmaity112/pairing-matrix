@@ -17,6 +17,7 @@ commands:
   check                                                Run security checks across all packages
   format                                               Auto format source files across all packages
   test                                                 Build and test all packages
+  bump-version                                         Bump up version for packages
 EOF
   exit 1
 }
@@ -28,6 +29,7 @@ case ${CMD} in
   check) _check ;;
   format) _format_sources ;;
   test) _test ;;
+  bump-version) _bump_version "$@" ;;
   *) _usage ;;
 esac
 
