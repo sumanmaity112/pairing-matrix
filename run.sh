@@ -18,6 +18,7 @@ commands:
   format                                               Auto format source files across all packages
   test                                                 Build and test all packages
   bump-version                                         Bump up version for packages
+  publish                                              Publish newly created version to npm registry  
 EOF
   exit 1
 }
@@ -30,6 +31,7 @@ case ${CMD} in
   format) _format_sources ;;
   test) _test ;;
   bump-version) _bump_version "$@" ;;
+  publish) _publish ;;
   *) _usage ;;
 esac
 

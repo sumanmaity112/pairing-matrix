@@ -50,3 +50,9 @@ _bump_version() {
   # shellcheck disable=SC2068
   yarn lerna version --conventional-commits --no-private --sign-git-tag $@
 }
+
+_publish() {
+  _ensure_nvm
+
+  yarn lerna publish from-git
+}
