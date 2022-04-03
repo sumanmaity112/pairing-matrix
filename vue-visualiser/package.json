@@ -13,9 +13,13 @@
     "url": "https://github.com/sumanmaity112/pairing-matrix.git",
     "directory": "vue-visualiser"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "NODE_ENV=production webpack --config build/webpack.prod.conf.js --progress",
-    "build:dev": "NODE_ENV=dev webpack --config build/webpack.dev.conf.js --progress"
+    "build:dev": "NODE_ENV=dev webpack --config build/webpack.dev.conf.js --progress",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
