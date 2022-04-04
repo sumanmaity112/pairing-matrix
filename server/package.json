@@ -1,0 +1,29 @@
+{
+  "name": "pairing-matrix-server",
+  "version": "0.1.0",
+  "description": "Pairing Matrix Server to serve application",
+  "author": {
+    "name": "Suman Maity"
+  },
+  "private": true,
+  "type": "module",
+  "homepage": "https://github.com/sumanmaity112/pairing-matrix#readme",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "lodash": "^4.17.21",
+    "pairing-matrix-engine": "^0.2.0"
+  },
+  "scripts": {
+    "build-frontend": "cd ../frontend-app && yarn build && cd - > /dev/null",
+    "copy-frontend": "rm -rf public && cp -r ../frontend-app/dist/ public/",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanmaity112/pairing-matrix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sumanmaity112/pairing-matrix/issues"
+  }
+}
