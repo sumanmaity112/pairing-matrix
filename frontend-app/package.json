@@ -1,0 +1,59 @@
+{
+  "name": "pairing-matrix-frontend-app",
+  "version": "0.1.0",
+  "description": "Pairing Matrix UI. This will be used incase of docker based application",
+  "homepage": "https://github.com/sumanmaity112/pairing-matrix#readme",
+  "author": {
+    "name": "Suman Maity"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "pairing-matrix-vue-visualiser": "^0.2.0",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanmaity112/pairing-matrix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sumanmaity112/pairing-matrix/issues"
+  }
+}
