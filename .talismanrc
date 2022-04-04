@@ -7,4 +7,8 @@ fileignoreconfig:
   checksum: dbb6abc1aa30a2aae55ba951ec65b4d3f71a0624dc6cf41e9df916ae9fca9970
 - filename: yarn.lock
   checksum: 06f319bf52b9fab0ee0ae84aba6da3d9c83c41aafe307f18d48821a2969c5621
+- filename: engine/CHANGELOG.md
+  checksum: 1ae0e6aa35b68e7c6ffe66b1327749495bb50f145e3117fc703bda4db8cbdf0c
+- filename: vue-visualiser/CHANGELOG.md
+  checksum: 382eb5136e42f3043b78a779214aabb7dd0e1535d7be2207882ae9276c97dd32
 version: "1.0"
