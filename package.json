@@ -2,7 +2,9 @@
   "name": "pairing_matrix",
   "description": "Pairing Matrix using Github commits",
   "repository": "https://github.com/sumanmaity112/pairing-matrix.git",
-  "author": "sumanmaity112 <suman.maity112@gmail.com>",
+  "author": {
+    "name": "Suman Maity"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
