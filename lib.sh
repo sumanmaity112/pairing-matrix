@@ -56,3 +56,9 @@ _publish() {
 
   yarn lerna publish from-git
 }
+
+_docker_build() {
+  # shellcheck disable=SC2155
+  local revision=$(git rev-parse HEAD)
+  docker build -t "pairing-matrix:${revision}" .
+}

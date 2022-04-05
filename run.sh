@@ -18,7 +18,8 @@ commands:
   format                                               Auto format source files across all packages
   test                                                 Build and test all packages
   bump-version                                         Bump up version for packages
-  publish                                              Publish newly created version to npm registry  
+  publish                                              Publish newly created version to npm registry
+  docker-build                                         Build docker image for the application
 EOF
   exit 1
 }
@@ -32,6 +33,7 @@ case ${CMD} in
   test) _test ;;
   bump-version) _bump_version "$@" ;;
   publish) _publish ;;
+  docker-build) _docker_build ;;
   *) _usage ;;
 esac
 

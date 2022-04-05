@@ -8,7 +8,7 @@ import PairingMatrixGenerator from "pairing-matrix-engine";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const config = JSON.parse(readFileSync(process.argv[2], "utf8"));
+const config = JSON.parse(readFileSync(process.env.CONFIG_PATH, "utf8"));
 
 const pairingMatrixGenerator = new PairingMatrixGenerator(
   config.username,
