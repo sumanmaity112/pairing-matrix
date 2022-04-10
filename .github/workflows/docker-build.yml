@@ -1,0 +1,45 @@
+name: docker-build
+
+on:
+  push:
+    tags:
+      - 'pairing-matrix@v*.*.*'
+
+env:
+  SERVICE_NAME: pairing-matrix
+
+jobs:
+  docker:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v2
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.SERVICE_NAME }}
+          tag-semver: |
+            {{major}}.{{minor}}.{{patch}}
+            {{major}}.{{minor}}
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          push: true
+      - name: Update docker hub description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          repository: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.SERVICE_NAME }}
+          readme-filepath: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/README.md
