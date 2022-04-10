@@ -18,6 +18,7 @@ commands:
   format                                               Auto format source files across all packages
   test                                                 Build and test all packages
   bump-version                                         Bump up version for packages
+  bump-server-version <--major|--minor|--patch>        Bump up version for pairing matrix server
   publish                                              Publish newly created version to npm registry
   docker-build                                         Build docker image for the application
 EOF
@@ -32,6 +33,7 @@ case ${CMD} in
   format) _format_sources ;;
   test) _test ;;
   bump-version) _bump_version "$@" ;;
+  bump-server-version) _bump_server_version "$@" ;;
   publish) _publish ;;
   docker-build) _docker_build ;;
   *) _usage ;;

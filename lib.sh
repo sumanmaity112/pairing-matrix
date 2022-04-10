@@ -51,6 +51,19 @@ _bump_version() {
   yarn lerna version --conventional-commits --no-private --sign-git-tag $@
 }
 
+_bump_server_version() {
+  _ensure_nvm
+
+  pushd "server" > /dev/null || exit
+    yarn config set version-tag-prefix "pairing-matrix@v"
+    yarn config set version-git-message "build: Update pairing matrix server version to v%s"
+    # shellcheck disable=SC2068
+    yarn version $@
+    yarn config delete version-tag-prefix
+    yarn config delete version-git-message
+  popd > /dev/null || exit
+}
+
 _publish() {
   _ensure_nvm
 
@@ -58,7 +71,9 @@ _publish() {
 }
 
 _docker_build() {
+  # shellcheck disable=SC2002
   # shellcheck disable=SC2155
-  local revision=$(git rev-parse HEAD)
-  docker build -t "pairing-matrix:${revision}" .
+  local version=$(cat "server/package.json" | jq -r ".version")
+
+  docker build -t "pairing-matrix:v${version}" .
 }
