@@ -55,11 +55,9 @@ _bump_server_version() {
   _ensure_nvm
 
   pushd "server" > /dev/null || exit
-    yarn config set version-tag-prefix "pairing-matrix@v"
     yarn config set version-git-message "build: Update pairing matrix server version to v%s"
     # shellcheck disable=SC2068
     yarn version $@
-    yarn config delete version-tag-prefix
     yarn config delete version-git-message
   popd > /dev/null || exit
 }

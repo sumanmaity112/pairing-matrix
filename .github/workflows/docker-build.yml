@@ -3,7 +3,7 @@ name: docker-build
 on:
   push:
     tags:
-      - 'pairing-matrix@v*.*.*'
+      - "v*.*.*"
 
 env:
   SERVICE_NAME: pairing-matrix
