@@ -1,7 +1,17 @@
 # Pairing Matrix engine
 
 [![NPM version](https://img.shields.io/npm/v/pairing-matrix-engine.svg)](https://www.npmjs.com/package/pairing-matrix-engine)
-This package main logic required to build pairing matrix using github commits.
+This package required codebase to build pairing matrix using github commits. The expected github commit structure is following
+
+```text
+<commit message>
+
+Addresses <issue/card number>
+
+Co-authored-by: <co-author name> <co-author email>
+```
+
+**Note**: Co-author syntax follows [github co-author recommendation](https://docs.github.com/en/github-ae@latest/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors#creating-co-authored-commits-on-github-ae)
 
 ## Installation
 

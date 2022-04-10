@@ -1,5 +1,26 @@
 # Pairing Matrix
 
+## Usage
+
+Pairing matrix can be either used as out of box docker image or can be used as library to integrate with other application.
+
+### As Docker
+
+Pairing Matrix docker image can be found on [dockerhub](https://hub.docker.com/r/sumanmaity112/pairing-matrix). You can run following
+command to start pairing-matrix docker
+
+```shell
+docker run -p <host port>:8080 -e CONFIG_PATH="<config json path>" --name pairing-matrix pairing-matrix:<tag>
+```
+
+### As Library
+
+To be able to design your own pairing matrix or include with your existing application, the core logic can be found as
+npm package.
+
+- [pairing-matrix-engine](https://www.npmjs.com/package/pairing-matrix-engine) is responsible to collect pairing data from github commits
+- [pairing-matrix-vue-visualiser](https://www.npmjs.com/package/pairing-matrix-vue-visualiser) is responsible to visualise pairing information. Currently it can be only used with (Vuejs)[https://vuejs.org/]
+
 ## Developers Guide
 
 ### Prerequisites
@@ -8,7 +29,6 @@
 - [Node.js v16.13.1](https://nodejs.org)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [ShellCheck](https://www.shellcheck.net)
-- [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli) (maintainers only)
 
 ### Project setup
 
@@ -22,16 +42,10 @@
 yarn build
 ```
 
-### Check Lints and fixes files
-
-```shell
-yarn lint
-```
-
 ### Fix Lint issues
 
 ```shell
-yarn lint:fix
+./run.sh format
 ```
 
 ### Commits

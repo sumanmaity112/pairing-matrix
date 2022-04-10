@@ -1,4 +1,4 @@
-# Frontend App
+# Pairing Matrix Frontend App
 
 This package is getting used while we are running the pairing matrix application.
 

@@ -1,11 +1,26 @@
-# `server`
+# Pairing Matrix Server
 
-> TODO: description
+This package is getting used while we are running the pairing matrix application.
 
-## Usage
+## Project setup
 
 ```
-const server = require('server');
+yarn install
+```
 
-// TODO: DEMONSTRATE API
+## Start Server
+
+```shell
+CONFIG_PATH=<config path> yarn start
+```
+
+### Config file
+
+```json
+{
+  "repos": ["<List of repos>"],
+  "username": "<username>",
+  "basePath": "<base path where cloned repos will be stored>",
+  "sshIdentityFilePath": "<ssh file path>"
+}
 ```
