@@ -1,14 +1,15 @@
-FROM node:16-alpine3.14 as frontend-builder
+FROM node:16-slim as frontend-builder
 COPY --chown=node:node frontend-app /home/gradle/frontend-app
 WORKDIR /home/gradle/frontend-app
 RUN yarn install
 RUN yarn build
 
-FROM node:16-alpine3.14
+FROM node:16-slim
 EXPOSE 8080
 
-RUN apk update
-RUN apk add git openssh openrc
+RUN apt update
+RUN apt install -y git openssh-server
+RUN service ssh start
 
 COPY --chown=node:node server /home/node/server
 
