@@ -13,6 +13,13 @@ command to start pairing-matrix docker
 docker run -p <host port>:8080 -e CONFIG_PATH="<config json path>" --name pairing-matrix pairing-matrix:<tag>
 ```
 
+Once you start the docker image, it'll expose the following `http://localhost:<host port>?pull-data=true&since-days=<since days>`
+
+- `pull-data` if set to **true** then latest data will be pulled from github repos and then it'll create the matrix
+- `since-days` by default it's set to **14** days but can be set to any number of days
+
+**Note** For config please check [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/server/README.md#config-file)
+
 ### As Library
 
 To be able to design your own pairing matrix or include with your existing application, the core logic can be found as
