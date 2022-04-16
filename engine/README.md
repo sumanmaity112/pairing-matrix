@@ -34,7 +34,11 @@ const pairingMatrixGenerator = new PairingMatrixGenerator(
   sshIdentityFilePath
 );
 
-await pairingMatrixGenerator.generatePairingMatrix(14, true);
+await pairingMatrixGenerator.generatePairingMatrix(
+  14,
+  true,
+  PairingMatrixGenerator.AGGREGATE_BY_DATE
+);
 ```
 
 ### API
@@ -62,14 +66,23 @@ Pull data from github for configured repos. `fetchRepos` method returns a `Promi
 #### Generate Pairing Matrix
 
 ```javascript
-await pairingMatrixGenerator.generatePairingMatrix(sinceDays, [pullData]);
+await pairingMatrixGenerator.generatePairingMatrix(
+  sinceDays,
+  [pullData],
+  [aggreateBy]
+);
 
-// await pairingMatrixGenerator.generatePairingMatrix(14, true);
+// await pairingMatrixGenerator.generatePairingMatrix(14, true, PairingMatrixGenerator.AGGREGATE_BY_DATE);
 ```
 
-Generate pairing matrix for given days. `pullData` is optional Boolean parameter, depends on this
-parameter `generatePairingMatrix`
-will pull data from github and create the pairing matrix. `generatePairingMatrix` returns a `Promise`.
+Generate pairing matrix for given days. `generatePairingMatrix` returns a `Promise`.
+
+###### Parameters
+
+- `pullData` is an optional Boolean parameter, depends on this parameter `generatePairingMatrix` will pull data from GitHub and create the pairing matrix. By default, it is set to **false**.
+- `aggreateBy` is an optional parameter, which indicates the aggregation needs to used while generating pairing matrix. Currently, it supports following options
+  - `PairingMatrixGenerator.AGGREGATE_BY_DATE` aggregate by date
+  - `PairingMatrixGenerator.AGGREGATE_BY_ISSUE` aggregate by issue (default)
 
 ##### Example data
 

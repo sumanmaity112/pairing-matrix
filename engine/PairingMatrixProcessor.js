@@ -28,16 +28,16 @@ export default class PairingMatrixProcessor {
       .map(PairingMatrixProcessor.#extractCoAuthor);
   }
 
-  static #extractCardNumber(message, addresses) {
-    const addressRegExp = new RegExp(addresses, "gi");
+  static #extractCardNumber(message, addressesPrefix) {
+    const addressRegExp = new RegExp(addressesPrefix, "gi");
 
     const addressStatement = _.first(
       message
         .replace(
           addressRegExp,
-          `${addresses}${PairingMatrixProcessor.SEPARATOR}`
+          `${addressesPrefix}${PairingMatrixProcessor.SEPARATOR}`
         )
-        .split(addresses)
+        .split(addressesPrefix)
         .filter((text) => text.includes(PairingMatrixProcessor.SEPARATOR))
     );
 
@@ -77,21 +77,28 @@ export default class PairingMatrixProcessor {
     );
   }
 
-  extractCommitters(commits, addresses) {
+  extractCommitters(commits, referenceExtractor) {
     return commits
       .filter(({ message }) => !_.isEmpty(message))
-      .map(({ authorName, authorEmail, message }) => {
+      .map((commit) => {
+        const { authorName, authorEmail, message } = commit;
         return {
           authors: [
             { authorName, authorEmail },
             ...PairingMatrixProcessor.#extractCoAuthors(message),
           ],
-          cardNumber: PairingMatrixProcessor.#extractCardNumber(
-            message,
-            addresses
-          ),
+          reference: referenceExtractor(commit),
         };
       });
+  }
+
+  cardNumberReferenceExtractor(addressPrefix) {
+    return ({ message }) =>
+      PairingMatrixProcessor.#extractCardNumber(message, addressPrefix);
+  }
+
+  dateReferenceExtractor() {
+    return ({ timestamp }) => new Date(timestamp).toLocaleDateString();
   }
 
   extractPairedCommitters(commitsInformation) {
@@ -102,7 +109,7 @@ export default class PairingMatrixProcessor {
   }
 
   createPairingMatrix(committersWithCardInfo) {
-    const dictionary = _.groupBy(committersWithCardInfo, "cardNumber");
+    const dictionary = _.groupBy(committersWithCardInfo, "reference");
     const pairs = _.flatten(
       _.map(dictionary, PairingMatrixProcessor.#findUniquePairs)
     );

@@ -3,6 +3,9 @@ import GitService from "./GitService.js";
 import _ from "lodash";
 
 export default class PairingMatrixGenerator {
+  static AGGREGATE_BY_ISSUE = "issue";
+  static AGGREGATE_BY_DATE = "date";
+
   #repos;
   #username;
   #basePath;
@@ -27,7 +30,8 @@ export default class PairingMatrixGenerator {
     );
 
     return _.flatten(await Promise.all(promises)).map(
-      ({ author_name, author_email, message, body }) => ({
+      ({ author_name, author_email, message, body, date }) => ({
+        timestamp: date,
         authorName: author_name,
         authorEmail: author_email,
         message: `${message}\n${body}`,
@@ -35,10 +39,13 @@ export default class PairingMatrixGenerator {
     );
   }
 
-  async #getAllCommittersWithCardInfo(sinceDays) {
+  async #getAllCommitters(sinceDays, referenceExtractor) {
     const commits = await this.#fetchAllCommits(sinceDays);
 
-    return this.#pairingMatrixProcessor.extractCommitters(commits, "Addresses");
+    return this.#pairingMatrixProcessor.extractCommitters(
+      commits,
+      referenceExtractor
+    );
   }
 
   fetchRepos() {
@@ -49,13 +56,19 @@ export default class PairingMatrixGenerator {
     );
   }
 
-  async generatePairingMatrix(sinceDays, pullData = false) {
+  async generatePairingMatrix(
+    sinceDays,
+    pullData = false,
+    aggregateBy = PairingMatrixGenerator.AGGREGATE_BY_ISSUE
+  ) {
     if (pullData) {
       await this.fetchRepos();
     }
 
-    const committersWithCardInfo = await this.#getAllCommittersWithCardInfo(
-      sinceDays
+    const referenceExtractor = this.#getReferenceExtractor(aggregateBy);
+    const committersWithCardInfo = await this.#getAllCommitters(
+      sinceDays,
+      referenceExtractor
     );
 
     const pairedCommitters =
@@ -70,5 +83,18 @@ export default class PairingMatrixGenerator {
       matrix: pairingMatrix,
       authors: this.#pairingMatrixProcessor.findUniqueAuthors(pairingMatrix),
     };
+  }
+
+  #getReferenceExtractor(aggregateBy) {
+    switch (aggregateBy) {
+      case PairingMatrixGenerator.AGGREGATE_BY_ISSUE:
+        return this.#pairingMatrixProcessor.cardNumberReferenceExtractor(
+          "Addresses"
+        );
+      case PairingMatrixGenerator.AGGREGATE_BY_DATE:
+        return this.#pairingMatrixProcessor.dateReferenceExtractor();
+      default:
+        throw new Error(`Invalid aggregation config ${aggregateBy}`);
+    }
   }
 }
