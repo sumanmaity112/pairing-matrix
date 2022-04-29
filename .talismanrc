@@ -1,6 +1,8 @@
 fileignoreconfig:
 - filename: .github/workflows/docker-build.yml
   checksum: a41d083cff29b658d9c952def92b88950f440813c37e9255e82f8de0af8f3713
+- filename: charts/yarn.lock
+  checksum: 476c8528871b5678223cef2dd1c4b5553aaf05cddcfdcf634ea726a27040c391
 - filename: engine/CHANGELOG.md
   checksum: 1ae0e6aa35b68e7c6ffe66b1327749495bb50f145e3117fc703bda4db8cbdf0c
 - filename: engine/GitService.js

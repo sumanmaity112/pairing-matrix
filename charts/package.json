@@ -1,0 +1,38 @@
+{
+  "name": "pairing-matrix-charts",
+  "version": "0.1.0",
+  "description": "Core logic to create D3 visualisation for pairing matrix",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Suman Maity"
+  },
+  "readme": "https://github.com/sumanmaity112/pairing-matrix/blob/main/charts/README.md",
+  "homepage": "https://github.com/sumanmaity112/pairing-matrix/tree/main/charts#pairing-matrix-charts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sumanmaity112/pairing-matrix.git",
+    "directory": "charts"
+  },
+  "private": false,
+  "dependencies": {
+    "d3": "^7.4.4"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "engineStrict": true,
+  "keywords": [
+    "pairing matrix",
+    "pairing-matrix",
+    "charts",
+    "d3",
+    "visualisation",
+    "pair",
+    "matrix"
+  ],
+  "bugs": {
+    "url": "https://github.com/sumanmaity112/pairing-matrix/issues"
+  }
+}
