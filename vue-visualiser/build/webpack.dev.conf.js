@@ -2,6 +2,7 @@ const { merge } = require("webpack-merge");
 const baseWebpackConfig = require("./webpack.base.conf");
 
 module.exports = merge(baseWebpackConfig, {
+  watch: true,
   entry: "./src/index.js",
   output: {
     filename: "pairing-matrix-vue-visualiser.js",
