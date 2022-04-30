@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "pairing-matrix-vue-visualiser": "^0.2.0",
+    "pairing-matrix-vue-visualiser": "^0.3.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {

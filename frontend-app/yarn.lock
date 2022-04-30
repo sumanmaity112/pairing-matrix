@@ -3335,10 +3335,10 @@ d3-zoom@3:
     d3-selection "2 - 3"
     d3-transition "2 - 3"
 
-d3@^7.3.0:
-  version "7.4.2"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-7.4.2.tgz#c5d1001459dc9517bc774949f71b95e8735b3b4e"
-  integrity sha512-7VK+QBAWtNDbP2EU/ThkXgjd0u1MsXYYgCK2ElQ4BBWh0usE75tHVVeYx47m2pqQEy4isYKAA0tAFSln0l+9EQ==
+d3@^7.4.4:
+  version "7.4.4"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-7.4.4.tgz#bfbf87487c37d3196efebd5a63e3a0ed8299d8ff"
+  integrity sha512-97FE+MYdAlV3R9P74+R3Uar7wUKkIFu89UWMjEaDhiJ9VxKvqaMxauImy8PC2DdBkdM2BxJOIoLxPrcZUyrKoQ==
   dependencies:
     d3-array "3"
     d3-axis "3"
@@ -6385,12 +6385,19 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-pairing-matrix-vue-visualiser@^0.2.0:
+pairing-matrix-charts@^0.2.0:
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/pairing-matrix-vue-visualiser/-/pairing-matrix-vue-visualiser-0.2.0.tgz#a0754a8d88e3c4e432715d31bca59f565f1c0108"
-  integrity sha512-s+wMJ82R/AapjpGpCI/oI4eVo9Ea/kFkArIm6qJuYlwTf3LrxRSJhV8XghWxrnRBlVHW5uWXdEXXuZsuP3rUjA==
+  resolved "https://registry.yarnpkg.com/pairing-matrix-charts/-/pairing-matrix-charts-0.2.0.tgz#84cbc6485607ef53e0b52eaa218f038df81b1c55"
+  integrity sha512-/wYyXgLkNiUesfY/Ne/pwETVGgVARfABAY/q+tqVy3WbAOO0Hm/8nZlAJpHZE73HDfALpGinT7SHHSm42RlbPA==
   dependencies:
-    d3 "^7.3.0"
+    d3 "^7.4.4"
+
+pairing-matrix-vue-visualiser@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/pairing-matrix-vue-visualiser/-/pairing-matrix-vue-visualiser-0.3.0.tgz#ca0104fedcfa4a1794dcc7c963340054cde31c77"
+  integrity sha512-vaYGNX+rMiY3K4BOgiPgNt+IusVczs6ZcBwDsp6nAR8ryQUZuY+cOnfJ6kBLSFVl75MkdTxD1Gh+zJTdR/44uA==
+  dependencies:
+    pairing-matrix-charts "^0.2.0"
 
 pako@~1.0.5:
   version "1.0.11"

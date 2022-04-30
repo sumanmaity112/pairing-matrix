@@ -265,10 +265,10 @@ on-finished@~2.3.0:
   dependencies:
     ee-first "1.1.1"
 
-pairing-matrix-engine@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/pairing-matrix-engine/-/pairing-matrix-engine-0.2.0.tgz#4d788fc3b97bdeb0cfa83907752ef28670ff4dd4"
-  integrity sha512-2a/kNh204QtJeEDk6HZwW4b8lCze6ilBxFecClGLMqxQfsmP2BPCUky5KfOG8SvlLP3ApRUekSgFngfrRxw0eA==
+pairing-matrix-engine@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/pairing-matrix-engine/-/pairing-matrix-engine-0.3.0.tgz#62582a764897f9fd2cdf17f141bb7849690c4bb3"
+  integrity sha512-xeKs4f7aNWPsDPRH2wj7ttdk5JWlwvnrJO1PJULAh1ImYcWRSthZOEJeAd8+ggqjtHhmeiP9QMyc1B/9ck4fNw==
   dependencies:
     lodash "^4.17.21"
     simple-git "^3.2.6"

@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "lodash": "^4.17.21",
-    "pairing-matrix-engine": "^0.2.0"
+    "pairing-matrix-engine": "^0.3.0"
   },
   "scripts": {
     "build-frontend": "cd ../frontend-app && yarn build && cd - > /dev/null",

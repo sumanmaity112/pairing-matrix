@@ -28,17 +28,37 @@ app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "public/index.html"))
 );
 
+const getAggregation = (aggregateBy) => {
+  if (
+    _.isEmpty(aggregateBy) ||
+    aggregateBy === PairingMatrixGenerator.AGGREGATE_BY_ISSUE
+  )
+    return PairingMatrixGenerator.AGGREGATE_BY_ISSUE;
+  else if (aggregateBy === PairingMatrixGenerator.AGGREGATE_BY_DATE)
+    return PairingMatrixGenerator.AGGREGATE_BY_DATE;
+  return null;
+};
+
 app.get(
   "/api/pair-matrix",
   (
-    { query: { "since-days": sinceDays, "pull-data": pullData } },
+    {
+      query: {
+        "since-days": sinceDays,
+        "pull-data": pullData,
+        "aggregate-by": aggregateBy,
+      },
+    },
     res,
     next
   ) => {
-    pairingMatrixGenerator
+    const aggregation = getAggregation(aggregateBy);
+    if (!aggregation) return res.sendStatus(400);
+    return pairingMatrixGenerator
       .generatePairingMatrix(
         _.isEmpty(sinceDays) ? 14 : sinceDays,
-        pullData === "true"
+        pullData === "true",
+        aggregation
       )
       .then((matrix) => res.json(matrix))
       .catch(next);
@@ -46,7 +66,7 @@ app.get(
 );
 
 app.get("/api/sync", (req, res, next) => {
-  pairingMatrixGenerator
+  return pairingMatrixGenerator
     .fetchRepos()
     .then(() => res.sendStatus(200))
     .catch(next);

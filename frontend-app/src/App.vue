@@ -1,16 +1,16 @@
 <template>
   <div id="container">
-    <PairingMatrix />
+    <PairingMatrixPage />
   </div>
 </template>
 
 <script>
-import PairingMatrix from "@/components/PairingMatrix";
+import PairingMatrixPage from "@/components/PairingMatrixPage";
 
 export default {
   name: "App",
   components: {
-    PairingMatrix,
+    PairingMatrixPage,
   },
 };
 </script>

@@ -14,9 +14,9 @@ fileignoreconfig:
 - filename: frontend-app/src/assets/logo.png
   checksum: 438c91cce828e2db27b2367716202658ae4ccaaffc00d9a490fca1c48ce49a1f
 - filename: frontend-app/yarn.lock
-  checksum: 018d47db3616ab6b63a333af1cfa4b65a4e89c580a8832630efdf5554f7501ae
+  checksum: 70f7a9a1ab4aed8ba829b26e61774e700a582c4e7db43de32e82ebf200596ecf
 - filename: server/yarn.lock
-  checksum: 65b28ec9c9b883c80447cb6fbe9d923f55790c894d4c6044eb09807e68cef75a
+  checksum: 8921a609e303ba4d4387cfa331dee8d27ebfb0559c75fde6ef132eb8b255a572
 - filename: vue-visualiser/CHANGELOG.md
   checksum: 382eb5136e42f3043b78a779214aabb7dd0e1535d7be2207882ae9276c97dd32
 - filename: vue-visualiser/yarn.lock
