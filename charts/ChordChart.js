@@ -1,18 +1,8 @@
 import * as d3 from "d3";
+import { createD3Matrix } from "./chartsUtil.js";
 
 export default class ChordChart {
   constructor() {}
-
-  static #createD3Matrix(authors, data) {
-    const index = new Map(authors.map((name, i) => [name, i]));
-    const matrix = Array.from(index, () => new Array(authors.length).fill(0));
-
-    for (const { author, coAuthor, times } of data) {
-      matrix[index.get(author)][index.get(coAuthor)] += times;
-    }
-
-    return matrix;
-  }
 
   static #onMouseOver(event, d) {
     d3.selectAll(`path[co-author='${d.index}']`)
@@ -53,7 +43,7 @@ export default class ChordChart {
       d3.quantize(d3.interpolateRainbow, authors.length)
     );
 
-    const chords = chord(ChordChart.#createD3Matrix(authors, data));
+    const chords = chord(createD3Matrix(authors, data));
 
     const group = svg
       .append("g")
