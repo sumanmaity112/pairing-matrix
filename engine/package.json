@@ -1,6 +1,6 @@
 {
   "name": "pairing-matrix-engine",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Main logic to create pairing matrix using github commits",
   "main": "index.js",
   "license": "MIT",
