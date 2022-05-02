@@ -17,10 +17,15 @@ export default class ChordChart {
   }
 
   createChart(targetElement, authors, data, width, height) {
-    const svg = d3
-      .select(targetElement)
+    if (authors.length === 0 || data.length === 0) return;
+
+    const domElement = d3.select(targetElement);
+    domElement.selectAll(`svg[svg-for='pairing-matrix-chord-chart']`).remove();
+
+    const svg = domElement
       .append("svg")
-      .attr("viewBox", [-width / 2, -height / 2, width, height]);
+      .attr("viewBox", [-width / 2, -height / 2, width, height])
+      .attr("svg-for", "pairing-matrix-chord-chart");
 
     const innerRadius = Math.min(width, height) * 0.5 - 150;
     const outerRadius = innerRadius + 10;

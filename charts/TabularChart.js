@@ -4,6 +4,10 @@ import { createD3Matrix } from "./chartsUtil.js";
 export default class TabularChart {
   constructor() {}
 
+  static #deepCopyArray(elements) {
+    return [].concat(elements);
+  }
+
   static #getElementsForHoverEffect(self) {
     const author = d3.select(self.parentNode).attr("author");
     const coAuthor = d3.select(self).attr("co-author");
@@ -32,52 +36,29 @@ export default class TabularChart {
   }
 
   createChart(targetElement, authors, data, width, height) {
-    const paddingBetweenElements = 50;
-    const committersNameTopStartingPositionY = -height / 2 + 150;
-    const committersNameTopStartingPositionX = -height / 2 + 100;
+    if (authors.length === 0 || data.length === 0) return;
 
-    const svg = d3
-      .select(targetElement)
+    const domElement = d3.select(targetElement);
+    domElement
+      .selectAll(`svg[svg-for='pairing-matrix-tabular-chart']`)
+      .remove();
+
+    const svg = domElement
       .append("svg")
-      .attr("viewBox", [-width / 2, -height / 2, width, height]);
+      .attr("viewBox", [-width, -height, width, height])
+      .attr("svg-for", "pairing-matrix-tabular-chart");
 
-    TabularChart.#appendNamesOnTop(
-      svg,
-      authors,
-      committersNameTopStartingPositionX,
-      paddingBetweenElements,
-      committersNameTopStartingPositionY
-    );
-
-    TabularChart.#appendMatrixAlongWithNameOnSide(
-      height,
-      svg,
-      authors,
-      data,
-      width,
-      paddingBetweenElements
-    );
+    this.appendNameOnTop(svg, authors, height, width);
+    this.appendTableAlongWithNameOnSide(svg, authors, data, height, width);
 
     svg.selectAll("text").attr("font-size", 18).attr("font-family", "fantasy");
-
-    return svg;
   }
 
-  static #appendMatrixAlongWithNameOnSide(
-    height,
-    svg,
-    authors,
-    data,
-    width,
-    paddingBetweenElements
-  ) {
-    const rectangleHeight = 40;
-    const rectangleWidth = 40;
-    const committersNameSideStartingXPosition = height / 2 - 175;
-    const pairingRowStartingYPosition = -height / 2 + 125;
-    const paddingBetweenGroupElements = 25;
-    const rectangleStartingXPosition =
-      committersNameSideStartingXPosition - paddingBetweenGroupElements;
+  appendTableAlongWithNameOnSide(svg, authors, data, height, width) {
+    const tableStartPositionX = this.getTableStartPositionX(width);
+    const tableStartPositionY = this.getTableStartPositionY(height);
+    const boxHeight = this.getBoxHeight();
+    const paddingBetweenBox = this.getPaddingBetweenBox();
 
     const table = svg
       .append("g")
@@ -89,48 +70,22 @@ export default class TabularChart {
       .attr(
         "transform",
         (d, index) =>
-          `translate(${-width / 2}, ${
-            pairingRowStartingYPosition + paddingBetweenElements * (index + 1)
+          `translate(${tableStartPositionX}, ${
+            tableStartPositionY + boxHeight * index + paddingBetweenBox * index
           })`
       );
 
-    TabularChart.#appendNameOnSide(
-      table,
-      authors,
-      rectangleHeight,
-      committersNameSideStartingXPosition
-    );
-
-    const row = table.append("g");
-
-    TabularChart.#appendColumns(
-      row,
-      authors,
-      rectangleStartingXPosition,
-      paddingBetweenElements,
-      rectangleWidth,
-      rectangleHeight
-    );
-
-    TabularChart.#appendPairCountOnColumns(
-      row,
-      authors,
-      rectangleStartingXPosition,
-      rectangleWidth,
-      paddingBetweenElements,
-      rectangleHeight
-    );
+    this.appendNameOnSide(table, authors);
+    this.appendColumns(table, authors);
+    this.appendPairCount(table, authors);
   }
 
-  static #appendPairCountOnColumns(
-    row,
-    authors,
-    rectangleStartingXPosition,
-    rectangleWidth,
-    paddingBetweenElements,
-    rectangleHeight
-  ) {
-    row
+  appendPairCount(table, authors) {
+    const boxWidth = this.getBoxWidth();
+    const boxHeight = this.getBoxHeight();
+    const paddingBetweenBox = this.getPaddingBetweenBox();
+
+    table
       .append("g")
       .attr("author", (element, index) => authors[index])
       .selectAll("text")
@@ -140,9 +95,9 @@ export default class TabularChart {
       })
       .enter()
       .append("text")
-      .text((element, index, elements) => {
-        return elements.length - 1 === index ? ":)" : element;
-      })
+      .text((element, index, elements) =>
+        elements.length - 1 === index ? ":)" : element
+      )
       .attr(
         "co-author",
         (element, index) =>
@@ -151,25 +106,27 @@ export default class TabularChart {
       .attr(
         "x",
         (d, index) =>
-          rectangleStartingXPosition +
-          rectangleWidth / 2 +
-          paddingBetweenElements * (index + 1)
+          boxWidth * index +
+          paddingBetweenBox * index +
+          boxWidth / 2 -
+          this.getDigitWidth()
       )
-      .attr("y", rectangleHeight / 2)
+      .attr("y", boxHeight / 2)
       .attr("alignment-baseline", "middle")
       .on("mouseover", TabularChart.#onMouseOver)
       .on("mouseout", TabularChart.#onMouseOut);
   }
 
-  static #appendColumns(
-    row,
-    authors,
-    rectangleStartingXPosition,
-    paddingBetweenElements,
-    rectangleWidth,
-    rectangleHeight
-  ) {
-    row
+  getDigitWidth() {
+    return 5;
+  }
+
+  appendColumns(table, authors) {
+    const boxWidth = this.getBoxWidth();
+    const boxHeight = this.getBoxHeight();
+    const paddingBetweenBox = this.getPaddingBetweenBox();
+
+    table
       .append("g")
       .attr("author", (element, index) => authors[index])
       .selectAll("rect")
@@ -185,52 +142,42 @@ export default class TabularChart {
         (element, index) =>
           TabularChart.#deepCopyArray(authors).reverse()[index]
       )
-      .attr(
-        "x",
-        (d, index) =>
-          rectangleStartingXPosition + paddingBetweenElements * (index + 1)
-      )
+      .attr("x", (d, index) => boxWidth * index + paddingBetweenBox * index)
       .style("outline", "2px solid chocolate")
       .style("border-radius", "6px")
       .attr("fill", "white")
-      .attr("width", rectangleWidth)
-      .attr("height", rectangleHeight)
+      .attr("width", boxWidth)
+      .attr("height", boxHeight)
       .on("mouseover", TabularChart.#onMouseOver)
       .on("mouseout", TabularChart.#onMouseOut);
   }
 
-  static #deepCopyArray(elements) {
-    return [].concat(elements);
-  }
+  appendNameOnSide(table, authors) {
+    const boxHeight = this.getBoxHeight();
+    const paddingBetweenNameAndTable = this.getPaddingBetweenNameAndTable();
 
-  static #appendNameOnSide(
-    enter,
-    authors,
-    rectangleHeight,
-    committersNameSideStartingXPosition
-  ) {
-    enter
+    table
       .append("text")
       .text((element, index) => authors[index])
       .attr("author", (element, index) => authors[index])
-      .attr("y", rectangleHeight / 2)
-      .attr("x", committersNameSideStartingXPosition)
+      .attr("x", -paddingBetweenNameAndTable)
+      .attr("y", boxHeight / 2)
       .attr("text-anchor", "end")
       .attr("alignment-baseline", "middle");
   }
 
-  static #appendNamesOnTop(
-    svg,
-    authors,
-    committersNameTopStartingPositionX,
-    paddingBetweenElements,
-    committersNameTopStartingPositionY
-  ) {
+  appendNameOnTop(svg, authors, height, width) {
+    const tableStartPositionX = this.getTableStartPositionX(width);
+    const tableStartPositionY = this.getTableStartPositionY(height);
+
+    const nameStartingPositionY =
+      tableStartPositionY - this.getPaddingBetweenNameAndTable();
+    const boxWidth = this.getBoxWidth();
+    const paddingBetweenBox = this.getPaddingBetweenBox();
     svg
       .append("g")
       .attr("location", "top")
-      .selectAll("g")
-      .append("g")
+      .selectAll("text")
       .data(() => TabularChart.#deepCopyArray(authors).reverse())
       .enter()
       .append("text")
@@ -239,10 +186,46 @@ export default class TabularChart {
       .attr(
         "transform",
         (d, index) =>
-          `translate(${
-            committersNameTopStartingPositionX +
-            paddingBetweenElements * (index + 1)
-          }, ${committersNameTopStartingPositionY}) rotate(270)`
+          `translate( ${
+            tableStartPositionX +
+            boxWidth * index +
+            paddingBetweenBox * index +
+            boxWidth / 2
+          } , ${nameStartingPositionY}) rotate(270)`
       );
+  }
+
+  getPaddingBetweenBox() {
+    return 10;
+  }
+
+  getBoxHeight() {
+    return 40;
+  }
+
+  getBoxWidth() {
+    return 40;
+  }
+
+  getTableStartPositionX(width) {
+    const widthForNames = this.getWidthForNames();
+    const paddingBetweenNameAndTable = this.getPaddingBetweenNameAndTable();
+
+    return -(width - widthForNames - paddingBetweenNameAndTable);
+  }
+
+  getPaddingBetweenNameAndTable() {
+    return 25;
+  }
+
+  getWidthForNames() {
+    return 150;
+  }
+
+  getTableStartPositionY(height) {
+    const widthForNames = this.getWidthForNames();
+    const paddingBetweenNameAndTable = this.getPaddingBetweenNameAndTable();
+
+    return -(height - widthForNames - paddingBetweenNameAndTable);
   }
 }
