@@ -13,13 +13,21 @@ export default {
     };
   },
   updated() {
-    this.chordChart.createChart(
-      "#chord-pairing-chart",
-      this.authors,
-      this.data,
-      this.width,
-      this.height
-    );
+    this.renderChart();
+  },
+  mounted() {
+    this.renderChart();
+  },
+  methods: {
+    renderChart() {
+      this.chordChart.createChart(
+        "#chord-pairing-chart",
+        this.authors,
+        this.data,
+        this.width,
+        this.height
+      );
+    },
   },
   props: {
     height: {

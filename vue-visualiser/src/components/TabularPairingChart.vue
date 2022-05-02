@@ -12,14 +12,22 @@ export default {
       tabularChart: new TabularChart(),
     };
   },
+  mounted() {
+    this.renderChart();
+  },
   updated() {
-    this.tabularChart.createChart(
-      "#tabular-pairing-chart",
-      this.authors,
-      this.data,
-      this.width,
-      this.height
-    );
+    this.renderChart();
+  },
+  methods: {
+    renderChart() {
+      this.tabularChart.createChart(
+        "#tabular-pairing-chart",
+        this.authors,
+        this.data,
+        this.width,
+        this.height
+      );
+    },
   },
   props: {
     height: {
