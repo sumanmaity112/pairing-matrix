@@ -44,10 +44,8 @@ export default class TabularChart {
       matrix[i] = [];
       for (let j = 0; j < authors.length; j++) {
         if (j < authors.length - i) matrix[i][j] = row[j];
-        else if (i < j)
-          matrix[authors.length - j - 1][j - i] += row[j];
-        else
-          matrix[i - j][authors.length - i - 1] += row[j];
+        else if (i < j) matrix[authors.length - j - 1][j - i] += row[j];
+        else matrix[i - j][authors.length - i - 1] += row[j];
       }
     }
 
@@ -56,6 +54,8 @@ export default class TabularChart {
 
   createChart(targetElement, authors, data, width, height) {
     if (authors.length === 0 || data.length === 0) return;
+
+    const sortedAuthors = authors.sort();
 
     const domElement = d3.select(targetElement);
     domElement
@@ -67,8 +67,14 @@ export default class TabularChart {
       .attr("viewBox", [-width, -height, width, height])
       .attr("svg-for", "pairing-matrix-tabular-chart");
 
-    this.appendNameOnTop(svg, authors, height, width);
-    this.appendTableAlongWithNameOnSide(svg, authors, data, height, width);
+    this.appendNameOnTop(svg, sortedAuthors, height, width);
+    this.appendTableAlongWithNameOnSide(
+      svg,
+      sortedAuthors,
+      data,
+      height,
+      width
+    );
 
     svg.selectAll("text").attr("font-size", 18).attr("font-family", "fantasy");
   }
