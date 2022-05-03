@@ -25,8 +25,9 @@ Once you start the docker image, it'll expose the following `http://localhost:<h
 To be able to design your own pairing matrix or include with your existing application, the core logic can be found as
 npm package.
 
-- [pairing-matrix-engine](https://www.npmjs.com/package/pairing-matrix-engine) is responsible to collect pairing data from github commits
-- [pairing-matrix-vue-visualiser](https://www.npmjs.com/package/pairing-matrix-vue-visualiser) is responsible to visualise pairing information. Currently it can be only used with (Vuejs)[https://vuejs.org/]
+- [pairing-matrix-engine](https://www.npmjs.com/package/pairing-matrix-engine) is responsible to collect pairing data from GitHub commits
+- [pairing-matrix-charts](https://www.npmjs.com/package/pairing-matrix-charts) is responsible to create D3 charts for given pairing information. It can be used with most of the popular javascript frontend library.
+- [pairing-matrix-vue-visualiser](https://www.npmjs.com/package/pairing-matrix-vue-visualiser) is responsible to visualise pairing information. Internally it makes use of [pairing-matrix-charts](https://www.npmjs.com/package/pairing-matrix-charts). Currently, it can be only used with (Vuejs)[https://vuejs.org/]
 
 ## Developers Guide
 
