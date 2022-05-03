@@ -35,6 +35,25 @@ export default class TabularChart {
     );
   }
 
+  static #createD3Matrix(authors, data) {
+    const d3Matrix = createD3Matrix(authors, data);
+    const matrix = [];
+
+    for (let i = 0; i < authors.length; i++) {
+      const row = TabularChart.#deepCopyArray(d3Matrix[i]).reverse();
+      matrix[i] = [];
+      for (let j = 0; j < authors.length; j++) {
+        if (j < authors.length - i) matrix[i][j] = row[j];
+        else if (i < j)
+          matrix[authors.length - j - 1][j - i] += row[j];
+        else
+          matrix[i - j][authors.length - i - 1] += row[j];
+      }
+    }
+
+    return matrix;
+  }
+
   createChart(targetElement, authors, data, width, height) {
     if (authors.length === 0 || data.length === 0) return;
 
@@ -64,7 +83,7 @@ export default class TabularChart {
       .append("g")
       .attr("location", "side")
       .selectAll("g")
-      .data(createD3Matrix(authors, data))
+      .data(TabularChart.#createD3Matrix(authors, data))
       .enter()
       .append("g")
       .attr(
@@ -90,8 +109,8 @@ export default class TabularChart {
       .attr("author", (element, index) => authors[index])
       .selectAll("text")
       .data((elements, index) => {
-        const data = TabularChart.#deepCopyArray(elements).reverse();
-        return index === 0 ? data : data.slice(0, -index);
+        // return index === 0 ? data : data.slice(0, -index);
+        return TabularChart.#deepCopyArray(elements);
       })
       .enter()
       .append("text")
@@ -130,11 +149,12 @@ export default class TabularChart {
       .append("g")
       .attr("author", (element, index) => authors[index])
       .selectAll("rect")
-      .data((elements, index) =>
-        index === 0
-          ? elements
-          : TabularChart.#deepCopyArray(elements).slice(0, -index)
-      )
+      .data((elements, index) => {
+        // return index === 0
+        //     ? elements
+        //     : TabularChart.#deepCopyArray(elements).slice(0, -index);
+        return elements;
+      })
       .enter()
       .append("rect")
       .attr(
