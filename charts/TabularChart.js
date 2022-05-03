@@ -57,7 +57,7 @@ export default class TabularChart {
   appendTableAlongWithNameOnSide(svg, authors, data, height, width) {
     const tableStartPositionX = this.getTableStartPositionX(width);
     const tableStartPositionY = this.getTableStartPositionY(height);
-    const boxHeight = this.getBoxHeight();
+    const boxHeight = this.getBoxHeight(authors, width, height);
     const paddingBetweenBox = this.getPaddingBetweenBox();
 
     const table = svg
@@ -75,14 +75,14 @@ export default class TabularChart {
           })`
       );
 
-    this.appendNameOnSide(table, authors);
-    this.appendColumns(table, authors);
-    this.appendPairCount(table, authors);
+    this.appendNameOnSide(table, authors, width, height);
+    this.appendColumns(table, authors, width, height);
+    this.appendPairCount(table, authors, width, height);
   }
 
-  appendPairCount(table, authors) {
-    const boxWidth = this.getBoxWidth();
-    const boxHeight = this.getBoxHeight();
+  appendPairCount(table, authors, width, height) {
+    const boxWidth = this.getBoxWidth(authors, width, height);
+    const boxHeight = this.getBoxHeight(authors, width, height);
     const paddingBetweenBox = this.getPaddingBetweenBox();
 
     table
@@ -121,9 +121,9 @@ export default class TabularChart {
     return 5;
   }
 
-  appendColumns(table, authors) {
-    const boxWidth = this.getBoxWidth();
-    const boxHeight = this.getBoxHeight();
+  appendColumns(table, authors, width, height) {
+    const boxWidth = this.getBoxWidth(authors, width, height);
+    const boxHeight = this.getBoxHeight(authors, width, height);
     const paddingBetweenBox = this.getPaddingBetweenBox();
 
     table
@@ -152,8 +152,8 @@ export default class TabularChart {
       .on("mouseout", TabularChart.#onMouseOut);
   }
 
-  appendNameOnSide(table, authors) {
-    const boxHeight = this.getBoxHeight();
+  appendNameOnSide(table, authors, width, height) {
+    const boxHeight = this.getBoxHeight(authors, width, height);
     const paddingBetweenNameAndTable = this.getPaddingBetweenNameAndTable();
 
     table
@@ -172,7 +172,7 @@ export default class TabularChart {
 
     const nameStartingPositionY =
       tableStartPositionY - this.getPaddingBetweenNameAndTable();
-    const boxWidth = this.getBoxWidth();
+    const boxWidth = this.getBoxWidth(authors, width, height);
     const paddingBetweenBox = this.getPaddingBetweenBox();
     svg
       .append("g")
@@ -199,12 +199,24 @@ export default class TabularChart {
     return 10;
   }
 
-  getBoxHeight() {
-    return 40;
+  getBoxHeight(authors, width, height) {
+    return (
+      (height * 1 -
+        this.getWidthForNames() -
+        this.getPaddingBetweenNameAndTable() -
+        this.getPaddingBetweenBox() * authors.length) /
+      authors.length
+    );
   }
 
-  getBoxWidth() {
-    return 40;
+  getBoxWidth(authors, width, height) {
+    return (
+      (width * 1 -
+        this.getWidthForNames() -
+        this.getPaddingBetweenNameAndTable() -
+        this.getPaddingBetweenBox() * authors.length) /
+      authors.length
+    );
   }
 
   getTableStartPositionX(width) {
