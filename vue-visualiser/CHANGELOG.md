@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.3.1](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-vue-visualiser@0.3.0...pairing-matrix-vue-visualiser@0.3.1) (2022-05-05)
+
+
+### Bug Fixes
+
+* Render svg when component is mounted ([09642c8](https://github.com/sumanmaity112/pairing-matrix/commit/09642c8e6b69849b67f27a3d7a8552c7512aa15f))
+
+
+
 ## [0.3.0](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-vue-visualiser@0.2.1...pairing-matrix-vue-visualiser@0.3.0) (2022-04-30)
 
 

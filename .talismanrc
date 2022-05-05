@@ -18,9 +18,9 @@ fileignoreconfig:
 - filename: server/yarn.lock
   checksum: 8921a609e303ba4d4387cfa331dee8d27ebfb0559c75fde6ef132eb8b255a572
 - filename: vue-visualiser/CHANGELOG.md
-  checksum: 382eb5136e42f3043b78a779214aabb7dd0e1535d7be2207882ae9276c97dd32
+  checksum: ce65374cdad1251a758cd8b5f04ea87b81052426a5c86c370f8e3f01ddfa59d3
 - filename: vue-visualiser/yarn.lock
-  checksum: 91bb8234dff6f181e634cb0ec52a9ba685e38612710fad0450005b2e856b4691
+  checksum: 9cf400657af248919c8eac058afc3f2c35fdaed2dfdb992e9183ddba465c23f6
 - filename: yarn.lock
   checksum: 06f319bf52b9fab0ee0ae84aba6da3d9c83c41aafe307f18d48821a2969c5621
 version: "1.0"
