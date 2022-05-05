@@ -11,6 +11,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+### [0.3.3](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-vue-visualiser@0.3.2...pairing-matrix-vue-visualiser@0.3.3) (2022-05-05)
+
+**Note:** Version bump only for package pairing-matrix-vue-visualiser
+
+
+
+
+
 ### [0.3.2](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-vue-visualiser@0.3.1...pairing-matrix-vue-visualiser@0.3.2) (2022-05-05)
 
 **Note:** Version bump only for package pairing-matrix-vue-visualiser
