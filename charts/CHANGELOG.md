@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.3.2](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.3.1...pairing-matrix-charts@0.3.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* Remove babel transpilation as it's having some issue ([cfb6d99](https://github.com/sumanmaity112/pairing-matrix/commit/cfb6d996e68705d9679c25c5696bb9c835785179))
+
+
+
 ### [0.3.1](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.3.0...pairing-matrix-charts@0.3.1) (2022-05-05)
 
 
