@@ -1,6 +1,6 @@
 {
   "name": "pairing-matrix-charts",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Core logic to create D3 visualisation for pairing matrix",
   "main": "dist/pairing-matrix-charts.js",
   "license": "MIT",
