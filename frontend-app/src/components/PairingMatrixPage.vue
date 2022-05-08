@@ -23,13 +23,14 @@
           <input type="radio" v-model="chart" value="tabular" />Tabular Chart
         </section>
       </div>
-      <PairingMatrix
-        :aggregate-by="aggregateBy"
-        :pull-data="shouldPullData"
-        :since-days="sinceDays"
-        :chart="chart"
-        class="pairing-matrix"
-      ></PairingMatrix>
+      <div class="pairing-matrix">
+        <PairingMatrix
+          :aggregate-by="aggregateBy"
+          :pull-data="shouldPullData"
+          :since-days="sinceDays"
+          :chart="chart"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -73,7 +74,7 @@ export default {
 .pairing-matrix-config-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 35%;
 }
 
 .pairing-matrix-config {
@@ -82,6 +83,9 @@ export default {
 }
 
 .pairing-matrix {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 65%;
   margin: 0 auto;
 }
