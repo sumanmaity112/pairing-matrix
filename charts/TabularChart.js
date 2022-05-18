@@ -38,14 +38,16 @@ export default class TabularChart {
   static #createD3Matrix(authors, data) {
     const d3Matrix = createD3Matrix(authors, data);
     const matrix = [];
-
     for (let i = 0; i < authors.length; i++) {
-      const row = TabularChart.#deepCopyArray(d3Matrix[i]).reverse();
+      const row = d3Matrix[i];
       matrix[i] = [];
-      for (let j = 0; j < authors.length; j++) {
-        if (j < authors.length - i) matrix[i][j] = row[j];
-        else if (i < j) matrix[authors.length - j - 1][j - i] += row[j];
-        else matrix[i - j][authors.length - i - 1] += row[j];
+
+      for (let j = authors.length - 1; j >= 0; j--) {
+        const cellValue = row[j];
+        if (j >= i) matrix[i][authors.length - 1 - j] = cellValue;
+        else {
+          matrix[j][authors.length - 1 - i] += cellValue;
+        }
       }
     }
 
@@ -114,10 +116,7 @@ export default class TabularChart {
       .append("g")
       .attr("author", (element, index) => authors[index])
       .selectAll("text")
-      .data((elements, index) => {
-        // return index === 0 ? data : data.slice(0, -index);
-        return TabularChart.#deepCopyArray(elements);
-      })
+      .data((elements, index) => TabularChart.#deepCopyArray(elements))
       .enter()
       .append("text")
       .text((element, index, elements) =>
@@ -155,12 +154,7 @@ export default class TabularChart {
       .append("g")
       .attr("author", (element, index) => authors[index])
       .selectAll("rect")
-      .data((elements, index) => {
-        // return index === 0
-        //     ? elements
-        //     : TabularChart.#deepCopyArray(elements).slice(0, -index);
-        return elements;
-      })
+      .data((elements, index) => elements)
       .enter()
       .append("rect")
       .attr(
