@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.3.3](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.3.2...pairing-matrix-charts@0.3.3) (2022-05-18)
+
+
+### Bug Fixes
+
+* Fix calculation for TabularChart ([3908d4a](https://github.com/sumanmaity112/pairing-matrix/commit/3908d4a96b1f0e2ea9cf67aa753f7b84f6387c78))
+
+
+
 ### [0.3.2](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.3.1...pairing-matrix-charts@0.3.2) (2022-05-05)
 
 
