@@ -69,10 +69,12 @@ Pull data from github for configured repos. `fetchRepos` method returns a `Promi
 await pairingMatrixGenerator.generatePairingMatrix(
   sinceDays,
   [pullData],
-  [aggreateBy]
+  [aggreateBy],
+  [cardNumberPrefix]
 );
 
 // await pairingMatrixGenerator.generatePairingMatrix(14, true, PairingMatrixGenerator.AGGREGATE_BY_DATE);
+// await pairingMatrixGenerator.generatePairingMatrix(14, true, PairingMatrixGenerator.AGGREGATE_BY_ISSUE, "Addresses");
 ```
 
 Generate pairing matrix for given days. `generatePairingMatrix` returns a `Promise`.
@@ -83,6 +85,7 @@ Generate pairing matrix for given days. `generatePairingMatrix` returns a `Promi
 - `aggreateBy` is an optional parameter, which indicates the aggregation needs to used while generating pairing matrix. Currently, it supports following options
   - `PairingMatrixGenerator.AGGREGATE_BY_DATE` aggregate by date
   - `PairingMatrixGenerator.AGGREGATE_BY_ISSUE` aggregate by issue (default)
+- `cardNumberPrefix` is an optional parameter which indicates the reference _prefix_ for card/issue number. By default, it set to `Addresses`. This parameter is only used when `aggreateBy` is set to `PairingMatrixGenerator.AGGREGATE_BY_ISSUE`.
 
 ##### Example data
 

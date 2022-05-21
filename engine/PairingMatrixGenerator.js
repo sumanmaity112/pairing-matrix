@@ -59,13 +59,17 @@ export default class PairingMatrixGenerator {
   async generatePairingMatrix(
     sinceDays,
     pullData = false,
-    aggregateBy = PairingMatrixGenerator.AGGREGATE_BY_ISSUE
+    aggregateBy = PairingMatrixGenerator.AGGREGATE_BY_ISSUE,
+    cardNumberPrefix = "Addresses"
   ) {
     if (pullData) {
       await this.fetchRepos();
     }
 
-    const referenceExtractor = this.#getReferenceExtractor(aggregateBy);
+    const referenceExtractor = this.#getReferenceExtractor(
+      aggregateBy,
+      cardNumberPrefix
+    );
     const committersWithCardInfo = await this.#getAllCommitters(
       sinceDays,
       referenceExtractor
@@ -85,11 +89,11 @@ export default class PairingMatrixGenerator {
     };
   }
 
-  #getReferenceExtractor(aggregateBy) {
+  #getReferenceExtractor(aggregateBy, cardNumberPrefix) {
     switch (aggregateBy) {
       case PairingMatrixGenerator.AGGREGATE_BY_ISSUE:
         return this.#pairingMatrixProcessor.cardNumberReferenceExtractor(
-          "Addresses"
+          cardNumberPrefix
         );
       case PairingMatrixGenerator.AGGREGATE_BY_DATE:
         return this.#pairingMatrixProcessor.dateReferenceExtractor();
