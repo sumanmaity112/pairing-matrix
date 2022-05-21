@@ -23,19 +23,44 @@ export default class GitService {
     const envVariables = { ...process.env, ...overrideableEnvVariables };
 
     if (existsSync(localPath)) {
-      console.log(`Pulling latest changes for ${repoName}`);
-      return simpleGit(localPath)
-        .env(envVariables)
-        .pull()
-        .catch((e) => console.error(e));
+      return this.#pullLatestChangesFromRepository(
+        repoName,
+        localPath,
+        envVariables
+      );
     }
 
-    console.log(`Cloning ${repoName} repo to ${localPath}`);
+    return this.#cloneRepository(repoName, localPath, envVariables, username);
+  }
+
+  static #pullLatestChangesFromRepository(repoName, localPath, envVariables) {
+    console.log(`Pulling latest changes for ${repoName}`);
+    return simpleGit(localPath)
+      .env(envVariables)
+      .pull()
+      .then((value) =>
+        console.log(
+          `Successfully pulled latest changes for ${repoName} repository`
+        )
+      )
+      .catch((e) =>
+        console.error(
+          `Unable to fetch latest changes from ${repoName} repository`,
+          e
+        )
+      );
+  }
+
+  static #cloneRepository(repoName, localPath, envVariables, username) {
+    console.log(`Cloning ${repoName} repository to ${localPath}`);
 
     return simpleGit()
       .env(envVariables)
       .clone(`git@github.com:${username}/${repoName}.git`, localPath)
-      .catch((e) => console.error(e));
+      .then((value) =>
+        console.log(`Successfully cloned ${repoName} repository`)
+      )
+      .catch((e) => console.error(`Unable to clone ${repoName} repository`, e));
   }
 
   #overrideableEnvVariables() {

@@ -2,13 +2,13 @@ fileignoreconfig:
 - filename: .github/workflows/docker-build.yml
   checksum: a41d083cff29b658d9c952def92b88950f440813c37e9255e82f8de0af8f3713
 - filename: charts/CHANGELOG.md
-  checksum: ef8861a6b4c93172d874698bb78f3207d93edbea5299b99f2f10738dcd981981
+  checksum: b6fbe3d02a6781099dff2cc0cf0bb20705c2136f82e87a77499f881b92893d2c
 - filename: charts/yarn.lock
   checksum: 476c8528871b5678223cef2dd1c4b5553aaf05cddcfdcf634ea726a27040c391
 - filename: engine/CHANGELOG.md
   checksum: 1ae0e6aa35b68e7c6ffe66b1327749495bb50f145e3117fc703bda4db8cbdf0c
 - filename: engine/GitService.js
-  checksum: babd1acfedecc8d32f1e89143b2cc2f1ef792e9f8ce5e4fbb9254d5825ad6f00
+  checksum: 8985797e4967496cdd072a1c18985b1eb5307b52a8f3617f406a29ece8ebe022
 - filename: engine/yarn.lock
   checksum: 30e7d295d75827d7b33c083e0602eeb0bcaf1fd0c2c9c411d5fa54800349039b
 - filename: frontend-app/src/assets/logo.png
@@ -18,7 +18,7 @@ fileignoreconfig:
 - filename: server/yarn.lock
   checksum: 8921a609e303ba4d4387cfa331dee8d27ebfb0559c75fde6ef132eb8b255a572
 - filename: vue-visualiser/CHANGELOG.md
-  checksum: ce65374cdad1251a758cd8b5f04ea87b81052426a5c86c370f8e3f01ddfa59d3
+  checksum: 49d2b2188afb444469d73327ba13e29d74352ded37dec06b4cc8874bb8782c2b
 - filename: vue-visualiser/yarn.lock
   checksum: a90fc96d1cee8277cafa37e4332dd53fa0fb30b596cf399098b0a86bdb2109a3
 - filename: yarn.lock
