@@ -97,7 +97,7 @@ export default class PairingMatrixProcessor {
       PairingMatrixProcessor.#extractCardNumber(message, addressPrefix);
   }
 
-  dateReferenceExtractor() {
+  daysReferenceExtractor() {
     return ({ timestamp }) => new Date(timestamp).toLocaleDateString();
   }
 

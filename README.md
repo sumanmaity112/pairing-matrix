@@ -17,7 +17,7 @@ Once you start the docker image, it'll expose the following `http://localhost:<h
 
 - `pull-data` if set to **true** then latest data will be pulled from github repos and then it'll create the matrix
 - `since-days` by default it's set to **14** days but can be set to any number of days
-- `aggregate-by` defines the aggregation logic needs to use while generating pairing matrix. It can be either `issue` or `date`. By default, it makes use of **issue** based aggregation
+- `aggregate-by` defines the aggregation logic needs to use while generating pairing matrix. It can be either `issue` or `days`. By default, it makes use of **issue** based aggregation
 
 **Note** For config please check [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/server/README.md#config-file)
 

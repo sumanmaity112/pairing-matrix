@@ -4,7 +4,7 @@ import _ from "lodash";
 
 export default class PairingMatrixGenerator {
   static AGGREGATE_BY_ISSUE = "issue";
-  static AGGREGATE_BY_DATE = "date";
+  static AGGREGATE_BY_DAYS = "days";
 
   #repos;
   #username;
@@ -95,8 +95,8 @@ export default class PairingMatrixGenerator {
         return this.#pairingMatrixProcessor.cardNumberReferenceExtractor(
           cardNumberPrefix
         );
-      case PairingMatrixGenerator.AGGREGATE_BY_DATE:
-        return this.#pairingMatrixProcessor.dateReferenceExtractor();
+      case PairingMatrixGenerator.AGGREGATE_BY_DAYS:
+        return this.#pairingMatrixProcessor.daysReferenceExtractor();
       default:
         throw new Error(`Invalid aggregation config ${aggregateBy}`);
     }

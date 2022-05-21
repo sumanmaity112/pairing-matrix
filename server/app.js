@@ -34,8 +34,8 @@ const getAggregation = (aggregateBy) => {
     aggregateBy === PairingMatrixGenerator.AGGREGATE_BY_ISSUE
   )
     return PairingMatrixGenerator.AGGREGATE_BY_ISSUE;
-  else if (aggregateBy === PairingMatrixGenerator.AGGREGATE_BY_DATE)
-    return PairingMatrixGenerator.AGGREGATE_BY_DATE;
+  else if (aggregateBy === PairingMatrixGenerator.AGGREGATE_BY_DAYS)
+    return PairingMatrixGenerator.AGGREGATE_BY_DAYS;
   return null;
 };
 

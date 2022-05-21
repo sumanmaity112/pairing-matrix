@@ -15,7 +15,7 @@
         <section class="pairing-matrix-config">
           <h4>Aggregate By:</h4>
           <input type="radio" v-model="aggregateBy" value="issue" />Issue
-          <input type="radio" v-model="aggregateBy" value="date" />Days
+          <input type="radio" v-model="aggregateBy" value="days" />Days
         </section>
         <section class="pairing-matrix-config">
           <h4>Visualise by:</h4>

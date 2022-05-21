@@ -37,7 +37,7 @@ const pairingMatrixGenerator = new PairingMatrixGenerator(
 await pairingMatrixGenerator.generatePairingMatrix(
   14,
   true,
-  PairingMatrixGenerator.AGGREGATE_BY_DATE
+  PairingMatrixGenerator.AGGREGATE_BY_DAYS
 );
 ```
 
@@ -73,7 +73,7 @@ await pairingMatrixGenerator.generatePairingMatrix(
   [cardNumberPrefix]
 );
 
-// await pairingMatrixGenerator.generatePairingMatrix(14, true, PairingMatrixGenerator.AGGREGATE_BY_DATE);
+// await pairingMatrixGenerator.generatePairingMatrix(14, true, PairingMatrixGenerator.AGGREGATE_BY_DAYS);
 // await pairingMatrixGenerator.generatePairingMatrix(14, true, PairingMatrixGenerator.AGGREGATE_BY_ISSUE, "Addresses");
 ```
 
@@ -83,7 +83,7 @@ Generate pairing matrix for given days. `generatePairingMatrix` returns a `Promi
 
 - `pullData` is an optional Boolean parameter, depends on this parameter `generatePairingMatrix` will pull data from GitHub and create the pairing matrix. By default, it is set to **false**.
 - `aggreateBy` is an optional parameter, which indicates the aggregation needs to used while generating pairing matrix. Currently, it supports following options
-  - `PairingMatrixGenerator.AGGREGATE_BY_DATE` aggregate by date
+  - `PairingMatrixGenerator.AGGREGATE_BY_DAYS` aggregate by days
   - `PairingMatrixGenerator.AGGREGATE_BY_ISSUE` aggregate by issue (default)
 - `cardNumberPrefix` is an optional parameter which indicates the reference _prefix_ for card/issue number. By default, it set to `Addresses`. This parameter is only used when `aggreateBy` is set to `PairingMatrixGenerator.AGGREGATE_BY_ISSUE`.
 
