@@ -1,5 +1,7 @@
 # Pairing Matrix
 
+<img src="https://github.com/sumanmaity112/pairing-matrix/blob/main/screenshots/pairingMatrix.gif" height="500" alt="pairing-matrix">
+
 ## Usage
 
 Pairing matrix can be either used as out of box docker image or can be used as library to integrate with other application.

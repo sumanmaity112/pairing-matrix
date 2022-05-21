@@ -2,6 +2,9 @@
 
 [![NPM version](https://img.shields.io/npm/v/pairing-matrix-charts.svg)](https://www.npmjs.com/package/pairing-matrix-charts)
 
+<img src="https://github.com/sumanmaity112/pairing-matrix/blob/main/screenshots/chordChart.png" height="500" alt="chord-chart">
+<img src="https://github.com/sumanmaity112/pairing-matrix/blob/main/screenshots/tabularChart.png" height="500" alt="tabular-chart">
+
 ## Installation
 
 Use your favourite package manager:
@@ -20,6 +23,8 @@ const tabularChart = new TabularChart();
 chordChart.createChart(targetElement, authors, data, width, height);
 tabularChart.createChart(targetElement, authors, data, width, height);
 ```
+
+**Note** If your [jest](https://jestjs.io/) tests stops working with `SyntaxError: Cannot use import statement outside a module` error message, you might need to configure `transformIgnorePatterns` for your jest with `/node_modules/(?!(pairing-matrix-charts|d3.*|internmap|delaunator|robust-predicates)/).+\.(js|jsx|mjs|cjs|ts|tsx)$`.
 
 ### Usage with VueJs
 

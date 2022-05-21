@@ -4,6 +4,9 @@
 This package contains charts to visualise pairing matrix. This package can be used to easily create visualization using
 data created by [pairing-matrix-engine](https://www.npmjs.com/package/pairing-matrix-engine) package.
 
+<img src="https://github.com/sumanmaity112/pairing-matrix/blob/main/screenshots/chordChart.png" height="500" alt="chord-chart">
+<img src="https://github.com/sumanmaity112/pairing-matrix/blob/main/screenshots/tabularChart.png" height="500" alt="tabular-chart">
+
 ## Installation
 
 Use your favourite package manager:

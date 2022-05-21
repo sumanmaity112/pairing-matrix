@@ -23,4 +23,6 @@ fileignoreconfig:
   checksum: a90fc96d1cee8277cafa37e4332dd53fa0fb30b596cf399098b0a86bdb2109a3
 - filename: yarn.lock
   checksum: 06f319bf52b9fab0ee0ae84aba6da3d9c83c41aafe307f18d48821a2969c5621
+- filename: screenshots/pairingMatrix.gif
+  checksum: ead365ef8f5a854e7aebec3534a39f8d77a55bf89d7f65e60bf291801a8d310e
 version: "1.0"
