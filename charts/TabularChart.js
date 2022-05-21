@@ -33,18 +33,11 @@ export default class TabularChart {
   }
 
   static #mouseOverEffect(elements) {
-    elements.forEach((element) =>
-      element
-        .attr("font-weight", "bold")
-        .style("text-shadow", "6px 6px #A9A9A9")
-        .raise()
-    );
+    elements.forEach((element) => element.style("font-weight", "bold"));
   }
 
   static #mouseOutEffect(elements) {
-    elements.forEach((element) =>
-      element.attr("font-weight", "normal").style("text-shadow", null)
-    );
+    elements.forEach((element) => element.style("font-weight", "normal"));
   }
 
   static #getElementsForPairIdentityHoverEffect(self) {
@@ -122,7 +115,10 @@ export default class TabularChart {
       width
     );
 
-    svg.selectAll("text").attr("font-size", 18).attr("font-family", "fantasy");
+    svg
+      .selectAll("text")
+      .attr("font-size", 18)
+      .attr("font-family", "sans-serif");
   }
 
   appendTableAlongWithNameOnSide(svg, authors, data, height, width) {
