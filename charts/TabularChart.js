@@ -8,7 +8,7 @@ export default class TabularChart {
     return [].concat(elements);
   }
 
-  static #getElementsForHoverEffect(self) {
+  static #getElementsForCellHoverEffect(self) {
     const author = d3.select(self.parentNode).attr("author");
     const coAuthor = d3.select(self).attr("co-author");
 
@@ -20,8 +20,20 @@ export default class TabularChart {
     ];
   }
 
-  static #onMouseOver() {
-    TabularChart.#getElementsForHoverEffect(this).forEach((element) =>
+  static #onCellMouseOver() {
+    TabularChart.#mouseOverEffect(
+      TabularChart.#getElementsForCellHoverEffect(this)
+    );
+  }
+
+  static #onCellMouseOut() {
+    TabularChart.#mouseOutEffect(
+      TabularChart.#getElementsForCellHoverEffect(this)
+    );
+  }
+
+  static #mouseOverEffect(elements) {
+    elements.forEach((element) =>
       element
         .attr("font-weight", "bold")
         .style("text-shadow", "6px 6px #A9A9A9")
@@ -29,9 +41,41 @@ export default class TabularChart {
     );
   }
 
-  static #onMouseOut() {
-    TabularChart.#getElementsForHoverEffect(this).forEach((element) =>
+  static #mouseOutEffect(elements) {
+    elements.forEach((element) =>
       element.attr("font-weight", "normal").style("text-shadow", null)
+    );
+  }
+
+  static #getElementsForPairIdentityHoverEffect(self) {
+    const author = d3.select(self).attr("author");
+
+    if (author) {
+      return [
+        d3.selectAll(`text[co-author='${author}']`),
+        d3.selectAll(`g[author='${author}']`).selectAll("text"),
+        d3.selectAll(`text[author='${author}']`),
+      ];
+    }
+
+    const coAuthor = d3.select(self).attr("co-author");
+
+    return [
+      d3.selectAll(`text[co-author='${coAuthor}']`),
+      d3.selectAll(`g[author='${coAuthor}']`).selectAll("text"),
+      d3.selectAll(`text[author='${coAuthor}']`),
+    ];
+  }
+
+  static #onPairIdentityMouseOver() {
+    TabularChart.#mouseOverEffect(
+      TabularChart.#getElementsForPairIdentityHoverEffect(this)
+    );
+  }
+
+  static #onPairIdentityMouseOut() {
+    TabularChart.#mouseOutEffect(
+      TabularChart.#getElementsForPairIdentityHoverEffect(this)
     );
   }
 
@@ -137,8 +181,8 @@ export default class TabularChart {
       )
       .attr("y", boxHeight / 2)
       .attr("alignment-baseline", "middle")
-      .on("mouseover", TabularChart.#onMouseOver)
-      .on("mouseout", TabularChart.#onMouseOut);
+      .on("mouseover", TabularChart.#onCellMouseOver)
+      .on("mouseout", TabularChart.#onCellMouseOut);
   }
 
   getDigitWidth() {
@@ -168,8 +212,8 @@ export default class TabularChart {
       .attr("fill", "white")
       .attr("width", boxWidth)
       .attr("height", boxHeight)
-      .on("mouseover", TabularChart.#onMouseOver)
-      .on("mouseout", TabularChart.#onMouseOut);
+      .on("mouseover", TabularChart.#onCellMouseOver)
+      .on("mouseout", TabularChart.#onCellMouseOut);
   }
 
   appendNameOnSide(table, authors, width, height) {
@@ -183,7 +227,9 @@ export default class TabularChart {
       .attr("x", -paddingBetweenNameAndTable)
       .attr("y", boxHeight / 2)
       .attr("text-anchor", "end")
-      .attr("alignment-baseline", "middle");
+      .attr("alignment-baseline", "middle")
+      .on("mouseover", TabularChart.#onPairIdentityMouseOver)
+      .on("mouseout", TabularChart.#onPairIdentityMouseOut);
   }
 
   appendNameOnTop(svg, authors, height, width) {
@@ -212,7 +258,9 @@ export default class TabularChart {
             paddingBetweenBox * index +
             boxWidth / 2
           } , ${nameStartingPositionY}) rotate(270)`
-      );
+      )
+      .on("mouseover", TabularChart.#onPairIdentityMouseOver)
+      .on("mouseout", TabularChart.#onPairIdentityMouseOut);
   }
 
   getPaddingBetweenBox() {
