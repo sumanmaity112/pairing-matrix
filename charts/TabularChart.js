@@ -163,9 +163,10 @@ export default class TabularChart {
       .data((elements, index) => TabularChart.#deepCopyArray(elements))
       .enter()
       .append("text")
-      .text((element, index, elements) =>
-        elements.length - 1 === index ? ":)" : element
-      )
+      .text((element, index, elements) => {
+        if (elements.length - 1 === index) return ":)";
+        return element === 0 ? "-" : element;
+      })
       .attr(
         "co-author",
         (element, index) =>
