@@ -45,7 +45,7 @@ export default {
     return {
       pullData: false,
       sinceDays: 14,
-      aggregateBy: "issue",
+      aggregateBy: "days",
       chart: "chord",
     };
   },
