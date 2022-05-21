@@ -17,7 +17,8 @@ export default class ChordChart {
   }
 
   createChart(targetElement, authors, data, width, height) {
-    if (authors.length === 0 || data.length === 0) return;
+    const sortedAuthors = authors.sort();
+    if (sortedAuthors.length === 0 || data.length === 0) return;
 
     const domElement = d3.select(targetElement);
     domElement.selectAll(`svg[svg-for='pairing-matrix-chord-chart']`).remove();
@@ -44,11 +45,11 @@ export default class ChordChart {
       .padAngle(1 / innerRadius);
 
     const color = d3.scaleOrdinal(
-      authors,
-      d3.quantize(d3.interpolateRainbow, authors.length)
+      sortedAuthors,
+      d3.quantize(d3.interpolateRainbow, sortedAuthors.length)
     );
 
-    const chords = chord(createD3Matrix(authors, data));
+    const chords = chord(createD3Matrix(sortedAuthors, data));
 
     const group = svg
       .append("g")
@@ -60,7 +61,7 @@ export default class ChordChart {
 
     group
       .append("path")
-      .attr("fill", (d) => color(authors[d.index]))
+      .attr("fill", (d) => color(sortedAuthors[d.index]))
       .attr("d", arc);
 
     group
@@ -76,7 +77,7 @@ export default class ChordChart {
       `
       )
       .attr("text-anchor", (d) => (d.angle > Math.PI ? "end" : null))
-      .text((d) => authors[d.index])
+      .text((d) => sortedAuthors[d.index])
       .on("mouseover", ChordChart.#onMouseOver)
       .on("mouseout", ChordChart.#onMouseOut);
 
@@ -88,16 +89,16 @@ export default class ChordChart {
       .join("path")
       .style("stroke-width", "3px")
       .style("mix-blend-mode", "multiply")
-      .attr("fill", (d) => color(authors[d.target.index]))
+      .attr("fill", (d) => color(sortedAuthors[d.target.index]))
       .attr("d", ribbon)
       .attr("co-author", (d) => d.target.index)
       .attr("author", (d) => d.source.index)
       .append("title")
       .text(
         (d) =>
-          `${authors[d.source.index]} → ${authors[d.target.index]} ${
-            d.source.value
-          }`
+          `${sortedAuthors[d.source.index]} → ${
+            sortedAuthors[d.target.index]
+          } ${d.source.value}`
       );
 
     return svg;
