@@ -59,7 +59,7 @@ export default class PairingMatrixGenerator {
   async generatePairingMatrix(
     sinceDays,
     pullData = false,
-    aggregateBy = PairingMatrixGenerator.AGGREGATE_BY_ISSUE,
+    aggregateBy = PairingMatrixGenerator.AGGREGATE_BY_DAYS,
     cardNumberPrefix = "Addresses"
   ) {
     if (pullData) {
