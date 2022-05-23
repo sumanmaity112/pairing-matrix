@@ -1,6 +1,6 @@
 {
   "name": "pairing-matrix-server",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Pairing Matrix Server to serve application",
   "author": {
     "name": "Suman Maity"
