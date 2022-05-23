@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.0](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.3.3...pairing-matrix-charts@0.4.0) (2022-05-23)
+
+
+### Features
+
+* Display - when pair count is 0 in Tabular chart ([a55579f](https://github.com/sumanmaity112/pairing-matrix/commit/a55579fe7b9de820dcc51109052d1b583e22fbca))
+* Highlight pair count when user hovers on pair name for Tabular chart ([58bb3e0](https://github.com/sumanmaity112/pairing-matrix/commit/58bb3e0765b44b5a05bc1aad4c159aff55ca1d50))
+* Modify hover style for tabular chart ([f844a83](https://github.com/sumanmaity112/pairing-matrix/commit/f844a83f53a20bbacc712c034be1c7def2fb8b86))
+* Sort authors name alphabetically ([1ef505f](https://github.com/sumanmaity112/pairing-matrix/commit/1ef505f33448115b9e5c322ce2d16dfffb5b633e))
+
+
+
 ### [0.3.3](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.3.2...pairing-matrix-charts@0.3.3) (2022-05-18)
 
 
