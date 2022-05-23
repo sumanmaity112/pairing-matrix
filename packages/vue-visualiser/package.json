@@ -7,8 +7,8 @@
   "author": {
     "name": "Suman Maity"
   },
-  "readme": "https://github.com/sumanmaity112/pairing-matrix/blob/main/vue-visualiser/README.md",
-  "homepage": "https://github.com/sumanmaity112/pairing-matrix/tree/main/vue-visualiser#pairing-matrix-visualiser-vue",
+  "readme": "https://github.com/sumanmaity112/pairing-matrix/blob/main/packages/vue-visualiser/README.md",
+  "homepage": "https://github.com/sumanmaity112/pairing-matrix/tree/main/packages/vue-visualiser#pairing-matrix-visualiser-vue",
   "repository": {
     "type": "git",
     "url": "https://github.com/sumanmaity112/pairing-matrix.git",

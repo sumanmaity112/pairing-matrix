@@ -54,7 +54,7 @@ _bump_version() {
 _bump_server_version() {
   _ensure_nvm
 
-  pushd "server" > /dev/null || exit
+  pushd "packages/server" > /dev/null || exit
     yarn config set version-git-message "build: Update pairing matrix server version to v%s"
     # shellcheck disable=SC2068
     yarn version $@
@@ -71,7 +71,7 @@ _publish() {
 _docker_build() {
   # shellcheck disable=SC2002
   # shellcheck disable=SC2155
-  local version=$(cat "server/package.json" | jq -r ".version")
+  local version=$(cat "packages/server/package.json" | jq -r ".version")
 
   docker build -t "pairing-matrix:v${version}" .
 }

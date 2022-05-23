@@ -1,5 +1,5 @@
 FROM node:16-slim as frontend-builder
-COPY --chown=node:node frontend-app /home/frontend-app
+COPY --chown=node:node packages/frontend-app /home/frontend-app
 WORKDIR /home/frontend-app
 RUN yarn install && yarn build
 
@@ -8,7 +8,7 @@ EXPOSE 8080
 
 RUN apt update && apt install -y git
 
-COPY --chown=node:node server /home/node/server
+COPY --chown=node:node packages/server /home/node/server
 
 WORKDIR /home/node/server
 

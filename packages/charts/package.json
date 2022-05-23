@@ -8,8 +8,8 @@
   "author": {
     "name": "Suman Maity"
   },
-  "readme": "https://github.com/sumanmaity112/pairing-matrix/blob/main/charts/README.md",
-  "homepage": "https://github.com/sumanmaity112/pairing-matrix/tree/main/charts#pairing-matrix-charts",
+  "readme": "https://github.com/sumanmaity112/pairing-matrix/blob/main/packages/charts/README.md",
+  "homepage": "https://github.com/sumanmaity112/pairing-matrix/tree/main/packages/charts#pairing-matrix-charts",
   "repository": {
     "type": "git",
     "url": "https://github.com/sumanmaity112/pairing-matrix.git",
