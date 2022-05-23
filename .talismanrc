@@ -10,19 +10,19 @@ fileignoreconfig:
 - filename: engine/GitService.js
   checksum: 8985797e4967496cdd072a1c18985b1eb5307b52a8f3617f406a29ece8ebe022
 - filename: engine/yarn.lock
-  checksum: 30e7d295d75827d7b33c083e0602eeb0bcaf1fd0c2c9c411d5fa54800349039b
+  checksum: 8562ffdc2063b75834c44f73bcebc1c58af743997cf3f26be65e99d71d87c150
 - filename: frontend-app/src/assets/logo.png
   checksum: 438c91cce828e2db27b2367716202658ae4ccaaffc00d9a490fca1c48ce49a1f
 - filename: frontend-app/yarn.lock
-  checksum: d6cff011b8e23062aa956bf71f1eebf9b9956098664e671892b0f3d74559bf82
+  checksum: 3592323875fdb35c8d508b72ab0c5e90ca9d57b0c798cdf4e28bdb7911d0e6a6
+- filename: screenshots/pairingMatrix.gif
+  checksum: ead365ef8f5a854e7aebec3534a39f8d77a55bf89d7f65e60bf291801a8d310e
 - filename: server/yarn.lock
-  checksum: 8921a609e303ba4d4387cfa331dee8d27ebfb0559c75fde6ef132eb8b255a572
+  checksum: c4673d61beae03b422019d445f3e7812c4f482aff52ac7ea6716ecbeceb47d87
 - filename: vue-visualiser/CHANGELOG.md
   checksum: 49d2b2188afb444469d73327ba13e29d74352ded37dec06b4cc8874bb8782c2b
 - filename: vue-visualiser/yarn.lock
-  checksum: a90fc96d1cee8277cafa37e4332dd53fa0fb30b596cf399098b0a86bdb2109a3
+  checksum: 44a21181403a680d2db133b32fbe7a40095de4b7230b3274eb2f83659fcc0752
 - filename: yarn.lock
-  checksum: 06f319bf52b9fab0ee0ae84aba6da3d9c83c41aafe307f18d48821a2969c5621
-- filename: screenshots/pairingMatrix.gif
-  checksum: ead365ef8f5a854e7aebec3534a39f8d77a55bf89d7f65e60bf291801a8d310e
+  checksum: 2200996988818c60014902b24c46529d40923cb9ae8061cacb3edaaa0e597ab5
 version: "1.0"

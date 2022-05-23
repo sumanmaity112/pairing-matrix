@@ -18,7 +18,7 @@
   "private": false,
   "dependencies": {
     "lodash": "^4.17.21",
-    "simple-git": "^3.2.6"
+    "simple-git": "^3.7.1"
   },
   "engines": {
     "node": ">=14"
