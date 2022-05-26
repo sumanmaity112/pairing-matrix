@@ -51,13 +51,23 @@ _bump_version() {
   yarn lerna version --conventional-commits --no-private --sign-git-tag $@
 }
 
+_generate_changelog_for_application() {
+  _ensure_nvm > /dev/null
+
+  node generateChangelog.js
+}
+
 _bump_server_version() {
   _ensure_nvm
+
+  # shellcheck disable=SC2155
+  # shellcheck disable=SC2034
+  local new_version=$(_generate_changelog_for_application)
 
   pushd "packages/server" > /dev/null || exit
     yarn config set version-git-message "build: Update pairing matrix server version to v%s"
     # shellcheck disable=SC2068
-    yarn version $@
+    yarn version --new-version "${new_version}"
     yarn config delete version-git-message
   popd > /dev/null || exit
 }
