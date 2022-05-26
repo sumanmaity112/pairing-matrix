@@ -10,6 +10,10 @@ Use your favourite package manager:
 - [npm](https://npmjs.org): `npm install pairing-matrix-engine`
 - [yarn](https://yarnpkg.com/): `yarn add pairing-matrix-engine`
 
+## Changelog
+
+Changelog can be found [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/packages/engine/CHANGELOG.md)
+
 ## Example Commit Structure
 
 Example commit structures are following

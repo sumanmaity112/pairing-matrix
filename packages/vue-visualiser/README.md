@@ -14,6 +14,10 @@ Use your favourite package manager:
 - [npm](https://npmjs.org): `npm install pairing-matrix-vue-visualiser`
 - [yarn](https://yarnpkg.com/): `yarn add pairing-matrix-vue-visualiser`
 
+## Changelog
+
+Changelog can be found [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/packages/vue-visualiser/CHANGELOG.md)
+
 ## Usage
 
 Include into your JavaScript app as an ES Module:

@@ -12,6 +12,10 @@ Use your favourite package manager:
 - [npm](https://npmjs.org): `npm install pairing-matrix-charts`
 - [yarn](https://yarnpkg.com/): `yarn add pairing-matrix-charts`
 
+## Changelog
+
+Changelog can be found [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/packages/charts/CHANGELOG.md).
+
 ## Usage
 
 ```javascript

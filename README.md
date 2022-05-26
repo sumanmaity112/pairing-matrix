@@ -2,6 +2,10 @@
 
 <img src="https://github.com/sumanmaity112/pairing-matrix/blob/main/screenshots/pairingMatrix.gif" height="500" alt="pairing-matrix">
 
+## Changelog
+
+Changelog can be found [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/CHANGELOG.md)
+
 ## Usage
 
 Pairing matrix can be either used as out of box docker image or can be used as library to integrate with other application.
