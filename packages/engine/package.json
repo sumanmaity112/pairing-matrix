@@ -16,9 +16,17 @@
     "directory": "engine"
   },
   "private": false,
+  "scripts": {
+    "test": "jest --watchAll=false --coverage",
+    "test:watch": "jest --watchAll=true"
+  },
   "dependencies": {
     "lodash": "^4.17.21",
     "simple-git": "^3.7.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "jest": "^28.1.0"
   },
   "engines": {
     "node": ">=14"
@@ -30,5 +38,30 @@
     "engine",
     "pair",
     "matrix"
-  ]
+  ],
+  "jest": {
+    "clearMocks": true,
+    "verbose": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/coverage/"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
 }
