@@ -1,0 +1,20 @@
+name: verify
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  SERVICE_NAME: pairing-matrix
+
+jobs:
+  verify:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout local repository
+        uses: actions/checkout@v2
+        with:
+          path: ${{ github.workspace }}/${{ env.SERVICE_NAME }}
+      - name: Run all tests
+        run: ./run.sh test
+        working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
