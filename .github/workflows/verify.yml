@@ -2,7 +2,7 @@ name: verify
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 env:
   SERVICE_NAME: pairing-matrix

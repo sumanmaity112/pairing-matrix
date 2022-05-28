@@ -15,7 +15,7 @@ describe("Pairing Matrix Generator", () => {
   let pairingMatrixGenerator;
   let gitServiceInstance;
   let pairingMatrixProcessorInstance;
-  
+
   beforeEach(() => {
     pairingMatrixGenerator = new PairingMatrixGenerator(
       username,
