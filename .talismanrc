@@ -17,6 +17,8 @@ fileignoreconfig:
   checksum: 438c91cce828e2db27b2367716202658ae4ccaaffc00d9a490fca1c48ce49a1f
 - filename: frontend-app/yarn.lock
   checksum: 3592323875fdb35c8d508b72ab0c5e90ca9d57b0c798cdf4e28bdb7911d0e6a6
+- filename: packages/engine/__tests__/GitService.test.js
+  checksum: 3c78cac06f232b5b7a10181472262b9fe80c59ed23b996c5e5afdba4039a1090
 - filename: packages/engine/yarn.lock
   checksum: 09a5008b8f5d9bc1d48d3fa0a83a6817cc5623e1f0c83844a191be44d6063689
 - filename: screenshots/pairingMatrix.gif
