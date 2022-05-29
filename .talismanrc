@@ -17,6 +17,10 @@ fileignoreconfig:
   checksum: 438c91cce828e2db27b2367716202658ae4ccaaffc00d9a490fca1c48ce49a1f
 - filename: frontend-app/yarn.lock
   checksum: 3592323875fdb35c8d508b72ab0c5e90ca9d57b0c798cdf4e28bdb7911d0e6a6
+- filename: packages/charts/__tests__/__snapshots__/ChordChart.test.js.snap
+  checksum: 1c9529f506694a65f22950477a3b4870652b45d3e883435781884568e83de1be
+- filename: packages/charts/yarn.lock
+  checksum: fa3b53da5dd8606ac17ca4011525a69203371c6b231f3efae29e2b0e6761842d
 - filename: packages/engine/__tests__/GitService.test.js
   checksum: 3c78cac06f232b5b7a10181472262b9fe80c59ed23b996c5e5afdba4039a1090
 - filename: packages/engine/yarn.lock

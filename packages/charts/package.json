@@ -16,8 +16,17 @@
     "directory": "charts"
   },
   "private": false,
+  "scripts": {
+    "test": "jest --watchAll=false --coverage",
+    "test:watch": "jest --watchAll=true"
+  },
   "dependencies": {
     "d3": "^7.4.4"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0"
   },
   "engines": {
     "node": ">=16"
@@ -34,5 +43,39 @@
   ],
   "bugs": {
     "url": "https://github.com/sumanmaity112/pairing-matrix/issues"
+  },
+  "jest": {
+    "clearMocks": true,
+    "verbose": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/coverage/",
+      "<rootDir>/__tests__/data/",
+      "<rootDir>/__tests__/testUtil.js"
+    ],
+    "moduleNameMapper": {
+      "d3": "<rootDir>/node_modules/d3/dist/d3.min.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/data/",
+      "<rootDir>/__tests__/testUtil.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
   }
 }
