@@ -34,6 +34,10 @@ _test() {
     yarn test
   popd > /dev/null || exit
 
+  pushd "packages/server" > /dev/null || exit
+    yarn test
+  popd > /dev/null || exit
+
   # shellcheck disable=SC2035
   shellcheck -x *.sh
 }

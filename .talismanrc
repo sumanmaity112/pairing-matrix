@@ -25,6 +25,8 @@ fileignoreconfig:
   checksum: 3c78cac06f232b5b7a10181472262b9fe80c59ed23b996c5e5afdba4039a1090
 - filename: packages/engine/yarn.lock
   checksum: 09a5008b8f5d9bc1d48d3fa0a83a6817cc5623e1f0c83844a191be44d6063689
+- filename: packages/server/yarn.lock
+  checksum: 00b20f48bd79d23f134b19cf5548e2745b76ac5e028dd681aa0eb187029e57f4
 - filename: screenshots/pairingMatrix.gif
   checksum: ead365ef8f5a854e7aebec3534a39f8d77a55bf89d7f65e60bf291801a8d310e
 - filename: server/yarn.lock

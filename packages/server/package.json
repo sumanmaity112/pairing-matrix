@@ -14,10 +14,20 @@
     "lodash": "^4.17.21",
     "pairing-matrix-engine": "^0.4.0"
   },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.0",
+    "babel-plugin-transform-import-meta": "^2.1.1",
+    "jest": "^28.1.0",
+    "supertest": "^6.2.3"
+  },
   "scripts": {
     "build-frontend": "cd ../frontend-app && yarn build && cd - > /dev/null",
     "copy-frontend": "rm -rf public && cp -r ../frontend-app/dist/ public/",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jest --watchAll=false --coverage",
+    "test:watch": "yarn test --watchAll=true"
   },
   "repository": {
     "type": "git",
@@ -25,5 +35,30 @@
   },
   "bugs": {
     "url": "https://github.com/sumanmaity112/pairing-matrix/issues"
+  },
+  "jest": {
+    "clearMocks": true,
+    "setupFiles": [
+      "./__tests__/setupTests.js"
+    ],
+    "verbose": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(pairing-matrix-engine)/)"
+    ],
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/coverage/",
+      "<rootDir>/__tests__/setupTests.js",
+      "server.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/setupTests.js",
+      "server.js"
+    ]
   }
 }
