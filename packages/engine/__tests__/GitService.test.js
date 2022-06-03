@@ -191,7 +191,7 @@ describe("GitService", () => {
         expect(simpleGit).toBeCalledWith(`${localPath}/${repoName}`);
         expect(mockLog).toBeCalledTimes(1);
         expect(mockLog).toBeCalledWith([
-          `--since=${new Date(new Date() - sinceDays * 86400000)}`,
+          `--since=${new Date(new Date() - sinceDays * 86400000)} --all`,
         ]);
 
         expect(commits).toEqual(commitInfo.all);

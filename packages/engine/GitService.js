@@ -16,7 +16,7 @@ export default class GitService {
   }
 
   static async #getCommits(localPath, from) {
-    return (await simpleGit(localPath).log([`--since=${from}`])).all;
+    return (await simpleGit(localPath).log([`--since=${from} --all`])).all;
   }
 
   static #fetch(repoName, username, localPath, overrideableEnvVariables) {
