@@ -10,7 +10,7 @@ fileignoreconfig:
 - filename: engine/CHANGELOG.md
   checksum: 1ae0e6aa35b68e7c6ffe66b1327749495bb50f145e3117fc703bda4db8cbdf0c
 - filename: engine/GitService.js
-  checksum: 8985797e4967496cdd072a1c18985b1eb5307b52a8f3617f406a29ece8ebe022
+  checksum: a259970d157e4669b86ab2d18cc20439a7c3afbd8923ae86f72806f487ef3267
 - filename: engine/yarn.lock
   checksum: 8562ffdc2063b75834c44f73bcebc1c58af743997cf3f26be65e99d71d87c150
 - filename: frontend-app/src/assets/logo.png
@@ -22,7 +22,7 @@ fileignoreconfig:
 - filename: packages/charts/yarn.lock
   checksum: fa3b53da5dd8606ac17ca4011525a69203371c6b231f3efae29e2b0e6761842d
 - filename: packages/engine/__tests__/GitService.test.js
-  checksum: 3c78cac06f232b5b7a10181472262b9fe80c59ed23b996c5e5afdba4039a1090
+  checksum: 1f4969f20ca72ca58bc112b47885b35f1957f6909eb6429861f158b5626944b9
 - filename: packages/engine/yarn.lock
   checksum: 09a5008b8f5d9bc1d48d3fa0a83a6817cc5623e1f0c83844a191be44d6063689
 - filename: packages/server/yarn.lock

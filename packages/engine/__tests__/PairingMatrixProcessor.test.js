@@ -22,7 +22,9 @@ describe("PairingMatrixProcessor", () => {
     it.each([
       ["Addresses BAH-1571", "Addresses", "BAH-1571"],
       ["Addresses BAHA- 1571", "Addresses", "BAHA-"],
-      ["[BAHA-1571]", "\\[BAHA-", "1571]"],
+      ["[BAHA-1571]", "[BAHA-", "1571]"],
+      ["{BAHA-1571}", "{BAHA-", "1571}"],
+      ["(BAHA-1571)", "(BAHA-", "1571)"],
       ["[BAHA-1571]", "BAHA-", "1571]"],
       ["[BAHA-1571]", "BAHAA-", undefined],
     ])(

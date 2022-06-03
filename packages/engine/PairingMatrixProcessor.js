@@ -29,15 +29,17 @@ export default class PairingMatrixProcessor {
   }
 
   static #extractCardNumber(message, addressesPrefix) {
-    const addressRegExp = new RegExp(addressesPrefix, "gi");
+    const normalisePrefix =
+      PairingMatrixProcessor.#normalisePrefix(addressesPrefix);
+    const addressRegExp = new RegExp(normalisePrefix, "gi");
 
     const addressStatement = _.first(
       message
         .replace(
           addressRegExp,
-          `${addressesPrefix}${PairingMatrixProcessor.SEPARATOR}`
+          `${normalisePrefix}${PairingMatrixProcessor.SEPARATOR}`
         )
-        .split(addressesPrefix)
+        .split(normalisePrefix)
         .filter((text) => text.includes(PairingMatrixProcessor.SEPARATOR))
     );
 
@@ -48,6 +50,10 @@ export default class PairingMatrixProcessor {
           .split(/\s+/)[0]
           .toUpperCase()
       : addressStatement;
+  }
+
+  static #normalisePrefix(addressesPrefix) {
+    return addressesPrefix.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
   }
 
   static #extractCoAuthor(coAuthorStatement) {
