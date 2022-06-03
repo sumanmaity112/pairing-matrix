@@ -112,7 +112,7 @@ describe("Pairing Matrix Generator", () => {
           { authorName: "John Doe", authorEmail: "john@test.com" },
           { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [
@@ -120,35 +120,35 @@ describe("Pairing Matrix Generator", () => {
           { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
           { authorName: "Tony Stark", authorEmail: "tony@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [
           { authorName: "John Doe", authorEmail: "john@test.com" },
           { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [
           { authorName: "John Doe", authorEmail: "john@test.com" },
           { authorName: "John Weller", authorEmail: "jweller@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [
           { authorName: "Tony Stark", authorEmail: "tony@test.com" },
           { authorName: "John Weller", authorEmail: "jweller@test.com" },
         ],
-        reference: "4/17/2022",
+        reference: "2022-04-17",
       },
       {
         authors: [
           { authorName: "Tony Stark", authorEmail: "tony@test.com" },
           { authorName: "John Weller", authorEmail: "jweller@test.com" },
         ],
-        reference: "4/18/2022",
+        reference: "2022-04-18",
       },
     ];
 
