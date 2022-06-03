@@ -102,10 +102,29 @@ export default class PairingMatrixProcessor {
   }
 
   extractPairedCommitters(commitsInformation) {
-    return commitsInformation.filter(
+    const commitsWithMultipleAuthors = commitsInformation.filter(
       ({ authors }) =>
         PairingMatrixProcessor.#getUniqueCommitters(authors).length > 1
     );
+
+    return _.flatMap(
+      commitsWithMultipleAuthors,
+      PairingMatrixProcessor.#createPairCommitters
+    );
+  }
+
+  static #createPairCommitters(commit) {
+    const { authors } = commit;
+
+    const pairedAuthors = [];
+
+    for (let i = 0; i < authors.length - 1; i++) {
+      for (let j = i + 1; j < authors.length; j++) {
+        pairedAuthors.push({ ...commit, authors: [authors[i], authors[j]] });
+      }
+    }
+
+    return pairedAuthors;
   }
 
   createPairingMatrix(committersWithCardInfo) {

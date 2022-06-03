@@ -70,14 +70,14 @@ export default class PairingMatrixGenerator {
       aggregateBy,
       cardNumberPrefix
     );
-    const committersWithCardInfo = await this.#getAllCommitters(
+    const committersWithReference = await this.#getAllCommitters(
       sinceDays,
       referenceExtractor
     );
 
     const pairedCommitters =
       this.#pairingMatrixProcessor.extractPairedCommitters(
-        committersWithCardInfo
+        committersWithReference
       );
 
     const pairingMatrix =

@@ -199,6 +199,7 @@ describe("PairingMatrixProcessor", () => {
             { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
             { authorName: "Tony Stark", authorEmail: "tony@test.com" },
+            { authorName: "Steve Rogers", authorEmail: "srogers@test.com" },
           ],
           reference: "2022-05-19",
         },
@@ -227,7 +228,41 @@ describe("PairingMatrixProcessor", () => {
           authors: [
             { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+          ],
+          reference: "2022-05-19",
+        },
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Tony Stark", authorEmail: "tony@test.com" },
+          ],
+          reference: "2022-05-19",
+        },
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Steve Rogers", authorEmail: "srogers@test.com" },
+          ],
+          reference: "2022-05-19",
+        },
+        {
+          authors: [
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+            { authorName: "Tony Stark", authorEmail: "tony@test.com" },
+          ],
+          reference: "2022-05-19",
+        },
+        {
+          authors: [
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+            { authorName: "Steve Rogers", authorEmail: "srogers@test.com" },
+          ],
+          reference: "2022-05-19",
+        },
+        {
+          authors: [
+            { authorName: "Tony Stark", authorEmail: "tony@test.com" },
+            { authorName: "Steve Rogers", authorEmail: "srogers@test.com" },
           ],
           reference: "2022-05-19",
         },
