@@ -193,6 +193,95 @@ describe("PairingMatrixProcessor", () => {
     );
   });
 
+  describe("Extract Committers With Timestamp", () => {
+    it("should extract committers with timestamp", () => {
+      const expectedCommitters = [
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+          ],
+          pairedOn: baseCommit.timestamp,
+        },
+      ];
+
+      expect(
+        pairingMatrixProcessor.extractCommittersWithTimestamp([
+          { ...baseCommit },
+        ])
+      ).toEqual(expectedCommitters);
+    });
+
+    it("should extract committers with multiple co-authors", () => {
+      const commit = {
+        ...baseCommit,
+        message: `Introduce test \n Addresses BAH-1571 \n Co-authored-by: Kurt Weller <kweller@test.com> \n Co-authored-by: Tony Stark <TonY@teSt.com>`,
+      };
+
+      const expectedCommitters = [
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+            { authorName: "Tony Stark", authorEmail: "tony@test.com" },
+          ],
+          pairedOn: baseCommit.timestamp,
+        },
+      ];
+
+      expect(
+        pairingMatrixProcessor.extractCommittersWithTimestamp([commit])
+      ).toEqual(expect.arrayContaining(expectedCommitters));
+    });
+
+    it("should have only one author name if there is not co-author present", () => {
+      const commit = { ...baseCommit, message: `Introduce test` };
+
+      const expectedCommitters = [
+        {
+          authors: [{ authorName: "John Doe", authorEmail: "john@test.com" }],
+          pairedOn: baseCommit.timestamp,
+        },
+      ];
+
+      expect(
+        pairingMatrixProcessor.extractCommittersWithTimestamp([commit])
+      ).toEqual(expectedCommitters);
+    });
+
+    it("should extract committers even if co-authors doesn't have email id", () => {
+      const commit = {
+        ...baseCommit,
+        message: `Introduce test \n Addresses BAH-1571 \n Co-authored-by: Kurt Weller`,
+      };
+
+      const expectedCommitters = [
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Kurt Weller" },
+          ],
+          pairedOn: baseCommit.timestamp,
+        },
+      ];
+
+      expect(
+        pairingMatrixProcessor.extractCommittersWithTimestamp([commit])
+      ).toEqual(expect.arrayContaining(expectedCommitters));
+    });
+
+    it.each([[undefined], [""]])(
+      "should return empty list if message is '%s'",
+      (message) => {
+        const commit = { ...baseCommit, message };
+
+        expect(
+          pairingMatrixProcessor.extractCommittersWithTimestamp([commit])
+        ).toEqual([]);
+      }
+    );
+  });
+
   describe("Extract Paired Committers", () => {
     it("should extract pair committers", () => {
       const committers = [

@@ -1,8 +1,10 @@
 import GitService from "../GitService.js";
 import PairingMatrixProcessor from "../PairingMatrixProcessor.js";
+import PairRecommendationProcessor from "../PairRecommendationProcessor.js";
 
 jest.mock("../GitService.js");
 jest.mock("../PairingMatrixProcessor.js");
+jest.mock("../PairRecommendationProcessor.js");
 
 import PairingMatrixGenerator from "../PairingMatrixGenerator.js";
 
@@ -11,10 +13,56 @@ describe("Pairing Matrix Generator", () => {
   const username = "testuser";
   const sshIdentityFilePath = "/abc/xyz/id_rsa";
   const repoNames = ["repo1", "repo2"];
+  const baseCommit = {
+    date: "2022-05-19T11:16:54+05:30",
+    author_name: "John Doe",
+    author_email: "john@test.com",
+    message: `Introduce test`,
+    body: `Addresses BAH-1571 \n Co-authored-by: Kurt Weller <kweller@test.com>`,
+  };
+
+  const commits1 = [
+    { ...baseCommit },
+    { ...baseCommit },
+    {
+      ...baseCommit,
+      message: `Introduce test`,
+      body: `Addresses BAH-1571 \n Co-authored-by: John Weller <jweller@test.com>`,
+    },
+  ];
+
+  const commits2 = [
+    {
+      ...baseCommit,
+      date: "2022-04-17T10:16:54+05:30",
+      author_name: "Tony Stark",
+      author_email: "tony@test.com",
+      message: `Introduce test`,
+      body: `Addresses BAH-1561 \n Co-authored-by: John Weller <jweller@test.com>`,
+    },
+    {
+      ...baseCommit,
+      date: "2022-04-18T10:19:54+05:30",
+      author_name: "Tony Stark",
+      author_email: "tony@test.com",
+      message: `Introduce test`,
+      body: `Addresses BAH-1561 \n Co-authored-by: John Weller <jweller@test.com>`,
+    },
+  ];
+
+  const processedCommits = [...commits1, ...commits2].map(
+    ({ author_name, author_email, message, body, date }) => ({
+      timestamp: date,
+      authorName: author_name,
+      authorEmail: author_email,
+      message: `${message}\n${body}`,
+    })
+  );
 
   let pairingMatrixGenerator;
   let gitServiceInstance;
   let pairingMatrixProcessorInstance;
+  let pairingRecommendationProcessorInstance;
 
   beforeEach(() => {
     pairingMatrixGenerator = new PairingMatrixGenerator(
@@ -25,9 +73,12 @@ describe("Pairing Matrix Generator", () => {
     );
     gitServiceInstance = GitService.mock.instances[0];
     pairingMatrixProcessorInstance = PairingMatrixProcessor.mock.instances[0];
+    pairingRecommendationProcessorInstance =
+      PairRecommendationProcessor.mock.instances[0];
 
     expect(GitService).toBeCalledTimes(1);
     expect(GitService).toBeCalledWith(sshIdentityFilePath);
+    expect(PairRecommendationProcessor).toBeCalledTimes(1);
     expect(PairingMatrixProcessor).toBeCalledTimes(1);
     expect(PairingMatrixProcessor).toBeCalledWith(
       username,
@@ -60,53 +111,7 @@ describe("Pairing Matrix Generator", () => {
   });
 
   describe("Generate Pairing Matrix", () => {
-    const baseCommit = {
-      date: "2022-05-19T11:16:54+05:30",
-      author_name: "John Doe",
-      author_email: "john@test.com",
-      message: `Introduce test`,
-      body: `Addresses BAH-1571 \n Co-authored-by: Kurt Weller <kweller@test.com>`,
-    };
-
-    const commits1 = [
-      { ...baseCommit },
-      { ...baseCommit },
-      {
-        ...baseCommit,
-        message: `Introduce test`,
-        body: `Addresses BAH-1571 \n Co-authored-by: John Weller <jweller@test.com>`,
-      },
-    ];
-
-    const commits2 = [
-      {
-        ...baseCommit,
-        date: "2022-04-17T10:16:54+05:30",
-        author_name: "Tony Stark",
-        author_email: "tony@test.com",
-        message: `Introduce test`,
-        body: `Addresses BAH-1561 \n Co-authored-by: John Weller <jweller@test.com>`,
-      },
-      {
-        ...baseCommit,
-        date: "2022-04-18T10:19:54+05:30",
-        author_name: "Tony Stark",
-        author_email: "tony@test.com",
-        message: `Introduce test`,
-        body: `Addresses BAH-1561 \n Co-authored-by: John Weller <jweller@test.com>`,
-      },
-    ];
-
-    const processedCommits = [...commits1, ...commits2].map(
-      ({ author_name, author_email, message, body, date }) => ({
-        timestamp: date,
-        authorName: author_name,
-        authorEmail: author_email,
-        message: `${message}\n${body}`,
-      })
-    );
-
-    const groupedCommuters = [
+    const groupedCommitters = [
       {
         authors: [
           { authorName: "John Doe", authorEmail: "john@test.com" },
@@ -174,10 +179,10 @@ describe("Pairing Matrix Generator", () => {
         .mockResolvedValueOnce(commits1)
         .mockResolvedValueOnce(commits2);
       pairingMatrixProcessorInstance.extractCommitters.mockResolvedValueOnce(
-        groupedCommuters
+        groupedCommitters
       );
       pairingMatrixProcessorInstance.extractPairedCommitters.mockReturnValueOnce(
-        groupedCommuters
+        groupedCommitters
       );
       pairingMatrixProcessorInstance.createPairingMatrix.mockReturnValueOnce(
         mockPairingMatrix
@@ -193,9 +198,9 @@ describe("Pairing Matrix Generator", () => {
       ).toBeCalledTimes(1);
       expect(
         pairingMatrixProcessorInstance.extractPairedCommitters
-      ).toBeCalledWith(groupedCommuters);
+      ).toBeCalledWith(groupedCommitters);
       expect(pairingMatrixProcessorInstance.createPairingMatrix).toBeCalledWith(
-        groupedCommuters
+        groupedCommitters
       );
       expect(pairingMatrixProcessorInstance.findUniqueAuthors).toBeCalledWith(
         mockPairingMatrix
@@ -353,6 +358,102 @@ describe("Pairing Matrix Generator", () => {
         matrix: mockPairingMatrix,
         authors: uniqueAuthors,
       });
+    });
+  });
+
+  describe("Generate Pair Recommendation", () => {
+    const groupedCommitters = [
+      {
+        authors: [
+          {
+            authorName: "John Doe",
+            authorEmail: "john@test.com",
+          },
+          {
+            authorName: "Kurt Weller",
+            authorEmail: "kweller@test.com",
+          },
+        ],
+        pairedOn: "2022-05-19T11:16:54+05:30",
+      },
+    ];
+
+    const mockPairRecommendation = {
+      john: ["kweller"],
+      kweller: ["john"],
+    };
+
+    beforeEach(() => {
+      gitServiceInstance.getCommitsSince
+        .mockResolvedValueOnce(commits1)
+        .mockResolvedValueOnce(commits2);
+
+      pairingMatrixProcessorInstance.extractCommittersWithTimestamp.mockReturnValueOnce(
+        groupedCommitters
+      );
+      pairingMatrixProcessorInstance.extractPairedCommitters.mockReturnValueOnce(
+        groupedCommitters
+      );
+      pairingRecommendationProcessorInstance.generatePairRecommendation.mockReturnValueOnce(
+        mockPairRecommendation
+      );
+    });
+
+    afterEach(() => {
+      expect(
+        pairingMatrixProcessorInstance.extractPairedCommitters
+      ).toBeCalledTimes(1);
+      expect(
+        pairingMatrixProcessorInstance.extractPairedCommitters
+      ).toBeCalledWith(groupedCommitters);
+      expect(
+        pairingRecommendationProcessorInstance.generatePairRecommendation
+      ).toBeCalledWith(groupedCommitters);
+    });
+
+    it("should create pair recommendation", async () => {
+      expect(await pairingMatrixGenerator.generatePairRecommendation()).toEqual(
+        mockPairRecommendation
+      );
+
+      expect(gitServiceInstance.fetchRepos).not.toHaveBeenCalled();
+      expect(gitServiceInstance.getCommitsSince).toBeCalledTimes(2);
+      expect(gitServiceInstance.getCommitsSince).toHaveBeenNthCalledWith(
+        1,
+        14,
+        repoNames[0],
+        localPath
+      );
+
+      expect(gitServiceInstance.getCommitsSince).toHaveBeenNthCalledWith(
+        2,
+        14,
+        repoNames[1],
+        localPath
+      );
+    });
+
+    it("should pull latest data from github before pair recommendation creation", async () => {
+      expect(
+        await pairingMatrixGenerator.generatePairRecommendation(10, true)
+      ).toEqual(mockPairRecommendation);
+
+      expect(gitServiceInstance.fetchRepos).toHaveBeenCalledTimes(1);
+
+      expect(gitServiceInstance.getCommitsSince).toBeCalledTimes(2);
+      expect(gitServiceInstance.getCommitsSince).toHaveBeenNthCalledWith(
+        1,
+        10,
+        repoNames[0],
+        localPath
+      );
+
+      expect(gitServiceInstance.getCommitsSince).toHaveBeenNthCalledWith(
+        2,
+        10,
+        repoNames[1],
+        localPath
+      );
     });
   });
 });

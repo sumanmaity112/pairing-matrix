@@ -83,7 +83,7 @@ export default class PairingMatrixProcessor {
     );
   }
 
-  extractCommitters(commits, referenceExtractor) {
+  static #extractCommitters(commits, referenceGenerator) {
     return commits
       .filter(({ message }) => !_.isEmpty(message))
       .map((commit) => {
@@ -93,9 +93,24 @@ export default class PairingMatrixProcessor {
             { authorName, authorEmail },
             ...PairingMatrixProcessor.#extractCoAuthors(message),
           ],
-          reference: referenceExtractor(commit),
+          ...referenceGenerator(commit),
         };
       });
+  }
+
+  extractCommitters(commits, referenceExtractor) {
+    return PairingMatrixProcessor.#extractCommitters(commits, (commit) => ({
+      reference: referenceExtractor(commit),
+    }));
+  }
+
+  extractCommittersWithTimestamp(commits) {
+    return PairingMatrixProcessor.#extractCommitters(
+      commits,
+      ({ timestamp }) => ({
+        pairedOn: timestamp,
+      })
+    );
   }
 
   cardNumberReferenceExtractor(addressPrefix) {
@@ -133,8 +148,8 @@ export default class PairingMatrixProcessor {
     return pairedAuthors;
   }
 
-  createPairingMatrix(committersWithCardInfo) {
-    const dictionary = _.groupBy(committersWithCardInfo, "reference");
+  createPairingMatrix(committersWithReference) {
+    const dictionary = _.groupBy(committersWithReference, "reference");
     const pairs = _.flatten(
       _.map(dictionary, PairingMatrixProcessor.#findUniquePairs)
     );

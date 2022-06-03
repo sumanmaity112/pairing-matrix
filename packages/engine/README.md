@@ -97,10 +97,11 @@ await pairingMatrixGenerator.generatePairingMatrix(
 // await pairingMatrixGenerator.generatePairingMatrix(14, true, PairingMatrixGenerator.AGGREGATE_BY_ISSUE, "Addresses");
 ```
 
-Generate pairing matrix for given days. `generatePairingMatrix` returns a `Promise`.
+Generate pairing matrix for given number of days. `generatePairingMatrix` returns a `Promise`.
 
 ###### Parameters
 
+- `sinceDays` is a required parameter, indicates the number of days for which matrix needs to be generated
 - `pullData` is an optional Boolean parameter, depends on this parameter `generatePairingMatrix` will pull data from GitHub and create the pairing matrix. By default, it is set to **false**.
 - `aggreateBy` is an optional parameter, which indicates the aggregation needs to used while generating pairing matrix. Currently, it supports following options
   - `PairingMatrixGenerator.AGGREGATE_BY_DAYS` aggregate by days (default)
@@ -165,5 +166,35 @@ Generate pairing matrix for given days. `generatePairingMatrix` returns a `Promi
     "barry.allen",
     "oliver"
   ]
+}
+```
+
+#### Generate Pair Recommendation
+
+```javascript
+await pairingMatrixGenerator.generatePairRecommendation(
+  [sinceDays],
+  [pullData]
+);
+
+// await pairingMatrixGenerator.generatePairRecommendation();
+// await pairingMatrixGenerator.generatePairRecommendation(60, true);
+```
+
+Generate pair suggestion considering given number of days. `generatePairRecommendation` returns a `Promise`.
+
+###### Parameters
+
+- `sinceDays` is an optional parameter, indicates the number of days to consider while generating the recommendation list. By default, it set to **14**.
+- `pullData` is an optional Boolean parameter, depends on this parameter `generatePairingMatrix` will pull data from GitHub and create the pairing matrix. By default, it is set to **false**.
+
+##### Example data
+
+```json
+{
+  "john": ["tony", "kweller", "jweller"],
+  "kweller": ["jweller", "tony", "john"],
+  "jweller": ["kweller", "tony", "john"],
+  "tony": ["john", "kweller", "jweller"]
 }
 ```

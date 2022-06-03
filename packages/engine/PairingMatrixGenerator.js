@@ -1,6 +1,7 @@
 import PairingMatrixProcessor from "./PairingMatrixProcessor.js";
 import GitService from "./GitService.js";
 import _ from "lodash";
+import PairRecommendationProcessor from "./PairRecommendationProcessor.js";
 
 export default class PairingMatrixGenerator {
   static AGGREGATE_BY_ISSUE = "issue";
@@ -11,6 +12,7 @@ export default class PairingMatrixGenerator {
   #basePath;
   #pairingMatrixProcessor;
   #gitService;
+  #pairRecommendationProcessor;
 
   constructor(username, repos, basePath, sshIdentityFilePath) {
     this.#repos = repos;
@@ -22,6 +24,7 @@ export default class PairingMatrixGenerator {
       basePath
     );
     this.#gitService = new GitService(sshIdentityFilePath);
+    this.#pairRecommendationProcessor = new PairRecommendationProcessor();
   }
 
   async #fetchAllCommits(sinceDays) {
@@ -70,6 +73,7 @@ export default class PairingMatrixGenerator {
       aggregateBy,
       cardNumberPrefix
     );
+
     const committersWithReference = await this.#getAllCommitters(
       sinceDays,
       referenceExtractor
@@ -100,5 +104,25 @@ export default class PairingMatrixGenerator {
       default:
         throw new Error(`Invalid aggregation config ${aggregateBy}`);
     }
+  }
+
+  async generatePairRecommendation(sinceDays = 14, pullData = false) {
+    if (pullData) {
+      await this.fetchRepos();
+    }
+
+    const commits = await this.#fetchAllCommits(sinceDays);
+
+    const committersWithReference =
+      this.#pairingMatrixProcessor.extractCommittersWithTimestamp(commits);
+
+    const pairedCommitters =
+      this.#pairingMatrixProcessor.extractPairedCommitters(
+        committersWithReference
+      );
+
+    return this.#pairRecommendationProcessor.generatePairRecommendation(
+      pairedCommitters
+    );
   }
 }
