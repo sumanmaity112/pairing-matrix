@@ -40,9 +40,9 @@ describe("PairingMatrixProcessor", () => {
     );
 
     it.each([
-      ["2022-05-19T11:16:54+05:30", "5/19/2022"],
-      ["2012-09-10T11:16:54+05:30", "9/10/2012"],
-      ["2020-01-29T11:16:54+05:30", "1/29/2020"],
+      ["2022-05-19T11:16:54+05:30", "2022-05-19"],
+      ["2012-09-10T11:16:54+05:30", "2012-09-10"],
+      ["2020-01-29T11:16:54+05:30", "2020-01-29"],
     ])(
       "should extract date from commit timestamp %s",
       (timestamp, expectedReference) => {
@@ -89,7 +89,7 @@ describe("PairingMatrixProcessor", () => {
             { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
       ];
 
@@ -116,7 +116,7 @@ describe("PairingMatrixProcessor", () => {
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
             { authorName: "Tony Stark", authorEmail: "tony@test.com" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
       ];
 
@@ -136,7 +136,7 @@ describe("PairingMatrixProcessor", () => {
       const expectedCommitters = [
         {
           authors: [{ authorName: "John Doe", authorEmail: "john@test.com" }],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
       ];
 
@@ -162,7 +162,7 @@ describe("PairingMatrixProcessor", () => {
             { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Kurt Weller" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
       ];
 
@@ -200,18 +200,18 @@ describe("PairingMatrixProcessor", () => {
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
             { authorName: "Tony Stark", authorEmail: "tony@test.com" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
         {
           authors: [{ authorName: "John Doe", authorEmail: "john@test.com" }],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
         {
           authors: [
             { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
         {
           authors: [
@@ -229,14 +229,14 @@ describe("PairingMatrixProcessor", () => {
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
             { authorName: "Tony Stark", authorEmail: "tony@test.com" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
         {
           authors: [
             { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
         {
           authors: [
@@ -259,7 +259,7 @@ describe("PairingMatrixProcessor", () => {
             { authorName: "John Doe", authorEmail: "john@test.com" },
             { authorName: "Kurt Weller" },
           ],
-          reference: "5/19/2022",
+          reference: "2022-05-19",
         },
       ];
 
@@ -276,28 +276,28 @@ describe("PairingMatrixProcessor", () => {
           { authorName: "John Doe", authorEmail: "john@test.com" },
           { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [
           { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
           { authorName: "Tony Stark", authorEmail: "tony@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [
           { authorName: "John Doe", authorEmail: "john@test.com" },
           { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [
           { authorName: "John Doe", authorEmail: "john@test.com" },
           { authorName: "Steve Rogers", authorEmail: "srogers@test.com" },
         ],
-        reference: "5/19/2022",
+        reference: "2022-05-19",
       },
       {
         authors: [

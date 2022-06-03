@@ -98,7 +98,7 @@ export default class PairingMatrixProcessor {
   }
 
   daysReferenceExtractor() {
-    return ({ timestamp }) => new Date(timestamp).toLocaleDateString();
+    return ({ timestamp }) => new Date(timestamp).toISOString().split("T")[0];
   }
 
   extractPairedCommitters(commitsInformation) {
