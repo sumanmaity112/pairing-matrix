@@ -63,7 +63,7 @@ export default class PairingMatrixProcessor {
     if (parts.length === 2)
       return {
         authorName,
-        authorEmail: parts[1].replace(">", "").trim().toLocaleLowerCase(),
+        authorEmail: parts[1].replace(">", "").trim().toLowerCase(),
       };
     return { authorName };
   }
@@ -90,7 +90,7 @@ export default class PairingMatrixProcessor {
         const { authorName, authorEmail, message } = commit;
         return {
           authors: [
-            { authorName, authorEmail },
+            { authorName, authorEmail: authorEmail.toLowerCase() },
             ...PairingMatrixProcessor.#extractCoAuthors(message),
           ],
           ...referenceGenerator(commit),

@@ -81,6 +81,42 @@ describe("PairingMatrixProcessor", () => {
       ).toEqual(expectedCommitters);
     });
 
+    it("should extract committers with converting email id to lower case", () => {
+      const cardNumberReferenceExtractor =
+        pairingMatrixProcessor.cardNumberReferenceExtractor("Addresses");
+
+      const expectedCommitters = [
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+          ],
+          reference: "BAH-1571",
+        },
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+          ],
+          reference: "BAH-1572",
+        },
+      ];
+
+      expect(
+        pairingMatrixProcessor.extractCommitters(
+          [
+            { ...baseCommit },
+            {
+              ...baseCommit,
+              message: `Introduce test \n Addresses BAH-1572 \n Co-authored-by: Kurt Weller <KWeller@test.com>`,
+              authorEmail: "John@Test.Com",
+            },
+          ],
+          cardNumberReferenceExtractor
+        )
+      ).toEqual(expectedCommitters);
+    });
+
     it("should extract committers using date reference", () => {
       const daysReferenceExtractor =
         pairingMatrixProcessor.daysReferenceExtractor();
@@ -208,6 +244,38 @@ describe("PairingMatrixProcessor", () => {
       expect(
         pairingMatrixProcessor.extractCommittersWithTimestamp([
           { ...baseCommit },
+        ])
+      ).toEqual(expectedCommitters);
+    });
+
+    it("should extract committers with converting email id to lowercase", () => {
+      const commit2Timestamp = "2022-06-19T11:16:54+05:30";
+
+      const expectedCommitters = [
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+          ],
+          pairedOn: baseCommit.timestamp,
+        },
+        {
+          authors: [
+            { authorName: "John Doe", authorEmail: "john@test.com" },
+            { authorName: "Kurt Weller", authorEmail: "kweller@test.com" },
+          ],
+          pairedOn: commit2Timestamp,
+        },
+      ];
+
+      expect(
+        pairingMatrixProcessor.extractCommittersWithTimestamp([
+          { ...baseCommit },
+          {
+            ...baseCommit,
+            timestamp: commit2Timestamp,
+            authorEmail: "John@Test.Com",
+          },
         ])
       ).toEqual(expectedCommitters);
     });

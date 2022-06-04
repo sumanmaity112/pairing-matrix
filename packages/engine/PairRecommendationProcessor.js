@@ -108,7 +108,7 @@ class PairRecommendationProcessor {
   }
 
   static #getEmailPrefix(coAuthorEmail) {
-    return _.first(coAuthorEmail.split("@")).toLowerCase();
+    return _.first(coAuthorEmail.split("@"));
   }
 }
 
