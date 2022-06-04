@@ -31,16 +31,30 @@ class PairingMatrixService {
     return null;
   }
 
-  async generatePairingMatrix(sinceDays, aggregateBy, pullData) {
+  async generatePairingMatrixWithRecommendations(
+    sinceDays,
+    aggregateBy,
+    pullData
+  ) {
     const aggregation = PairingMatrixService.#getAggregation(aggregateBy);
     if (!aggregation) {
       throw new Error("Invalid aggregation config");
     }
-    return this.#pairingMatrixGenerator.generatePairingMatrix(
-      PairingMatrixService.#getSinceDays(sinceDays),
-      pullData,
-      aggregation
-    );
+    const days = PairingMatrixService.#getSinceDays(sinceDays);
+    const pairingMatrix =
+      await this.#pairingMatrixGenerator.generatePairingMatrix(
+        days,
+        pullData,
+        aggregation
+      );
+
+    const recommendations =
+      await this.#pairingMatrixGenerator.generatePairRecommendation(
+        days,
+        false
+      );
+
+    return { ...pairingMatrix, recommendations };
   }
 
   static #getSinceDays(sinceDays) {

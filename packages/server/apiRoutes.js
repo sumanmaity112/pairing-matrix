@@ -13,7 +13,11 @@ router.get("/pair-matrix", ({ query }, res, next) => {
   } = query;
 
   return pairingMatrixService
-    .generatePairingMatrix(sinceDays, aggregateBy, pullData === "true")
+    .generatePairingMatrixWithRecommendations(
+      sinceDays,
+      aggregateBy,
+      pullData === "true"
+    )
     .then((matrix) => res.json(matrix))
     .catch(next);
 });

@@ -31,11 +31,31 @@ describe("PairingMatrixService", () => {
     expect(pairingMatrixGeneratorInstance.fetchRepos).toBeCalledTimes(1);
   });
 
-  describe("Generate Pairing Matrix", () => {
+  describe("Generate Pairing Matrix With Recommendations", () => {
     const mockPairingMatrix = {
       matrix: [{ author: "john", coAuthor: "kweller", times: 1 }],
       authors: ["john", "kweller"],
     };
+
+    const mockRecommendations = {
+      john: ["kweller"],
+      kweller: ["john"],
+    };
+
+    const mockPairingMatrixWithRecommendations = {
+      ...mockPairingMatrix,
+      recommendations: mockRecommendations,
+    };
+
+    beforeEach(() => {
+      pairingMatrixGeneratorInstance.generatePairingMatrix.mockResolvedValue(
+        mockPairingMatrix
+      );
+
+      pairingMatrixGeneratorInstance.generatePairRecommendation.mockResolvedValue(
+        mockRecommendations
+      );
+    });
 
     it.each([
       ["10", "issue", false],
@@ -45,37 +65,42 @@ describe("PairingMatrixService", () => {
     ])(
       "should generate pairing matrix with given parameter days='%s' aggregation = '%s' pullData='%s'",
       async (sinceDays, aggregation, pullData) => {
-        pairingMatrixGeneratorInstance.generatePairingMatrix.mockResolvedValue(
-          mockPairingMatrix
-        );
-
         expect(
-          await pairingMatrixService.generatePairingMatrix(
+          await pairingMatrixService.generatePairingMatrixWithRecommendations(
             sinceDays,
             aggregation,
             pullData
           )
-        ).toEqual(mockPairingMatrix);
+        ).toEqual(mockPairingMatrixWithRecommendations);
 
         expect(
           pairingMatrixGeneratorInstance.generatePairingMatrix
         ).toBeCalledTimes(1);
+
         expect(
           pairingMatrixGeneratorInstance.generatePairingMatrix
         ).toBeCalledWith(sinceDays, pullData, aggregation);
+
+        expect(
+          pairingMatrixGeneratorInstance.generatePairRecommendation
+        ).toBeCalledTimes(1);
+
+        expect(
+          pairingMatrixGeneratorInstance.generatePairRecommendation
+        ).toBeCalledWith(sinceDays, false);
       }
     );
 
     it.each([[""], [undefined]])(
       "should generate pairing matrix with default number of days when days = '%s'",
       async (days) => {
-        pairingMatrixGeneratorInstance.generatePairingMatrix.mockResolvedValue(
-          mockPairingMatrix
-        );
-
         expect(
-          await pairingMatrixService.generatePairingMatrix(days, "issue", false)
-        ).toEqual(mockPairingMatrix);
+          await pairingMatrixService.generatePairingMatrixWithRecommendations(
+            days,
+            "issue",
+            false
+          )
+        ).toEqual(mockPairingMatrixWithRecommendations);
 
         expect(
           pairingMatrixGeneratorInstance.generatePairingMatrix
@@ -83,23 +108,27 @@ describe("PairingMatrixService", () => {
         expect(
           pairingMatrixGeneratorInstance.generatePairingMatrix
         ).toBeCalledWith(14, false, "issue");
+
+        expect(
+          pairingMatrixGeneratorInstance.generatePairRecommendation
+        ).toBeCalledTimes(1);
+
+        expect(
+          pairingMatrixGeneratorInstance.generatePairRecommendation
+        ).toBeCalledWith(14, false);
       }
     );
 
     it.each([[""], [undefined]])(
       "should generate pairing matrix using default aggregation when aggregation = '%s'",
       async (aggregation) => {
-        pairingMatrixGeneratorInstance.generatePairingMatrix.mockResolvedValue(
-          mockPairingMatrix
-        );
-
         expect(
-          await pairingMatrixService.generatePairingMatrix(
+          await pairingMatrixService.generatePairingMatrixWithRecommendations(
             "10",
             aggregation,
             false
           )
-        ).toEqual(mockPairingMatrix);
+        ).toEqual(mockPairingMatrixWithRecommendations);
 
         expect(
           pairingMatrixGeneratorInstance.generatePairingMatrix
@@ -107,18 +136,33 @@ describe("PairingMatrixService", () => {
         expect(
           pairingMatrixGeneratorInstance.generatePairingMatrix
         ).toBeCalledWith("10", false, "issue");
+
+        expect(
+          pairingMatrixGeneratorInstance.generatePairRecommendation
+        ).toBeCalledTimes(1);
+
+        expect(
+          pairingMatrixGeneratorInstance.generatePairRecommendation
+        ).toBeCalledWith("10", false);
       }
     );
 
     it("should throw error for invalid aggregation config", async () => {
       await expect(
         async () =>
-          await pairingMatrixService.generatePairingMatrix(
+          await pairingMatrixService.generatePairingMatrixWithRecommendations(
             "10",
             "invaliddd",
             false
           )
       ).rejects.toThrowError("Invalid aggregation config");
+
+      expect(
+        pairingMatrixGeneratorInstance.generatePairingMatrix
+      ).not.toBeCalled();
+      expect(
+        pairingMatrixGeneratorInstance.generatePairRecommendation
+      ).not.toBeCalled();
     });
   });
 });

@@ -6,7 +6,7 @@ jest.mock("../PairingMatrixService.js", () => {
   return jest.fn().mockImplementation(() => {
     return {
       fetchRepos: mockFetchRepos,
-      generatePairingMatrix: mockGeneratePairingMatrix,
+      generatePairingMatrixWithRecommendations: mockGeneratePairingMatrix,
     };
   });
 });
@@ -38,6 +38,10 @@ describe("Api Routes", () => {
     const mockPairingMatrix = {
       matrix: [{ author: "john", coAuthor: "kweller", times: 1 }],
       authors: ["john", "kweller"],
+      recommendations: {
+        john: ["kweller"],
+        kweller: ["john"],
+      },
     };
 
     it.each([

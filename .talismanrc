@@ -25,6 +25,8 @@ fileignoreconfig:
   checksum: 1f4969f20ca72ca58bc112b47885b35f1957f6909eb6429861f158b5626944b9
 - filename: packages/engine/yarn.lock
   checksum: 09a5008b8f5d9bc1d48d3fa0a83a6817cc5623e1f0c83844a191be44d6063689
+- filename: packages/frontend-app/src/components/PairRecommendation.vue
+  checksum: 768ee614542f4e60838b44a3113866ed3e017f5ac52def598deab73cbbfde5ba
 - filename: packages/server/yarn.lock
   checksum: 00b20f48bd79d23f134b19cf5548e2745b76ac5e028dd681aa0eb187029e57f4
 - filename: screenshots/pairingMatrix.gif

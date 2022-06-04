@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
 .pairing-matrix-page {
-  width: 80%;
+  width: 93%;
   margin: 0 auto;
 }
 
@@ -74,7 +74,7 @@ export default {
 .pairing-matrix-config-container {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 20%;
 }
 
 .pairing-matrix-config {
@@ -86,7 +86,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 65%;
+  width: 80%;
   margin: 0 auto;
 }
 </style>
