@@ -2,7 +2,7 @@
   "name": "pairing-matrix-vue-visualiser",
   "version": "0.3.5",
   "private": false,
-  "main": "dist/pairing-matrix-vue-visualiser.js",
+  "main": "dist/pairing-matrix-vue-visualiser.umd.js",
   "license": "MIT",
   "author": {
     "name": "Suman Maity"
@@ -18,9 +18,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack --config build/webpack.prod.conf.js --progress",
-    "build:dev": "NODE_ENV=dev webpack --config build/webpack.dev.conf.js --progress",
-    "prepublishOnly": "yarn build"
+    "build": "vue-cli-service build --target lib --entry ./src/index.js",
+    "build:dev": "yarn build --watch --mode development",
+    "prepublishOnly": "yarn build && rm -rf ./dist/demo.html"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -29,17 +29,10 @@
     "pairing-matrix-charts": "^0.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@babel/plugin-transform-runtime": "^7.18.0",
-    "@babel/preset-env": "^7.18.0",
-    "@vue/compiler-sfc": "^3.2.35",
-    "babel-loader": "^8.2.3",
-    "terser-webpack-plugin": "^5.3.1",
-    "vue": "^3.2.35",
-    "vue-loader": "^17.0.0",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2",
-    "webpack-merge": "^5.8.0"
+    "@vue/cli-plugin-babel": "^5.0.4",
+    "@vue/cli-service": "^5.0.4",
+    "@vue/compiler-sfc": "^3.2.36",
+    "vue": "^3.2.36"
   },
   "browserslist": [
     "> 1%",

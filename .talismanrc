@@ -29,6 +29,8 @@ fileignoreconfig:
   checksum: 768ee614542f4e60838b44a3113866ed3e017f5ac52def598deab73cbbfde5ba
 - filename: packages/server/yarn.lock
   checksum: 00b20f48bd79d23f134b19cf5548e2745b76ac5e028dd681aa0eb187029e57f4
+- filename: packages/vue-visualiser/yarn.lock
+  checksum: 787b12b970d75262a28971e9ee93fccbf7c8540fbd3c9370a85da45b8b10079c
 - filename: screenshots/pairingMatrix.gif
   checksum: ead365ef8f5a854e7aebec3534a39f8d77a55bf89d7f65e60bf291801a8d310e
 - filename: server/yarn.lock
