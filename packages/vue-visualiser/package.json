@@ -2,7 +2,7 @@
   "name": "pairing-matrix-vue-visualiser",
   "version": "0.3.5",
   "private": false,
-  "main": "dist/pairing-matrix-vue-visualiser.umd.js",
+  "main": "dist/pairing-matrix-vue-visualiser.umd.min.js",
   "license": "MIT",
   "author": {
     "name": "Suman Maity"
