@@ -5,7 +5,7 @@
       <select id="author" name="author" @change="onAuthorSelect($event)">
         <option
           v-for="author in authors"
-          :key="author"
+          :key="'author-' + author"
           :value="author"
           :selected="author === selectedAuthor"
         >
@@ -20,7 +20,10 @@
           <th>Name</th>
         </tr>
       </thead>
-      <tr v-for="(coAuthor, index) in recommendedCoauthors" :key="coAuthor">
+      <tr
+        v-for="(coAuthor, index) in recommendedCoauthors"
+        :key="'coAuthor-' + coAuthor + '-' + index"
+      >
         <td>{{ index + 1 }}</td>
         <td>{{ coAuthor }}</td>
       </tr>
