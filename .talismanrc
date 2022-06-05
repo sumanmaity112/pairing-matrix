@@ -4,7 +4,7 @@ fileignoreconfig:
 - filename: CHANGELOG.md
   checksum: 406dc95763daf91f6fa9a2b2409a9644c5325da617cc7e26e01de28b4e2bdfb6
 - filename: packages/charts/__tests__/__snapshots__/ChordChart.test.js.snap
-  checksum: 1c9529f506694a65f22950477a3b4870652b45d3e883435781884568e83de1be
+  checksum: 5ac1ca187ebd61b3fced2a690b75e101f1912f37eb8fb4b91a3f1a069ee287be
 - filename: packages/charts/yarn.lock
   checksum: f4d970a5720f464cf519d0a2ea50a92eb235a2139ec8df28eeb2dfa136a3d2e1
 - filename: packages/engine/__tests__/GitService.test.js

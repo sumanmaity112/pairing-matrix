@@ -51,7 +51,7 @@ export default class ChordChart {
 
     const color = d3ScaleOrdinal(
       sortedAuthors,
-      d3Quantize(d3InterpolateRainbow, sortedAuthors.length)
+      d3Quantize(d3InterpolateRainbow, sortedAuthors.length + 1)
     );
 
     const chords = chord(createD3Matrix(sortedAuthors, data));
