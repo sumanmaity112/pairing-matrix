@@ -18,7 +18,7 @@ fileignoreconfig:
 - filename: packages/vue-visualiser/yarn.lock
   checksum: 787b12b970d75262a28971e9ee93fccbf7c8540fbd3c9370a85da45b8b10079c
 - filename: screenshots/pairingMatrix.gif
-  checksum: ead365ef8f5a854e7aebec3534a39f8d77a55bf89d7f65e60bf291801a8d310e
+  checksum: acd8ede19f629251e2dd7fa5cbb4464f99c977e35688dac242ab041c86ae31dd
 - filename: yarn.lock
   checksum: 2200996988818c60014902b24c46529d40923cb9ae8061cacb3edaaa0e597ab5
 version: "1.0"
