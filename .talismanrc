@@ -3,24 +3,10 @@ fileignoreconfig:
   checksum: a41d083cff29b658d9c952def92b88950f440813c37e9255e82f8de0af8f3713
 - filename: CHANGELOG.md
   checksum: 406dc95763daf91f6fa9a2b2409a9644c5325da617cc7e26e01de28b4e2bdfb6
-- filename: charts/CHANGELOG.md
-  checksum: b6fbe3d02a6781099dff2cc0cf0bb20705c2136f82e87a77499f881b92893d2c
-- filename: charts/yarn.lock
-  checksum: 476c8528871b5678223cef2dd1c4b5553aaf05cddcfdcf634ea726a27040c391
-- filename: engine/CHANGELOG.md
-  checksum: 1ae0e6aa35b68e7c6ffe66b1327749495bb50f145e3117fc703bda4db8cbdf0c
-- filename: engine/GitService.js
-  checksum: a259970d157e4669b86ab2d18cc20439a7c3afbd8923ae86f72806f487ef3267
-- filename: engine/yarn.lock
-  checksum: 8562ffdc2063b75834c44f73bcebc1c58af743997cf3f26be65e99d71d87c150
-- filename: frontend-app/src/assets/logo.png
-  checksum: 438c91cce828e2db27b2367716202658ae4ccaaffc00d9a490fca1c48ce49a1f
-- filename: frontend-app/yarn.lock
-  checksum: 3592323875fdb35c8d508b72ab0c5e90ca9d57b0c798cdf4e28bdb7911d0e6a6
 - filename: packages/charts/__tests__/__snapshots__/ChordChart.test.js.snap
   checksum: 1c9529f506694a65f22950477a3b4870652b45d3e883435781884568e83de1be
 - filename: packages/charts/yarn.lock
-  checksum: fa3b53da5dd8606ac17ca4011525a69203371c6b231f3efae29e2b0e6761842d
+  checksum: f4d970a5720f464cf519d0a2ea50a92eb235a2139ec8df28eeb2dfa136a3d2e1
 - filename: packages/engine/__tests__/GitService.test.js
   checksum: 1f4969f20ca72ca58bc112b47885b35f1957f6909eb6429861f158b5626944b9
 - filename: packages/engine/yarn.lock
@@ -33,12 +19,6 @@ fileignoreconfig:
   checksum: 787b12b970d75262a28971e9ee93fccbf7c8540fbd3c9370a85da45b8b10079c
 - filename: screenshots/pairingMatrix.gif
   checksum: ead365ef8f5a854e7aebec3534a39f8d77a55bf89d7f65e60bf291801a8d310e
-- filename: server/yarn.lock
-  checksum: c4673d61beae03b422019d445f3e7812c4f482aff52ac7ea6716ecbeceb47d87
-- filename: vue-visualiser/CHANGELOG.md
-  checksum: 49d2b2188afb444469d73327ba13e29d74352ded37dec06b4cc8874bb8782c2b
-- filename: vue-visualiser/yarn.lock
-  checksum: 44a21181403a680d2db133b32fbe7a40095de4b7230b3274eb2f83659fcc0752
 - filename: yarn.lock
   checksum: 2200996988818c60014902b24c46529d40923cb9ae8061cacb3edaaa0e597ab5
 version: "1.0"

@@ -1,4 +1,4 @@
-import * as d3 from "d3";
+import { selectAll as d3SelectAll, select as d3Select } from "d3-selection";
 import { createD3Matrix } from "./chartsUtil.js";
 
 export default class TabularChart {
@@ -9,14 +9,14 @@ export default class TabularChart {
   }
 
   static #getElementsForCellHoverEffect(self) {
-    const author = d3.select(self.parentNode).attr("author");
-    const coAuthor = d3.select(self).attr("co-author");
+    const author = d3Select(self.parentNode).attr("author");
+    const coAuthor = d3Select(self).attr("co-author");
 
     return [
-      d3
-        .selectAll("g[location='top']")
-        .selectAll(`text[co-author='${coAuthor}']`),
-      d3.selectAll("g[location='side']").selectAll(`text[author='${author}']`),
+      d3SelectAll("g[location='top']").selectAll(
+        `text[co-author='${coAuthor}']`
+      ),
+      d3SelectAll("g[location='side']").selectAll(`text[author='${author}']`),
     ];
   }
 
@@ -41,22 +41,22 @@ export default class TabularChart {
   }
 
   static #getElementsForPairIdentityHoverEffect(self) {
-    const author = d3.select(self).attr("author");
+    const author = d3Select(self).attr("author");
 
     if (author) {
       return [
-        d3.selectAll(`text[co-author='${author}']`),
-        d3.selectAll(`g[author='${author}']`).selectAll("text"),
-        d3.selectAll(`text[author='${author}']`),
+        d3SelectAll(`text[co-author='${author}']`),
+        d3SelectAll(`g[author='${author}']`).selectAll("text"),
+        d3SelectAll(`text[author='${author}']`),
       ];
     }
 
-    const coAuthor = d3.select(self).attr("co-author");
+    const coAuthor = d3Select(self).attr("co-author");
 
     return [
-      d3.selectAll(`text[co-author='${coAuthor}']`),
-      d3.selectAll(`g[author='${coAuthor}']`).selectAll("text"),
-      d3.selectAll(`text[author='${coAuthor}']`),
+      d3SelectAll(`text[co-author='${coAuthor}']`),
+      d3SelectAll(`g[author='${coAuthor}']`).selectAll("text"),
+      d3SelectAll(`text[author='${coAuthor}']`),
     ];
   }
 
@@ -96,7 +96,7 @@ export default class TabularChart {
 
     const sortedAuthors = authors.sort();
 
-    const domElement = d3.select(targetElement);
+    const domElement = d3Select(targetElement);
     domElement
       .selectAll(`svg[svg-for='pairing-matrix-tabular-chart']`)
       .remove();

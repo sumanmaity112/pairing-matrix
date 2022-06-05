@@ -1,26 +1,33 @@
-import * as d3 from "d3";
+import { selectAll as d3SelectAll, select as d3Select } from "d3-selection";
+import {
+  chordDirected as d3ChordDirected,
+  ribbonArrow as d3RibbonArrow,
+} from "d3-chord";
+import { scaleOrdinal as d3ScaleOrdinal } from "d3-scale";
+import { quantize as d3Quantize } from "d3-interpolate";
+import { arc as d3Arc } from "d3-shape";
+import { interpolateRainbow as d3InterpolateRainbow } from "d3-scale-chromatic";
+import { descending as d3Descending } from "d3-array";
 import { createD3Matrix } from "./chartsUtil.js";
 
 export default class ChordChart {
   constructor() {}
 
   static #onMouseOver(event, d) {
-    d3.selectAll(`path[co-author='${d.index}']`)
-      .attr("stroke", "black")
-      .raise();
-    d3.selectAll(`path[author='${d.index}']`).attr("stroke", "black").raise();
+    d3SelectAll(`path[co-author='${d.index}']`).attr("stroke", "black").raise();
+    d3SelectAll(`path[author='${d.index}']`).attr("stroke", "black").raise();
   }
 
   static #onMouseOut(event, d) {
-    d3.selectAll(`path[co-author='${d.index}']`).attr("stroke", null);
-    d3.selectAll(`path[author='${d.index}']`).attr("stroke", null);
+    d3SelectAll(`path[co-author='${d.index}']`).attr("stroke", null);
+    d3SelectAll(`path[author='${d.index}']`).attr("stroke", null);
   }
 
   createChart(targetElement, authors, data, width, height) {
     const sortedAuthors = authors.sort();
     if (sortedAuthors.length === 0 || data.length === 0) return;
 
-    const domElement = d3.select(targetElement);
+    const domElement = d3Select(targetElement);
     domElement.selectAll(`svg[svg-for='pairing-matrix-chord-chart']`).remove();
 
     const svg = domElement
@@ -31,22 +38,20 @@ export default class ChordChart {
     const innerRadius = Math.min(width, height) * 0.5 - 150;
     const outerRadius = innerRadius + 10;
 
-    const chord = d3
-      .chordDirected()
+    const chord = d3ChordDirected()
       .padAngle(10 / innerRadius)
-      .sortSubgroups(d3.descending)
-      .sortChords(d3.descending);
+      .sortSubgroups(d3Descending)
+      .sortChords(d3Descending);
 
-    const arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
+    const arc = d3Arc().innerRadius(innerRadius).outerRadius(outerRadius);
 
-    const ribbon = d3
-      .ribbonArrow()
+    const ribbon = d3RibbonArrow()
       .radius(innerRadius - 1)
       .padAngle(1 / innerRadius);
 
-    const color = d3.scaleOrdinal(
+    const color = d3ScaleOrdinal(
       sortedAuthors,
-      d3.quantize(d3.interpolateRainbow, sortedAuthors.length)
+      d3Quantize(d3InterpolateRainbow, sortedAuthors.length)
     );
 
     const chords = chord(createD3Matrix(sortedAuthors, data));
