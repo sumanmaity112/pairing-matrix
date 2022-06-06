@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0](https://github.com/sumanmaity112/pairing-matrix/compare/0.3.0...1.0.0) (2022-06-06)
+
+### Features 
+
+* Display pair recommendations ([1770cd](https://github.com/sumanmaity112/pairing-matrix/commit/1770cd62a0c8b33beb0f0be50c8d640a1cc148e9))
+* Display data unavailable info message ([718d1e](https://github.com/sumanmaity112/pairing-matrix/commit/718d1ee1fdbb788791cec0acac756812a23507f6))
+
+### Bug Fixes 
+
+* Update vue-visualiser version to fix duplicate color code in chord chart ([eca99c](https://github.com/sumanmaity112/pairing-matrix/commit/eca99c4b1b014434e4f16fa18e4f651dc5e2071d))
+
+
+
 ## [0.3.0](https://github.com/sumanmaity112/pairing-matrix/compare/0.2.0...0.3.0) (2022-05-23)
 
 ### ⚠ BREAKING CHANGES
