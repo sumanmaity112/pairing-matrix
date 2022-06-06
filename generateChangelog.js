@@ -87,6 +87,10 @@ const createLog = (commits, url) =>
     .join("\n");
 
 const getNewVersion = (changedCommitTypes) => {
+  const userInputVersion = process.argv[2];
+
+  if (userInputVersion) return userInputVersion;
+
   const [major, minor, patch] = currentVersion.split(".").map((x) => Number(x));
 
   if (changedCommitTypes.indexOf("feat!") !== -1) {

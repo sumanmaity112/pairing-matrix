@@ -33,7 +33,7 @@ case ${CMD} in
   format) _format_sources ;;
   test) _test ;;
   bump-version) _bump_version "$@" ;;
-  bump-server-version) _bump_server_version ;;
+  bump-server-version) _bump_server_version "$@" ;;
   publish) _publish ;;
   docker-build) _docker_build ;;
   *) _usage ;;
