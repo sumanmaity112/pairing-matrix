@@ -25,7 +25,7 @@ Once you start the docker image, it'll expose the following `http://localhost:<h
 - `since-days` by default it's set to **14** days but can be set to any number of days
 - `aggregate-by` defines the aggregation logic needs to use while generating pairing matrix. It can be either `issue` or `days`. By default, it makes use of **issue** based aggregation
 
-**Note** For config please check [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/server/README.md#config-file)
+**Note** For config please check [here](https://github.com/sumanmaity112/pairing-matrix/tree/main/packages/server#config-file)
 
 ### As Library
 
