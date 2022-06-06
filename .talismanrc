@@ -2,7 +2,7 @@ fileignoreconfig:
 - filename: .github/workflows/docker-build.yml
   checksum: a41d083cff29b658d9c952def92b88950f440813c37e9255e82f8de0af8f3713
 - filename: CHANGELOG.md
-  checksum: 406dc95763daf91f6fa9a2b2409a9644c5325da617cc7e26e01de28b4e2bdfb6
+  checksum: d30601335b9163b45cd2b0bf9e8c4c8f48cd90cee76c58a1cd8c04b669cb0a3f
 - filename: packages/charts/__tests__/__snapshots__/ChordChart.test.js.snap
   checksum: 5ac1ca187ebd61b3fced2a690b75e101f1912f37eb8fb4b91a3f1a069ee287be
 - filename: packages/charts/yarn.lock
