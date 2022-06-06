@@ -1,6 +1,11 @@
 <template>
   <Spinner v-if="loading" />
   <Alert v-else-if="displayErrorMessage" :message="errorMessage" type="Error" />
+  <Alert
+    v-else-if="displayNoDataAvailable"
+    :message="`No pairing data is available for last ${sinceDays} day(s)`"
+    type="Info"
+  />
   <div v-else>
     <div class="container">
       <div class="chart">
@@ -61,6 +66,9 @@ export default {
     },
     displayErrorMessage() {
       return !!this.errorMessage;
+    },
+    displayNoDataAvailable() {
+      return this.authors.length === 0;
     },
   },
   mounted() {

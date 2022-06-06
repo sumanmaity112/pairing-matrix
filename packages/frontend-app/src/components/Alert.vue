@@ -29,13 +29,16 @@ export default {
 <style scoped>
 .alert {
   padding: 20px;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .danger {
-  background-color: rgba(244, 67, 54, 0.83);
+  background-color: rgba(244, 67, 54, 0.73);
 }
 
 .info {
-  background-color: rgba(33, 150, 243, 0.83);
+  background-color: rgba(33, 150, 243, 0.3);
 }
 </style>
