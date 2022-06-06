@@ -4,10 +4,8 @@ const simulateMouseEvent = (selector, type) => {
     .dispatchEvent(new MouseEvent(type, { bubbles: true }));
 };
 
-export const simulateMouseOver = (selector) => {
+export const simulateMouseOver = (selector) =>
   simulateMouseEvent(selector, "mouseover");
-};
 
-export const simulateMouseOut = (selector) => {
+export const simulateMouseOut = (selector) =>
   simulateMouseEvent(selector, "mouseout");
-};

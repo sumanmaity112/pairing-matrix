@@ -9,7 +9,7 @@ jest.mock("../PairRecommendationProcessor.js");
 import PairingMatrixGenerator from "../PairingMatrixGenerator.js";
 
 describe("Pairing Matrix Generator", () => {
-  const localPath = "/tmp";
+  const localPath = "/temp";
   const username = "testuser";
   const sshIdentityFilePath = "/abc/xyz/id_rsa";
   const repoNames = ["repo1", "repo2"];
