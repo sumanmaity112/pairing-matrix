@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-vue-visualiser@0.3.5...pairing-matrix-vue-visualiser@1.0.0) (2022-06-06)
+
+**Note:** Version bump only for package pairing-matrix-vue-visualiser
+
+
+
+
+
 ### [0.3.5](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-vue-visualiser@0.3.4...pairing-matrix-vue-visualiser@0.3.5) (2022-05-23)
 
 **Note:** Version bump only for package pairing-matrix-vue-visualiser

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-engine@0.4.0...pairing-matrix-engine@1.0.0) (2022-06-06)
+
+
+### Features
+
+* Consider all co-authors when generating pairing matrix ([6134cec](https://github.com/sumanmaity112/pairing-matrix/commit/6134ceca10015f36d946a29c9331fef1c47abadc))
+* Consider commits across all branches when generating matrix ([4642508](https://github.com/sumanmaity112/pairing-matrix/commit/4642508c2e1a4f76e9580063bc0ed6fd78821015))
+* Escape special characters presents in address prefix ([a13efbe](https://github.com/sumanmaity112/pairing-matrix/commit/a13efbead8d802e2049df2ae82fa63f956c42729))
+* Introduce API to suggest pairs based on commit information ([8bcfa9e](https://github.com/sumanmaity112/pairing-matrix/commit/8bcfa9ede9768d4abd0008efa37d7890a16608b0))
+
+
+### Bug Fixes
+
+* Always convert email address to lower case to avoid duplicate authors ([69ad244](https://github.com/sumanmaity112/pairing-matrix/commit/69ad244cc1ef4203bb5189968e3087ecc6f79441))
+* Use UTC timezone while extracting reference using days aggregation ([04b525b](https://github.com/sumanmaity112/pairing-matrix/commit/04b525bde524189c021e95301b3bf34bc7cb28e3))
+
+
+
 ## [0.4.0](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-engine@0.3.0...pairing-matrix-engine@0.4.0) (2022-05-23)
 
 

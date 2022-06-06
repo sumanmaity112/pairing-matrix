@@ -1,6 +1,6 @@
 {
   "name": "pairing-matrix-vue-visualiser",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "private": false,
   "main": "dist/pairing-matrix-vue-visualiser.umd.min.js",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "pairing-matrix-charts": "^0.4.0"
+    "pairing-matrix-charts": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.4",

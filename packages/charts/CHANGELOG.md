@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.4.0...pairing-matrix-charts@1.0.0) (2022-06-06)
+
+
+### Bug Fixes
+
+* Duplicate color code for authors in chord chart ([c7d7d7a](https://github.com/sumanmaity112/pairing-matrix/commit/c7d7d7a5b15af996ad1c04527f045cc10be769c5))
+
+
+
 ## [0.4.0](https://github.com/sumanmaity112/pairing-matrix/compare/pairing-matrix-charts@0.3.3...pairing-matrix-charts@0.4.0) (2022-05-23)
 
 

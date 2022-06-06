@@ -1,6 +1,6 @@
 {
   "name": "pairing-matrix-charts",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Core logic to create D3 visualisation for pairing matrix",
   "main": "index.js",
   "license": "MIT",
@@ -30,8 +30,8 @@
     "d3-shape": "^3.1.0"
   },
   "devDependencies": {
-    "d3": "^7.4.4",
     "@babel/preset-env": "^7.18.2",
+    "d3": "^7.4.4",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0"
   },
