@@ -8,44 +8,29 @@
   />
   <div v-else>
     <div class="container">
-      <div class="chart">
-        <ChordPairingChart
-          :height="height"
-          :width="width"
-          :data="pairingMatrix"
-          :authors="authors"
-          v-if="displayChordChart"
-        />
-        <TabularPairingChart
-          :height="height"
-          :width="width"
-          :data="pairingMatrix"
-          :authors="authors"
-          v-else
-        />
-      </div>
-      <PairRecommendation
-        :recommendations="recommendations"
-      ></PairRecommendation>
+      <PairingMatrixChart
+        :height="height"
+        :width="width"
+        :pairingMatrix="pairingMatrix"
+        :authors="authors"
+        :chart="chart"
+      />
+      <PairRecommendation :recommendations="recommendations" />
     </div>
   </div>
 </template>
 
 <script>
-import {
-  ChordPairingChart,
-  TabularPairingChart,
-} from "pairing-matrix-vue-visualiser";
 import Spinner from "./Spinner";
 import Alert from "./Alert";
 import PairRecommendation from "@/components/PairRecommendation";
+import PairingMatrixChart from "@/components/PairingMatrixChart";
 
 export default {
   name: "PairingMatrix",
   components: {
+    PairingMatrixChart,
     PairRecommendation,
-    ChordPairingChart,
-    TabularPairingChart,
     Spinner,
     Alert,
   },
@@ -61,9 +46,6 @@ export default {
     };
   },
   computed: {
-    displayChordChart() {
-      return this.chart === "chord";
-    },
     displayErrorMessage() {
       return !!this.errorMessage;
     },
@@ -130,11 +112,5 @@ export default {
 <style scoped>
 .container {
   display: flex;
-}
-
-.chart {
-  flex-direction: column;
-  width: 77%;
-  margin-right: 6%;
 }
 </style>
