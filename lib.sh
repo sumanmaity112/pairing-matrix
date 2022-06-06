@@ -75,6 +75,9 @@ _bump_server_version() {
   # shellcheck disable=SC2155
   # shellcheck disable=SC2034
   local new_version=$(_generate_changelog_for_application "$@")
+  git add CHANGELOG.md
+
+  git commit -m "docs: Update changelog for application" --no-verify
 
   pushd "packages/server" > /dev/null || exit
     yarn config set version-git-message "build: Update pairing matrix server version to v%s"
