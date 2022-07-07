@@ -43,7 +43,7 @@ export default {
   components: { PairingMatrix },
   data() {
     return {
-      pullData: false,
+      pullData: true,
       sinceDays: 14,
       aggregateBy: "days",
       chart: "chord",
