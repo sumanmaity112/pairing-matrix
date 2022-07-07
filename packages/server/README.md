@@ -24,3 +24,5 @@ CONFIG_PATH=<config path> yarn start
   "sshIdentityFilePath": "<ssh file path>"
 }
 ```
+
+:warning: The SSH key mentioned using **sshIdentityFilePath** should not be password protected.

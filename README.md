@@ -4,7 +4,7 @@
 
 ## Changelog
 
-Changelog can be found [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/CHANGELOG.md)
+Changelog can be found [here](https://github.com/sumanmaity112/pairing-matrix/blob/main/CHANGELOG.md).
 
 ## Usage
 
@@ -16,8 +16,13 @@ Pairing Matrix docker image can be found on [dockerhub](https://hub.docker.com/r
 command to start pairing-matrix docker
 
 ```shell
-docker run -p <host port>:8080 -e CONFIG_PATH="<config json path>" --name pairing-matrix pairing-matrix:<tag>
+docker run -p <host port>:8080 -e CONFIG_PATH="<absolute config json path on docker instance>"  -v "<absolute config json path on host>":"<absolute config json path on docker instance>" --name pairing-matrix sumanmaity112/pairing-matrix:<tag>
+
+# Example
+# docker run -p 8080:8080 -e CONFIG_PATH="config.json" -v "/Users/john/pairing-matrix/config.json":"config.json" --name pairing-matrix sumanmaity112/pairing-matrix:latest
 ```
+
+:warning: You may need to mount more file/folder(s) as per your config to docker instance from host machine.
 
 Once you start the docker image, it'll expose the following `http://localhost:<host port>?pull-data=<pull data>&since-days=<since days>&aggregate-by=<aggregate by>`
 
@@ -25,7 +30,7 @@ Once you start the docker image, it'll expose the following `http://localhost:<h
 - `since-days` by default it's set to **14** days but can be set to any number of days
 - `aggregate-by` defines the aggregation logic needs to use while generating pairing matrix. It can be either `issue` or `days`. By default, it makes use of **issue** based aggregation
 
-**Note** For config please check [here](https://github.com/sumanmaity112/pairing-matrix/tree/main/packages/server#config-file)
+**Note** For config please check [here](https://github.com/sumanmaity112/pairing-matrix/tree/main/packages/server#config-file).
 
 ### As Library
 
