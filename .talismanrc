@@ -3,6 +3,8 @@ fileignoreconfig:
   checksum: a41d083cff29b658d9c952def92b88950f440813c37e9255e82f8de0af8f3713
 - filename: .github/workflows/on-pr.yml
   checksum: 58e7b742401991668ba002604812a0451a68d86c16c47ef7ee6cc25e14ac6a8f
+- filename: .github/workflows/verify.yml
+  checksum: 392e1ed7daaaa2be634438f1b4e8ff3737cc1d3b0d66276a4b7ad3ccdc803507
 - filename: CHANGELOG.md
   checksum: d30601335b9163b45cd2b0bf9e8c4c8f48cd90cee76c58a1cd8c04b669cb0a3f
 - filename: packages/charts/__tests__/__snapshots__/ChordChart.test.js.snap
