@@ -1,10 +1,10 @@
 name: On  PR
 on:
   pull_request:
-    types: [ opened, reopened ]
+    types: [opened, reopened]
     paths-ignore:
-      - '.github/**'
-      - 'Dockerfile'
+      - ".github/**"
+      - "Dockerfile"
 
 env:
   SERVICE_NAME: pairing-matrix
