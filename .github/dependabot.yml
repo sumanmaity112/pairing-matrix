@@ -1,0 +1,44 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: ".."
+    schedule:
+      interval: "daily"
+      time: "04:30"
+    labels:
+      - "javascript"
+      - "dependencies"
+      - "dependabot"
+    commit-message:
+      prefix: "chore"
+    open-pull-requests-limit: 20
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "04:30"
+    labels:
+      - "github-actions"
+      - "dependencies"
+      - "dependabot"
+    commit-message:
+      prefix: "chore"
+    reviewers:
+      - "sumanmaity112"
+    open-pull-requests-limit: 20
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "04:30"
+    labels:
+      - "docker"
+      - "dependencies"
+      - "dependabot"
+    reviewers:
+      - "sumanmaity112"
+    commit-message:
+      prefix: "chore"
+    open-pull-requests-limit: 20
