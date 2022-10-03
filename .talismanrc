@@ -21,8 +21,10 @@ fileignoreconfig:
   checksum: d283ccda35590e443580350613bb3866ffa71f45f71537d6150e0ef7aa3f6a31
 - filename: packages/server/yarn.lock
   checksum: 114eb3772ec6cb59845ce388cbc5feabb16acc4857de318a3671956275e95571
+- filename: packages/vue-visualiser/__tests__/components/__snapshots__/ChordPairingChart.test.js.snap
+  checksum: b87df1d7a397f4b0e0a19a220972452576642af00b8dccd7ff0cc14b9532683b
 - filename: packages/vue-visualiser/yarn.lock
-  checksum: 2cb6f34cf1bc8ae320fabf431d8eac7eccd71f56214b9aaf65fc01d859990293
+  checksum: 8047f5ea326e751cf959da967043d94a1e2c5652427ae6e951e3932ece95ee06
 - filename: screenshots/pairingMatrix.gif
   checksum: acd8ede19f629251e2dd7fa5cbb4464f99c977e35688dac242ab041c86ae31dd
 - filename: yarn.lock
