@@ -5,19 +5,32 @@
       <div class="pairing-matrix-config-container">
         <section class="pairing-matrix-config">
           <h4>Pull new data from github:</h4>
-          <input type="radio" v-model="pullData" value="true" />Yes
-          <input type="radio" v-model="pullData" value="false" />No
+          <input
+            type="radio"
+            v-model="pullData"
+            value="true"
+            data-testid="pairing-matrix-pull-data-config-yes"
+          />Yes
+          <input
+            type="radio"
+            v-model="pullData"
+            value="false"
+            data-testid="pairing-matrix-pull-data-config-no"
+          />No
         </section>
-        <section class="pairing-matrix-config">
+        <section class="pairing-matrix-config" id="pairing-matrix-days-config">
           <h4>For last days:</h4>
           <input type="number" v-model="sinceDays" />
         </section>
-        <section class="pairing-matrix-config">
+        <section
+          class="pairing-matrix-config"
+          id="pairing-matrix-aggregation-config"
+        >
           <h4>Aggregate By:</h4>
           <input type="radio" v-model="aggregateBy" value="issue" />Issue
           <input type="radio" v-model="aggregateBy" value="days" />Days
         </section>
-        <section class="pairing-matrix-config">
+        <section class="pairing-matrix-config" id="pairing-matrix-chart-config">
           <h4>Visualise by:</h4>
           <input type="radio" v-model="chart" value="chord" />Chord Chart
           <input type="radio" v-model="chart" value="tabular" />Tabular Chart
@@ -43,6 +56,7 @@ export default {
   components: { PairingMatrix },
   data() {
     return {
+      //TODO: Change pullData to String
       pullData: true,
       sinceDays: 14,
       aggregateBy: "days",
@@ -51,6 +65,7 @@ export default {
   },
   computed: {
     shouldPullData() {
+      console.log("-----------------------------", this.pullData);
       return this.pullData === "true";
     },
   },

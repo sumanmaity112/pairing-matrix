@@ -15,16 +15,18 @@ fileignoreconfig:
   checksum: 1f4969f20ca72ca58bc112b47885b35f1957f6909eb6429861f158b5626944b9
 - filename: packages/engine/yarn.lock
   checksum: b7f8f82091d36fcb406ed483ff347e0cfb935d2e7bde52057bb7dd4d61fdd289
+- filename: packages/frontend-app/__tests__/components/__snapshots__/PairingMatrixChart.test.js.snap
+  checksum: 298ef858fc26842bdebceb651537452accc5acb8f35630dbc784b2dcce797a0e
 - filename: packages/frontend-app/src/components/PairRecommendation.vue
   checksum: 9c339e6776ded6435b6b44936ec37467222af4828998d0a042ebca3a9041200b
 - filename: packages/frontend-app/yarn.lock
-  checksum: d283ccda35590e443580350613bb3866ffa71f45f71537d6150e0ef7aa3f6a31
+  checksum: 9a59e1b9c5e63bcd3b9b581b3cea9cb2eb949b16094cb40cff4999484e5a6288
 - filename: packages/server/yarn.lock
   checksum: 114eb3772ec6cb59845ce388cbc5feabb16acc4857de318a3671956275e95571
 - filename: packages/vue-visualiser/__tests__/components/__snapshots__/ChordPairingChart.test.js.snap
   checksum: b87df1d7a397f4b0e0a19a220972452576642af00b8dccd7ff0cc14b9532683b
 - filename: packages/vue-visualiser/yarn.lock
-  checksum: 8047f5ea326e751cf959da967043d94a1e2c5652427ae6e951e3932ece95ee06
+  checksum: d300cc61e40a5f389b3c9f839e5bebb6c4ac61e811eb893505c0e4fe585a2e65
 - filename: screenshots/pairingMatrix.gif
   checksum: acd8ede19f629251e2dd7fa5cbb4464f99c977e35688dac242ab041c86ae31dd
 - filename: yarn.lock
