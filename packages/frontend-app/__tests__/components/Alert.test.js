@@ -11,7 +11,7 @@ describe("Alert", () => {
     const wrapper = shallowMount(Alert, { props: { type, message } });
     expect(wrapper.classes("alert")).toBeTruthy();
     expect(wrapper.classes("danger")).toBeTruthy();
-    expect(wrapper.find(`div`).wrapperElement.innerHTML).toBe(
+    expect(wrapper.find("div").wrapperElement.innerHTML).toMatchInlineSnapshot(
       `<strong>${type}!</strong> ${message}`
     );
   });
@@ -29,9 +29,9 @@ describe("Alert", () => {
       const wrapper = shallowMount(Alert, { props: { type, message } });
       expect(wrapper.classes("alert")).toBeTruthy();
       expect(wrapper.classes("info")).toBeTruthy();
-      expect(wrapper.find(`div`).wrapperElement.innerHTML).toBe(
-        `<strong>${type}!</strong> ${message}`
-      );
+      expect(
+        wrapper.find("div").wrapperElement.innerHTML
+      ).toMatchInlineSnapshot(`<strong>${type}!</strong> ${message}`);
     }
   );
 
@@ -40,7 +40,7 @@ describe("Alert", () => {
     const wrapper = shallowMount(Alert, { props: { message } });
     expect(wrapper.classes("alert")).toBeTruthy();
     expect(wrapper.classes("info")).toBeTruthy();
-    expect(wrapper.find(`div`).wrapperElement.innerHTML).toBe(
+    expect(wrapper.find("div").wrapperElement.innerHTML).toMatchInlineSnapshot(
       `<strong>Info!</strong> ${message}`
     );
   });

@@ -1,75 +1,64 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`PairingMatrixPage should re-configure pullData configuration to no 1`] = `
+exports[`PairingMatrixPage > should re-configure pullData configuration to no 1`] = `
 <div class="pairing-matrix-page">
   <h2 class="pairing-matrix-title">Pairing Matrix</h2>
   <div class="pairing-matrix-container">
     <div class="pairing-matrix-config-container">
       <section class="pairing-matrix-config">
-        <h4>Pull new data from github:</h4><input type="radio" data-testid="pairing-matrix-pull-data-config-yes" value="true">Yes <input type="radio" data-testid="pairing-matrix-pull-data-config-no" value="false">No
+        <h4>Pull new data from github:</h4>
+        <input type="radio" value="true">Yes
+        <input type="radio" value="false">No
       </section>
       <section class="pairing-matrix-config" id="pairing-matrix-days-config">
-        <h4>For last days:</h4><input type="number">
+        <h4>For last days:</h4>
+        <input type="number">
       </section>
       <section class="pairing-matrix-config" id="pairing-matrix-aggregation-config">
-        <h4>Aggregate By:</h4><input type="radio" value="issue">Issue <input type="radio" value="days">Days
+        <h4>Aggregate By:</h4>
+        <input type="radio" value="issue">Issue
+        <input type="radio" value="days">Days
       </section>
       <section class="pairing-matrix-config" id="pairing-matrix-chart-config">
-        <h4>Visualise by:</h4><input type="radio" value="chord">Chord Chart <input type="radio" value="tabular">Tabular Chart
+        <h4>Visualise by:</h4>
+        <input type="radio" value="chord">Chord Chart
+        <input type="radio" value="tabular">Tabular Chart
       </section>
     </div>
     <div class="pairing-matrix">
-      <pairing-matrix-stub aggregateby="days" sincedays="14" chart="chord" pulldata="false"></pairing-matrix-stub>
+      <pairing-matrix-stub aggregateby="days" chart="chord" pulldata="false" sincedays="14"></pairing-matrix-stub>
     </div>
   </div>
 </div>
 `;
 
-exports[`PairingMatrixPage should re-configure pullData configuration to yes 1`] = `
+exports[`PairingMatrixPage > should render pairing matrix page with default configuration 1`] = `
 <div class="pairing-matrix-page">
   <h2 class="pairing-matrix-title">Pairing Matrix</h2>
   <div class="pairing-matrix-container">
     <div class="pairing-matrix-config-container">
       <section class="pairing-matrix-config">
-        <h4>Pull new data from github:</h4><input type="radio" data-testid="pairing-matrix-pull-data-config-yes" value="true">Yes <input type="radio" data-testid="pairing-matrix-pull-data-config-no" value="false">No
+        <h4>Pull new data from github:</h4>
+        <input type="radio" value="true">Yes
+        <input type="radio" value="false">No
       </section>
       <section class="pairing-matrix-config" id="pairing-matrix-days-config">
-        <h4>For last days:</h4><input type="number">
+        <h4>For last days:</h4>
+        <input type="number">
       </section>
       <section class="pairing-matrix-config" id="pairing-matrix-aggregation-config">
-        <h4>Aggregate By:</h4><input type="radio" value="issue">Issue <input type="radio" value="days">Days
+        <h4>Aggregate By:</h4>
+        <input type="radio" value="issue">Issue
+        <input type="radio" value="days">Days
       </section>
       <section class="pairing-matrix-config" id="pairing-matrix-chart-config">
-        <h4>Visualise by:</h4><input type="radio" value="chord">Chord Chart <input type="radio" value="tabular">Tabular Chart
+        <h4>Visualise by:</h4>
+        <input type="radio" value="chord">Chord Chart
+        <input type="radio" value="tabular">Tabular Chart
       </section>
     </div>
     <div class="pairing-matrix">
-      <pairing-matrix-stub aggregateby="days" sincedays="14" chart="chord" pulldata="true"></pairing-matrix-stub>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`PairingMatrixPage should render pairing matrix page with default configuration 1`] = `
-<div class="pairing-matrix-page">
-  <h2 class="pairing-matrix-title">Pairing Matrix</h2>
-  <div class="pairing-matrix-container">
-    <div class="pairing-matrix-config-container">
-      <section class="pairing-matrix-config">
-        <h4>Pull new data from github:</h4><input type="radio" data-testid="pairing-matrix-pull-data-config-yes" value="true">Yes <input type="radio" data-testid="pairing-matrix-pull-data-config-no" value="false">No
-      </section>
-      <section class="pairing-matrix-config" id="pairing-matrix-days-config">
-        <h4>For last days:</h4><input type="number">
-      </section>
-      <section class="pairing-matrix-config" id="pairing-matrix-aggregation-config">
-        <h4>Aggregate By:</h4><input type="radio" value="issue">Issue <input type="radio" value="days">Days
-      </section>
-      <section class="pairing-matrix-config" id="pairing-matrix-chart-config">
-        <h4>Visualise by:</h4><input type="radio" value="chord">Chord Chart <input type="radio" value="tabular">Tabular Chart
-      </section>
-    </div>
-    <div class="pairing-matrix">
-      <pairing-matrix-stub aggregateby="days" sincedays="14" chart="chord" pulldata="false"></pairing-matrix-stub>
+      <pairing-matrix-stub aggregateby="days" chart="chord" pulldata="false" sincedays="14"></pairing-matrix-stub>
     </div>
   </div>
 </div>

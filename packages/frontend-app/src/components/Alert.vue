@@ -7,12 +7,6 @@
 <script>
 export default {
   name: "Alert",
-  computed: {
-    className() {
-      if ("error" === this.type.toLowerCase()) return "danger";
-      return "info";
-    },
-  },
   props: {
     message: {
       type: String,
@@ -21,6 +15,12 @@ export default {
     type: {
       type: String,
       default: "Info",
+    },
+  },
+  computed: {
+    className() {
+      if (this.type.toLowerCase() === "error") return "danger";
+      return "info";
     },
   },
 };

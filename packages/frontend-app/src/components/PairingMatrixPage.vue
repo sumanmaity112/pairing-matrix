@@ -6,34 +6,34 @@
         <section class="pairing-matrix-config">
           <h4>Pull new data from github:</h4>
           <input
-            type="radio"
             v-model="pullData"
+            type="radio"
             value="true"
             data-testid="pairing-matrix-pull-data-config-yes"
           />Yes
           <input
-            type="radio"
             v-model="pullData"
+            type="radio"
             value="false"
             data-testid="pairing-matrix-pull-data-config-no"
           />No
         </section>
-        <section class="pairing-matrix-config" id="pairing-matrix-days-config">
+        <section id="pairing-matrix-days-config" class="pairing-matrix-config">
           <h4>For last days:</h4>
-          <input type="number" v-model="sinceDays" />
+          <input v-model="sinceDays" type="number" />
         </section>
         <section
-          class="pairing-matrix-config"
           id="pairing-matrix-aggregation-config"
+          class="pairing-matrix-config"
         >
           <h4>Aggregate By:</h4>
-          <input type="radio" v-model="aggregateBy" value="issue" />Issue
-          <input type="radio" v-model="aggregateBy" value="days" />Days
+          <input v-model="aggregateBy" type="radio" value="issue" />Issue
+          <input v-model="aggregateBy" type="radio" value="days" />Days
         </section>
-        <section class="pairing-matrix-config" id="pairing-matrix-chart-config">
+        <section id="pairing-matrix-chart-config" class="pairing-matrix-config">
           <h4>Visualise by:</h4>
-          <input type="radio" v-model="chart" value="chord" />Chord Chart
-          <input type="radio" v-model="chart" value="tabular" />Tabular Chart
+          <input v-model="chart" type="radio" value="chord" />Chord Chart
+          <input v-model="chart" type="radio" value="tabular" />Tabular Chart
         </section>
       </div>
       <div class="pairing-matrix">
@@ -56,7 +56,7 @@ export default {
   components: { PairingMatrix },
   data() {
     return {
-      //TODO: Change pullData to String
+      // TODO: Change pullData to String
       pullData: true,
       sinceDays: 14,
       aggregateBy: "days",
@@ -65,7 +65,6 @@ export default {
   },
   computed: {
     shouldPullData() {
-      console.log("-----------------------------", this.pullData);
       return this.pullData === "true";
     },
   },

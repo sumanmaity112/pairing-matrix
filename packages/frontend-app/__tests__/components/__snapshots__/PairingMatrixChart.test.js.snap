@@ -1,221 +1,321 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`PairingMatrixChart should render chord pairing chart 1`] = `
+exports[`PairingMatrixChart > should render chord pairing chart 1`] = `
 <div class="pairing-matrix-chart">
-  <div id="chord-pairing-chart"><svg viewBox="-450,-350,900,700" svg-for="pairing-matrix-chord-chart">
-      <g font-size="20" font-family="sans-serif">
+  <div id="chord-pairing-chart">
+    <svg svg-for="pairing-matrix-chord-chart" viewBox="-450,-350,900,700">
+      <g font-family="sans-serif" font-size="20">
         <g>
-          <path fill="rgb(110, 64, 170)" d="M1.2858791391047208e-14,-210A210,210,0,0,1,129.96060706585033,-164.95526851566655L123.77200672938127,-157.10025572920622A200,200,0,0,0,1.2246467991473532e-14,-200Z"></path><text dy="0.35em" transform="
+          <path d="M1.2858791391047208e-14,-210A210,210,0,0,1,129.96060706585033,-164.95526851566655L123.77200672938127,-157.10025572920622A200,200,0,0,0,1.2246467991473532e-14,-200Z" fill="rgb(110, 64, 170)" />
+          <text dy="0.35em" transform="
         rotate(-70.88353210133891)
         translate(215)
         
       ">barry.allen</text>
         </g>
         <g>
-          <path fill="rgb(191, 60, 175)" d="M138.04251743534064,-158.2537942044793A210,210,0,0,1,192.7085946860517,-83.4469743856963L183.53199493909685,-79.47330893875838A200,200,0,0,0,131.46906422413394,-150.71789924236123Z"></path><text dy="0.35em" transform="
+          <path d="M138.04251743534064,-158.2537942044793A210,210,0,0,1,192.7085946860517,-83.4469743856963L183.53199493909685,-79.47330893875838A200,200,0,0,0,131.46906422413394,-150.71789924236123Z" fill="rgb(191, 60, 175)" />
+          <text dy="0.35em" transform="
         rotate(-36.15796329458298)
         translate(215)
         
       ">bruce_banner</text>
         </g>
         <g>
-          <path fill="rgb(254, 75, 131)" d="M196.6383695809908,-73.71127192315753A210,210,0,0,1,208.0547823398156,-28.516794096320787L198.14741175220533,-27.15885152030551A200,200,0,0,0,187.2746376961817,-70.20121135538811Z"></path><text dy="0.35em" transform="
+          <path d="M196.6383695809908,-73.71127192315753A210,210,0,0,1,208.0547823398156,-28.516794096320787L198.14741175220533,-27.15885152030551A200,200,0,0,0,187.2746376961817,-70.20121135538811Z" fill="rgb(254, 75, 131)" />
+          <text dy="0.35em" transform="
         rotate(-14.176706420267777)
         translate(215)
         
       ">diana</text>
         </g>
         <g>
-          <path fill="rgb(255, 120, 71)" d="M209.22001371750596,-18.08275034519423A210,210,0,0,1,175.53327978049663,115.27388121123487L167.17455217190155,109.78464877260463A200,200,0,0,0,199.25715592143425,-17.221666995423078Z"></path><text dy="0.35em" transform="
+          <path d="M209.22001371750596,-18.08275034519423A210,210,0,0,1,175.53327978049663,115.27388121123487L167.17455217190155,109.78464877260463A200,200,0,0,0,199.25715592143425,-17.221666995423078Z" fill="rgb(255, 120, 71)" />
+          <text dy="0.35em" transform="
         rotate(14.176706420267806)
         translate(215)
         
       ">john.reese</text>
         </g>
         <g>
-          <path fill="rgb(226, 183, 47)" d="M169.55261606720913,123.902826379246A210,210,0,0,1,10.495625546842424,209.7375546829429L9.995833854135643,199.75005207899326A200,200,0,0,0,161.4786819687706,118.00269178975809Z"></path><text dy="0.35em" transform="
+          <path d="M169.55261606720913,123.902826379246A210,210,0,0,1,10.495625546842424,209.7375546829429L9.995833854135643,199.75005207899326A200,200,0,0,0,161.4786819687706,118.00269178975809Z" fill="rgb(226, 183, 47)" />
+          <text dy="0.35em" transform="
         rotate(61.646587159464445)
         translate(215)
         
       ">natasha</text>
         </g>
         <g>
-          <path fill="rgb(175, 240, 91)" d="M1.2858791391047208e-14,210A210,210,0,0,1,-90.36969461103303,189.56085644433196L-86.06637582003145,180.53414899460188A200,200,0,0,0,1.2246467991473532e-14,200Z"></path><text dy="0.35em" transform="
+          <path d="M1.2858791391047208e-14,210A210,210,0,0,1,-90.36969461103303,189.56085644433196L-86.06637582003145,180.53414899460188A200,200,0,0,0,1.2246467991473532e-14,200Z" fill="rgb(175, 240, 91)" />
+          <text dy="0.35em" text-anchor="end" transform="
         rotate(102.74431193244072)
         translate(215)
         rotate(180)
-      " text-anchor="end">oliver</text>
+      ">oliver</text>
         </g>
         <g>
-          <path fill="rgb(82, 246, 103)" d="M-99.7308501559088,184.80735247056504A210,210,0,0,1,-169.55261606720913,123.90282637924601L-161.4786819687706,118.0026917897581A200,200,0,0,0,-94.98176205324647,176.00700235291907Z"></path><text dy="0.35em" transform="
+          <path d="M-99.7308501559088,184.80735247056504A210,210,0,0,1,-169.55261606720913,123.90282637924601L-161.4786819687706,118.0026917897581A200,200,0,0,0,-94.98176205324647,176.00700235291907Z" fill="rgb(82, 246, 103)" />
+          <text dy="0.35em" text-anchor="end" transform="
         rotate(131.0977247729763)
         translate(215)
         rotate(180)
-      " text-anchor="end">rohdy</text>
+      ">rohdy</text>
         </g>
         <g>
-          <path fill="rgb(29, 223, 163)" d="M-175.53327978049663,115.27388121123488A210,210,0,0,1,-200.0766509592607,-63.79132966889908L-190.5491913897721,-60.75364730371341A200,200,0,0,0,-167.17455217190155,109.78464877260465Z"></path><text dy="0.35em" transform="
+          <path d="M-175.53327978049663,115.27388121123488A210,210,0,0,1,-200.0766509592607,-63.79132966889908L-190.5491913897721,-60.75364730371341A200,200,0,0,0,-167.17455217190155,109.78464877260465Z" fill="rgb(29, 223, 163)" />
+          <text dy="0.35em" text-anchor="end" transform="
         rotate(172.19544954595256)
         translate(215)
         rotate(180)
-      " text-anchor="end">steve</text>
+      ">steve</text>
         </g>
         <g>
-          <path fill="rgb(35, 171, 216)" d="M-196.63836958099085,-73.71127192315737A210,210,0,0,1,-108.84273051421782,-179.59192636143018L-103.65974334687411,-171.03992986802874A200,200,0,0,0,-187.27463769618177,-70.20121135538797Z"></path><text dy="0.35em" transform="
+          <path d="M-196.63836958099085,-73.71127192315737A210,210,0,0,1,-108.84273051421782,-179.59192636143018L-103.65974334687411,-171.03992986802874A200,200,0,0,0,-187.27463769618177,-70.20121135538797Z" fill="rgb(35, 171, 216)" />
+          <text dy="0.35em" text-anchor="end" transform="
         rotate(219.66533028514914)
         translate(215)
         rotate(180)
-      " text-anchor="end">tonystark</text>
+      ">tonystark</text>
         </g>
         <g>
-          <path fill="rgb(76, 110, 219)" d="M-99.7308501559091,-184.8073524705649A210,210,0,0,1,-10.495625546842822,-209.73755468294289L-9.995833854136022,-199.75005207899324A200,200,0,0,0,-94.98176205324675,-176.00700235291896Z"></path><text dy="0.35em" transform="
+          <path d="M-99.7308501559091,-184.8073524705649A210,210,0,0,1,-10.495625546842822,-209.73755468294289L-9.995833854136022,-199.75005207899324A200,200,0,0,0,-94.98176205324675,-176.00700235291896Z" fill="rgb(76, 110, 219)" />
+          <text dy="0.35em" text-anchor="end" transform="
         rotate(254.39089909190506)
         translate(215)
         rotate(180)
-      " text-anchor="end">zoe.morgan</text>
+      ">zoe.morgan</text>
         </g>
       </g>
       <g fill-opacity="0.75">
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(175, 240, 91)" d="M0.4974994817709969,-198.9993781253239A199,199,0,0,1,85.18669810059946,-179.84500678839356Q0,0,-0.47249950781263217,188.9994093753076L-43.89952065981961,194.09748088483292L-80.90595950257939,170.80756926133859Q0,0,0.4974994817709969,-198.9993781253239Z" co-author="5" author="0">
+        <path author="0" co-author="5" d="M0.4974994817709969,-198.9993781253239A199,199,0,0,1,85.18669810059946,-179.84500678839356Q0,0,-0.47249950781263217,188.9994093753076L-43.89952065981961,194.09748088483292L-80.90595950257939,170.80756926133859Q0,0,0.4974994817709969,-198.9993781253239Z" fill="rgb(175, 240, 91)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>barry.allen → oliver 2</title>
         </path>
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(82, 246, 103)" d="M131.18622050043803,-149.63681215132343A199,199,0,0,1,182.41607464484352,-79.53223064372631Q0,0,-90.17330075736461,166.10170327399373L-130.81171890301326,149.9643097461494L-152.31809652504774,111.89368825356611Q0,0,131.18622050043803,-149.63681215132343Z" co-author="6" author="1">
+        <path author="1" co-author="6" d="M131.18622050043803,-149.63681215132343A199,199,0,0,1,182.41607464484352,-79.53223064372631Q0,0,-90.17330075736461,166.10170327399373L-130.81171890301326,149.9643097461494L-152.31809652504774,111.89368825356611Q0,0,131.18622050043803,-149.63681215132343Z" fill="rgb(82, 246, 103)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>bruce_banner → rohdy 2</title>
         </path>
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(76, 110, 219)" d="M198.30308942895783,-16.639853452802654A199,199,0,0,1,186.5123075322725,69.38414184081985Q0,0,-89.34166853753148,-166.550491632207L-53.54548854236466,-191.66084800177498L-9.917942479691519,-188.73959419520202Q0,0,198.30308942895783,-16.639853452802654Z" co-author="9" author="3">
+        <path author="3" co-author="9" d="M198.30308942895783,-16.639853452802654A199,199,0,0,1,186.5123075322725,69.38414184081985Q0,0,-89.34166853753148,-166.550491632207L-53.54548854236466,-191.66084800177498L-9.917942479691519,-188.73959419520202Q0,0,198.30308942895783,-16.639853452802654Z" fill="rgb(76, 110, 219)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>john.reese → zoe.morgan 2</title>
         </path>
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(35, 171, 216)" d="M160.37725507134658,117.81398921936324A199,199,0,0,1,94.94437487151092,174.89015318267064Q0,0,-157.72009215280264,-104.1411183505893L-138.143329938461,-143.23903236727585L-98.36223275617073,-161.38733273470038Q0,0,160.37725507134658,117.81398921936324Z" co-author="8" author="4">
+        <path author="4" co-author="8" d="M160.37725507134658,117.81398921936324A199,199,0,0,1,94.94437487151092,174.89015318267064Q0,0,-157.72009215280264,-104.1411183505893L-138.143329938461,-143.23903236727585L-98.36223275617073,-161.38733273470038Q0,0,160.37725507134658,117.81398921936324Z" fill="rgb(35, 171, 216)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>natasha → tonystark 2</title>
         </path>
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(226, 183, 47)" d="M-166.61124863229352,108.81953790192306A199,199,0,0,1,-197.08850100637252,27.51586398899905Q0,0,89.3416685375313,166.5504916322071L53.54548854236434,191.66084800177507L9.917942479691078,188.73959419520202Q0,0,-166.61124863229352,108.81953790192306Z" co-author="4" author="7">
+        <path author="7" co-author="4" d="M-166.61124863229352,108.81953790192306A199,199,0,0,1,-197.08850100637252,27.51586398899905Q0,0,89.3416685375313,166.5504916322071L53.54548854236434,191.66084800177507L9.917942479691078,188.73959419520202Q0,0,-166.61124863229352,108.81953790192306Z" fill="rgb(226, 183, 47)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>steve → natasha 2</title>
         </path>
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(29, 223, 163)" d="M86.08485455626725,-179.41682701470984A199,199,0,0,1,122.76197536329454,-156.6221485132351Q0,0,-188.256737768878,-16.745168993471008L-195.13420227952886,-39.03387119838236L-180.21195349029102,-56.961845293259096Q0,0,86.08485455626725,-179.41682701470984Z" co-author="7" author="0">
+        <path author="0" co-author="7" d="M86.08485455626725,-179.41682701470984A199,199,0,0,1,122.76197536329454,-156.6221485132351Q0,0,-188.256737768878,-16.745168993471008L-195.13420227952886,-39.03387119838236L-180.21195349029102,-56.961845293259096Q0,0,86.08485455626725,-179.41682701470984Z" fill="rgb(29, 223, 163)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>barry.allen → steve 1</title>
         </path>
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(35, 171, 216)" d="M186.16305686958248,70.31583219284686A199,199,0,0,1,166.61124863229352,108.81953790192304Q0,0,-176.80812938869903,-66.78237328868352L-177.43466824134327,-90.09960325153736L-158.23882407790703,-103.35121941438906Q0,0,186.16305686958248,70.31583219284686Z" co-author="8" author="3">
+        <path author="3" co-author="8" d="M186.16305686958248,70.31583219284686A199,199,0,0,1,166.61124863229352,108.81953790192304Q0,0,-176.80812938869903,-66.78237328868352L-177.43466824134327,-90.09960325153736L-158.23882407790703,-103.35121941438906Q0,0,186.16305686958248,70.31583219284686Z" fill="rgb(35, 171, 216)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>john.reese → tonystark 1</title>
         </path>
-        <path style="stroke-width: 3px; mix-blend-mode: multiply;" fill="rgb(254, 75, 131)" d="M-197.223616151941,26.530081642389206A199,199,0,0,1,-198.30308942895786,-16.639853452802598Q0,0,177.1398297668317,-65.89750154731126L192.93945488272965,-48.73773434983541L187.18455623218296,-26.133157255883425Q0,0,-197.223616151941,26.530081642389206Z" co-author="2" author="7">
+        <path author="7" co-author="2" d="M-197.223616151941,26.530081642389206A199,199,0,0,1,-198.30308942895786,-16.639853452802598Q0,0,177.1398297668317,-65.89750154731126L192.93945488272965,-48.73773434983541L187.18455623218296,-26.133157255883425Q0,0,-197.223616151941,26.530081642389206Z" fill="rgb(254, 75, 131)" style="stroke-width: 3px; mix-blend-mode: multiply;">
           <title>steve → diana 1</title>
         </path>
       </g>
-    </svg></div>
+    </svg>
+  </div>
 </div>
 `;
 
-exports[`PairingMatrixChart should render tabular pairing chart 1`] = `
+exports[`PairingMatrixChart > should render tabular pairing chart 1`] = `
 <div class="pairing-matrix-chart">
-  <div id="tabular-pairing-chart"><svg viewBox="-900,-700,900,700" svg-for="pairing-matrix-tabular-chart">
-      <g location="top"><text co-author="zoe.morgan" transform="translate( -693.75 , -550) rotate(270)" font-size="18" font-family="sans-serif">zoe.morgan</text><text co-author="tonystark" transform="translate( -621.25 , -550) rotate(270)" font-size="18" font-family="sans-serif">tonystark</text><text co-author="steve" transform="translate( -548.75 , -550) rotate(270)" font-size="18" font-family="sans-serif">steve</text><text co-author="rohdy" transform="translate( -476.25 , -550) rotate(270)" font-size="18" font-family="sans-serif">rohdy</text><text co-author="oliver" transform="translate( -403.75 , -550) rotate(270)" font-size="18" font-family="sans-serif">oliver</text><text co-author="natasha" transform="translate( -331.25 , -550) rotate(270)" font-size="18" font-family="sans-serif">natasha</text><text co-author="john.reese" transform="translate( -258.75 , -550) rotate(270)" font-size="18" font-family="sans-serif">john.reese</text><text co-author="diana" transform="translate( -186.25 , -550) rotate(270)" font-size="18" font-family="sans-serif">diana</text><text co-author="bruce_banner" transform="translate( -113.75 , -550) rotate(270)" font-size="18" font-family="sans-serif">bruce_banner</text><text co-author="barry.allen" transform="translate( -41.25 , -550) rotate(270)" font-size="18" font-family="sans-serif">barry.allen</text></g>
+  <div id="tabular-pairing-chart">
+    <svg svg-for="pairing-matrix-tabular-chart" viewBox="-900,-700,900,700">
+      <g location="top">
+        <text co-author="zoe.morgan" font-family="sans-serif" font-size="18" transform="translate( -693.75 , -550) rotate(270)">zoe.morgan</text>
+        <text co-author="tonystark" font-family="sans-serif" font-size="18" transform="translate( -621.25 , -550) rotate(270)">tonystark</text>
+        <text co-author="steve" font-family="sans-serif" font-size="18" transform="translate( -548.75 , -550) rotate(270)">steve</text>
+        <text co-author="rohdy" font-family="sans-serif" font-size="18" transform="translate( -476.25 , -550) rotate(270)">rohdy</text>
+        <text co-author="oliver" font-family="sans-serif" font-size="18" transform="translate( -403.75 , -550) rotate(270)">oliver</text>
+        <text co-author="natasha" font-family="sans-serif" font-size="18" transform="translate( -331.25 , -550) rotate(270)">natasha</text>
+        <text co-author="john.reese" font-family="sans-serif" font-size="18" transform="translate( -258.75 , -550) rotate(270)">john.reese</text>
+        <text co-author="diana" font-family="sans-serif" font-size="18" transform="translate( -186.25 , -550) rotate(270)">diana</text>
+        <text co-author="bruce_banner" font-family="sans-serif" font-size="18" transform="translate( -113.75 , -550) rotate(270)">bruce_banner</text>
+        <text co-author="barry.allen" font-family="sans-serif" font-size="18" transform="translate( -41.25 , -550) rotate(270)">barry.allen</text>
+      </g>
       <g location="side">
-        <g transform="translate(-725, -525)"><text author="barry.allen" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">barry.allen</text>
+        <g transform="translate(-725, -525)">
+          <text alignment-baseline="middle" author="barry.allen" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">barry.allen</text>
           <g author="barry.allen">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="rohdy" x="217.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="oliver" x="290" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="natasha" x="362.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="john.reese" x="435" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="diana" x="507.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="bruce_banner" x="580" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="barry.allen" x="652.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
+            <rect co-author="rohdy" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="217.5" />
+            <rect co-author="oliver" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="290" />
+            <rect co-author="natasha" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="362.5" />
+            <rect co-author="john.reese" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="435" />
+            <rect co-author="diana" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="507.5" />
+            <rect co-author="bruce_banner" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="580" />
+            <rect co-author="barry.allen" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="652.5" />
           </g>
-          <g author="barry.allen"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">1</text><text co-author="rohdy" x="243.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="oliver" x="316.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">2</text><text co-author="natasha" x="388.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="john.reese" x="461.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="diana" x="533.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="bruce_banner" x="606.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="barry.allen" x="678.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="barry.allen">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">1</text>
+            <text alignment-baseline="middle" co-author="rohdy" font-family="sans-serif" font-size="18" x="243.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="oliver" font-family="sans-serif" font-size="18" x="316.25" y="21.25">2</text>
+            <text alignment-baseline="middle" co-author="natasha" font-family="sans-serif" font-size="18" x="388.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="john.reese" font-family="sans-serif" font-size="18" x="461.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="diana" font-family="sans-serif" font-size="18" x="533.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="bruce_banner" font-family="sans-serif" font-size="18" x="606.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="barry.allen" font-family="sans-serif" font-size="18" x="678.75" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -472.5)"><text author="bruce_banner" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">bruce_banner</text>
+        <g transform="translate(-725, -472.5)">
+          <text alignment-baseline="middle" author="bruce_banner" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">bruce_banner</text>
           <g author="bruce_banner">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="rohdy" x="217.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="oliver" x="290" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="natasha" x="362.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="john.reese" x="435" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="diana" x="507.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="bruce_banner" x="580" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
+            <rect co-author="rohdy" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="217.5" />
+            <rect co-author="oliver" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="290" />
+            <rect co-author="natasha" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="362.5" />
+            <rect co-author="john.reese" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="435" />
+            <rect co-author="diana" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="507.5" />
+            <rect co-author="bruce_banner" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="580" />
           </g>
-          <g author="bruce_banner"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="rohdy" x="243.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">2</text><text co-author="oliver" x="316.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="natasha" x="388.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="john.reese" x="461.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="diana" x="533.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="bruce_banner" x="606.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="bruce_banner">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="rohdy" font-family="sans-serif" font-size="18" x="243.75" y="21.25">2</text>
+            <text alignment-baseline="middle" co-author="oliver" font-family="sans-serif" font-size="18" x="316.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="natasha" font-family="sans-serif" font-size="18" x="388.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="john.reese" font-family="sans-serif" font-size="18" x="461.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="diana" font-family="sans-serif" font-size="18" x="533.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="bruce_banner" font-family="sans-serif" font-size="18" x="606.25" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -420)"><text author="diana" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">diana</text>
+        <g transform="translate(-725, -420)">
+          <text alignment-baseline="middle" author="diana" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">diana</text>
           <g author="diana">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="rohdy" x="217.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="oliver" x="290" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="natasha" x="362.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="john.reese" x="435" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="diana" x="507.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
+            <rect co-author="rohdy" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="217.5" />
+            <rect co-author="oliver" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="290" />
+            <rect co-author="natasha" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="362.5" />
+            <rect co-author="john.reese" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="435" />
+            <rect co-author="diana" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="507.5" />
           </g>
-          <g author="diana"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">1</text><text co-author="rohdy" x="243.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="oliver" x="316.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="natasha" x="388.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="john.reese" x="461.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="diana" x="533.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="diana">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">1</text>
+            <text alignment-baseline="middle" co-author="rohdy" font-family="sans-serif" font-size="18" x="243.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="oliver" font-family="sans-serif" font-size="18" x="316.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="natasha" font-family="sans-serif" font-size="18" x="388.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="john.reese" font-family="sans-serif" font-size="18" x="461.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="diana" font-family="sans-serif" font-size="18" x="533.75" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -367.5)"><text author="john.reese" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">john.reese</text>
+        <g transform="translate(-725, -367.5)">
+          <text alignment-baseline="middle" author="john.reese" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">john.reese</text>
           <g author="john.reese">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="rohdy" x="217.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="oliver" x="290" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="natasha" x="362.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="john.reese" x="435" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
+            <rect co-author="rohdy" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="217.5" />
+            <rect co-author="oliver" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="290" />
+            <rect co-author="natasha" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="362.5" />
+            <rect co-author="john.reese" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="435" />
           </g>
-          <g author="john.reese"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">2</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">1</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="rohdy" x="243.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="oliver" x="316.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="natasha" x="388.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="john.reese" x="461.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="john.reese">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">2</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">1</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="rohdy" font-family="sans-serif" font-size="18" x="243.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="oliver" font-family="sans-serif" font-size="18" x="316.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="natasha" font-family="sans-serif" font-size="18" x="388.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="john.reese" font-family="sans-serif" font-size="18" x="461.25" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -315)"><text author="natasha" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">natasha</text>
+        <g transform="translate(-725, -315)">
+          <text alignment-baseline="middle" author="natasha" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">natasha</text>
           <g author="natasha">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="rohdy" x="217.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="oliver" x="290" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="natasha" x="362.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
+            <rect co-author="rohdy" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="217.5" />
+            <rect co-author="oliver" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="290" />
+            <rect co-author="natasha" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="362.5" />
           </g>
-          <g author="natasha"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">2</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">2</text><text co-author="rohdy" x="243.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="oliver" x="316.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="natasha" x="388.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="natasha">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">2</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">2</text>
+            <text alignment-baseline="middle" co-author="rohdy" font-family="sans-serif" font-size="18" x="243.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="oliver" font-family="sans-serif" font-size="18" x="316.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="natasha" font-family="sans-serif" font-size="18" x="388.75" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -262.5)"><text author="oliver" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">oliver</text>
+        <g transform="translate(-725, -262.5)">
+          <text alignment-baseline="middle" author="oliver" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">oliver</text>
           <g author="oliver">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="rohdy" x="217.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="oliver" x="290" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
+            <rect co-author="rohdy" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="217.5" />
+            <rect co-author="oliver" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="290" />
           </g>
-          <g author="oliver"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="rohdy" x="243.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="oliver" x="316.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="oliver">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="rohdy" font-family="sans-serif" font-size="18" x="243.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="oliver" font-family="sans-serif" font-size="18" x="316.25" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -210)"><text author="rohdy" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">rohdy</text>
+        <g transform="translate(-725, -210)">
+          <text alignment-baseline="middle" author="rohdy" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">rohdy</text>
           <g author="rohdy">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="rohdy" x="217.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
+            <rect co-author="rohdy" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="217.5" />
           </g>
-          <g author="rohdy"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="rohdy" x="243.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="rohdy">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="rohdy" font-family="sans-serif" font-size="18" x="243.75" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -157.5)"><text author="steve" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">steve</text>
+        <g transform="translate(-725, -157.5)">
+          <text alignment-baseline="middle" author="steve" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">steve</text>
           <g author="steve">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="steve" x="145" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
+            <rect co-author="steve" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="145" />
           </g>
-          <g author="steve"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="steve" x="171.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="steve">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="steve" font-family="sans-serif" font-size="18" x="171.25" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -105)"><text author="tonystark" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">tonystark</text>
+        <g transform="translate(-725, -105)">
+          <text alignment-baseline="middle" author="tonystark" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">tonystark</text>
           <g author="tonystark">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
-            <rect co-author="tonystark" x="72.5" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
+            <rect co-author="tonystark" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="72.5" />
           </g>
-          <g author="tonystark"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">-</text><text co-author="tonystark" x="98.75" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="tonystark">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">-</text>
+            <text alignment-baseline="middle" co-author="tonystark" font-family="sans-serif" font-size="18" x="98.75" y="21.25">:)</text>
+          </g>
         </g>
-        <g transform="translate(-725, -52.5)"><text author="zoe.morgan" x="-25" y="21.25" text-anchor="end" alignment-baseline="middle" font-size="18" font-family="sans-serif">zoe.morgan</text>
+        <g transform="translate(-725, -52.5)">
+          <text alignment-baseline="middle" author="zoe.morgan" font-family="sans-serif" font-size="18" text-anchor="end" x="-25" y="21.25">zoe.morgan</text>
           <g author="zoe.morgan">
-            <rect co-author="zoe.morgan" x="0" style="outline: 2px solid chocolate; border-radius: 6px;" fill="white" width="62.5" height="42.5"></rect>
+            <rect co-author="zoe.morgan" fill="white" height="42.5" style="outline: 2px solid chocolate; border-radius: 6px;" width="62.5" x="0" />
           </g>
-          <g author="zoe.morgan"><text co-author="zoe.morgan" x="26.25" y="21.25" alignment-baseline="middle" font-size="18" font-family="sans-serif">:)</text></g>
+          <g author="zoe.morgan">
+            <text alignment-baseline="middle" co-author="zoe.morgan" font-family="sans-serif" font-size="18" x="26.25" y="21.25">:)</text>
+          </g>
         </g>
       </g>
-    </svg></div>
+    </svg>
+  </div>
 </div>
 `;

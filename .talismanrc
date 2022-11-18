@@ -16,11 +16,11 @@ fileignoreconfig:
 - filename: packages/engine/yarn.lock
   checksum: b7f8f82091d36fcb406ed483ff347e0cfb935d2e7bde52057bb7dd4d61fdd289
 - filename: packages/frontend-app/__tests__/components/__snapshots__/PairingMatrixChart.test.js.snap
-  checksum: 298ef858fc26842bdebceb651537452accc5acb8f35630dbc784b2dcce797a0e
+  checksum: f524f63402f42c694c938833ca4a78c043e18f7b96c72bb99f3ed18412ba7a22
 - filename: packages/frontend-app/src/components/PairRecommendation.vue
   checksum: 9c339e6776ded6435b6b44936ec37467222af4828998d0a042ebca3a9041200b
 - filename: packages/frontend-app/yarn.lock
-  checksum: 9a59e1b9c5e63bcd3b9b581b3cea9cb2eb949b16094cb40cff4999484e5a6288
+  checksum: 951a19347110ca0f72fd61cdc96f2ac2d67b402abcd5d2171604c7cd59619386
 - filename: packages/server/yarn.lock
   checksum: 114eb3772ec6cb59845ce388cbc5feabb16acc4857de318a3671956275e95571
 - filename: packages/vue-visualiser/__tests__/components/__snapshots__/ChordPairingChart.test.js.snap

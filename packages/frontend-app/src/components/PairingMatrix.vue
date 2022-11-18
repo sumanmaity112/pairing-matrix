@@ -11,7 +11,7 @@
       <PairingMatrixChart
         :height="height"
         :width="width"
-        :pairingMatrix="pairingMatrix"
+        :pairing-matrix="pairingMatrix"
         :authors="authors"
         :chart="chart"
       />
@@ -34,6 +34,24 @@ export default {
     Spinner,
     Alert,
   },
+  props: {
+    sinceDays: {
+      type: Number,
+      required: true,
+    },
+    pullData: {
+      type: Boolean,
+      required: true,
+    },
+    aggregateBy: {
+      type: String,
+      required: true,
+    },
+    chart: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       pairingMatrix: [],
@@ -51,6 +69,17 @@ export default {
     },
     displayNoDataAvailable() {
       return this.authors.length === 0;
+    },
+  },
+  watch: {
+    sinceDays() {
+      this.fetchPairingMatrix();
+    },
+    pullData() {
+      this.fetchPairingMatrix();
+    },
+    aggregateBy() {
+      this.fetchPairingMatrix();
     },
   },
   mounted() {
@@ -75,35 +104,6 @@ export default {
           this.loading = false;
           this.errorMessage = res.statusText;
         });
-    },
-  },
-  props: {
-    sinceDays: {
-      type: Number,
-      required: true,
-    },
-    pullData: {
-      type: Boolean,
-      required: true,
-    },
-    aggregateBy: {
-      type: String,
-      required: true,
-    },
-    chart: {
-      type: String,
-      required: true,
-    },
-  },
-  watch: {
-    sinceDays() {
-      this.fetchPairingMatrix();
-    },
-    pullData() {
-      this.fetchPairingMatrix();
-    },
-    aggregateBy() {
-      this.fetchPairingMatrix();
     },
   },
 };

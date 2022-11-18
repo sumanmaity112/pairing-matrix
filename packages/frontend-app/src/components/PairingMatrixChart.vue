@@ -1,18 +1,18 @@
 <template>
   <div class="pairing-matrix-chart">
     <ChordPairingChart
+      v-if="displayChordChart"
       :height="height"
       :width="width"
       :data="pairingMatrix"
       :authors="authors"
-      v-if="displayChordChart"
     />
     <TabularPairingChart
+      v-else
       :height="height"
       :width="width"
       :data="pairingMatrix"
       :authors="authors"
-      v-else
     />
   </div>
 </template>
@@ -28,11 +28,6 @@ export default {
   components: {
     ChordPairingChart,
     TabularPairingChart,
-  },
-  computed: {
-    displayChordChart() {
-      return this.chart === "chord";
-    },
   },
   props: {
     height: {
@@ -54,6 +49,11 @@ export default {
     chart: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    displayChordChart() {
+      return this.chart === "chord";
     },
   },
 };

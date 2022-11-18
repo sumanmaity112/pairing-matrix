@@ -34,6 +34,12 @@
 <script>
 export default {
   name: "PairRecommendation",
+  props: {
+    recommendations: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     const authors = Object.keys(this.recommendations).sort();
     return {
@@ -49,12 +55,6 @@ export default {
   methods: {
     onAuthorSelect(e) {
       this.selectedAuthor = e.target.value;
-    },
-  },
-  props: {
-    recommendations: {
-      type: Object,
-      required: true,
     },
   },
 };
