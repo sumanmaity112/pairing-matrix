@@ -241,7 +241,7 @@
     estree-walker "^2.0.2"
     source-map "^0.6.1"
 
-"@vue/compiler-dom@3.2.46":
+"@vue/compiler-dom@3.2.46", "@vue/compiler-dom@^3.0.1":
   version "3.2.46"
   resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.2.46.tgz#43647915e7c9dc03741b3377f5f905d4b5610de8"
   integrity sha512-q4GNqlYG8RsBcLTcK7dTKovZcmUh8oB3tFY5S8dGDe03yxfyeimzQGQRxm6qBldVI/5azN3WYi830galNPTnbg==
@@ -322,11 +322,13 @@
   integrity sha512-Ty/ioj+rJCHaGsGWy4xyYnhOWk6vn1mT6PzmmqFlm6NvmW3wEefskmuECr2WRC2c4An8w5ioMM3CF+P3caLjPg==
 
 "@vue/test-utils@^2.2.3":
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.2.8.tgz#2002a2b2c90309f66c5c175b735621438832a610"
-  integrity sha512-/R8DKzp41Ip/RqTt1jvOVi5gxby3EwNWiYHNYsG9FAjEvt0gzDvYN55lCKzX7IdnI5zVIOo5tHtts0SLT+JrWw==
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.2.9.tgz#d915b204963582fd867c35277acddfd00efb6daa"
+  integrity sha512-WP2gmUX9hucNGCE+FMqdTwisRQcPkY+f9oaZOcUP/xdJbIbTwdCGeOpQzXe8h+W218SC7RPzfTFc6r8T3tkggg==
   dependencies:
     js-beautify "1.14.6"
+  optionalDependencies:
+    "@vue/compiler-dom" "^3.0.1"
 
 abab@^2.0.6:
   version "2.0.6"
