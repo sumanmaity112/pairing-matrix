@@ -1905,9 +1905,9 @@ d3-zoom@3:
     d3-transition "2 - 3"
 
 d3@^7.6.1:
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-7.7.0.tgz#e7779a74ea7c807b432fdfd8128de062b19c62eb"
-  integrity sha512-VEwHCMgMjD2WBsxeRGUE18RmzxT9Bn7ghDpzvTEvkLSBAKgTMydJjouZTjspgQfRHpPt/PB3EHWBa6SSyFQq4g==
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-7.8.3.tgz#b6c862d16368e15bf764c89e248a300a56f2ab40"
+  integrity sha512-cAa866AkPXtt4IzRx6nzGf50uerq6VYks7p/tTH94be4QfhUkyTfJfaxXGPOB5ZRVUZmUV1wcM1dism/Ua0lCw==
   dependencies:
     d3-array "3"
     d3-axis "3"
