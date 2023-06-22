@@ -287,7 +287,7 @@
     estree-walker "^2.0.2"
     source-map-js "^1.0.2"
 
-"@vue/compiler-dom@3.3.3", "@vue/compiler-dom@^3.0.1":
+"@vue/compiler-dom@3.3.3":
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.3.3.tgz#1ac26880546b457b43db562901bba93f83fa8b4b"
   integrity sha512-Rau2ZZwBABhIuOOY0gj5ouLtlsOFd98ltcufshCD15ep52Ujue40E36e1tKvC+FI2gZuB25V6ilKSoHhvU6PMw==
@@ -354,7 +354,7 @@
     "@vue/shared" "3.3.3"
     csstype "^3.1.1"
 
-"@vue/server-renderer@3.3.3", "@vue/server-renderer@^3.0.1":
+"@vue/server-renderer@3.3.3":
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/@vue/server-renderer/-/server-renderer-3.3.3.tgz#17f756ebf2972d9fbfb35d9c35a5500e9cbd096d"
   integrity sha512-N8fZ1LzHKUS6H11g8niR7YhRcha3k8k21UMP68hnXXWWVZeAuhUZv7Ln9eV29vnHwbMap63qx0ZNmqDvKO1Ucw==
@@ -368,14 +368,12 @@
   integrity sha512-CHPWoZcIKVIiDCBZ20RYKaIvdfJG8JLIySfyR2HT79iziM8R8etS7WTj4Q6fcWkFwCV7nKr7ZUoisTI+lbZcbQ==
 
 "@vue/test-utils@^2.2.3":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.3.2.tgz#b47ce6d7be7bf9700e0bb4322410e4cd8724d277"
-  integrity sha512-hJnVaYhbrIm0yBS0+e1Y0Sj85cMyAi+PAbK4JHqMRUZ6S622Goa+G7QzkRSyvCteG8wop7tipuEbHoZo26wsSA==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.4.0.tgz#7bc7fb2d0af1ad88e4e9ebd04b09545ce0eaceec"
+  integrity sha512-BKB9aj1yky63/I3IwSr1FjUeHYsKXI7D6S9F378AHt7a5vC0dLkOBtSsFXoRGC/7BfHmiB9HRhT+i9xrUHoAKw==
   dependencies:
     js-beautify "1.14.6"
-  optionalDependencies:
-    "@vue/compiler-dom" "^3.0.1"
-    "@vue/server-renderer" "^3.0.1"
+    vue-component-type-helpers "1.6.5"
 
 abab@^2.0.6:
   version "2.0.6"
@@ -1969,6 +1967,11 @@ vitest@^0.32.0:
     vite "^3.0.0 || ^4.0.0"
     vite-node "0.32.2"
     why-is-node-running "^2.2.2"
+
+vue-component-type-helpers@1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/vue-component-type-helpers/-/vue-component-type-helpers-1.6.5.tgz#ff6b75529063744b0966655725f3e02f30d97cd7"
+  integrity sha512-iGdlqtajmiqed8ptURKPJ/Olz0/mwripVZszg6tygfZSIL9kYFPJTNY6+Q6OjWGznl2L06vxG5HvNvAnWrnzbg==
 
 vue@^3.2.45:
   version "3.3.3"
