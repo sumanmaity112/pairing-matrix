@@ -1,9 +1,9 @@
-FROM node:16-slim as frontend-builder
+FROM node:22-slim as frontend-builder
 COPY --chown=node:node packages/frontend-app /home/frontend-app
 WORKDIR /home/frontend-app
 RUN yarn install && yarn build
 
-FROM node:16-slim
+FROM node:22-slim
 EXPOSE 8080
 
 RUN apt update && apt install -y git
