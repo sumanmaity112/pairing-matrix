@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "lerna": "^6.1.0",
+    "lerna": "^8.2.1",
     "prettier": "^2.8.0"
   }
 }
